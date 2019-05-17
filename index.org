@@ -4,5 +4,17 @@
 #+EXPORT_FILE_NAME: ./index.html
 
 * About
+
+  /You can often use Emacs to help you understand what puzzles you or to find out how to do something new./
+  /This self-reliance is not only a pleasure, but an advantage./
+  /--Emacs Lisp Intro Info pages/
+
+  Your friendly local Emacs User Group and useful resources about Emacs!
+  Open to all persuasions--emacs, spacemacs, doom etc.
+  Open to all text editor & lisp geeks--programmers, writers, [[https://bofh.org.uk/2019/02/25/baking-with-emacs/][bakers]].
+  Meant to be a regular meetup--a beginner vs. advanced topics and talks vs. hands on sessions (config, elisp, new packages, new ideas in emacs etc.).
+  For pre- and post- meetup discussions and all other things Emacs check out [[https://emacs-london.slack.com][slack]]
+
+  Go get an [[https://emacs-london.herokuapp.com/][invite]]!
 * Next meetup
 * Contact
