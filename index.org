@@ -43,3 +43,7 @@ Pawel & Matt
 * Contact
 
 Join the new [[https://emacs-london.herokuapp.com/][emacs-london Slack]] to discuss the London meetups and all other things Emacs.
+
+* Projects
+  Project inspiration for our meetups. Mostly comes from our own Emacs setup woes.
+  #+INCLUDE: projects.org

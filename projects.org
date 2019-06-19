@@ -1,0 +1,171 @@
+* org projects
+** Ability to jump to org link (e.g. footnotes) in another buffer/window
+   When buffer is narrowed can't preview the footnotes (for reference)
+   TODO:
+   - some nice way of previewing that
+   HOW:
+   - using ~clone-indirect-buffer~ functionality
+** Org indexing
+   Some sort of indexing idea for org
+   - org backed with a db?
+   - could also enrich the files themselves
+   USE:
+   say now I'm learning about *crux* db
+   crux becomes a /thing/ I might want to track, reference, have some cannonical representation, metadata etc
+   once this is established the internal links can be put an all occurences of the word crux
+** Xanadu
+   I find myself writing more and more stuff in org.
+   With that comes the need of having a way to make and show the interconnections between those writings.
+   In other words I'm finding myslef in need of a more powerful reference mechanism.
+   Every now and then when I'm looking for answers on-line or try to sketch some solutions myself I'm going back to Ted Nelson and Xanadu and keep thinking that I'm just trying to re-implement some of his ideas in Emacs.
+   When I've realised that and started to look around myself I found that some ppl already did some of that.
+   Nevertheless I think that this would make for a great elisp exercise and I would love to see how far we can go.
+   I believe some of the results may prove to be practical (I know I want some of that) but I want to do it mainly for the fun of it!
+   PS Other source of inspiration could be some of the wiki systems
+
+*** Sharing fragments
+    Sharing writing done in org mode
+    There are two main options here
+    - collaboration
+      - two way mechanism with syncing etc.
+      - this is solved through github
+    - publishing
+      - this only requires one way mechanis
+      - can this be solved by e.g. gists?
+    There are questions pertinent to both
+    - format
+      - for collaboration it stays in org
+      - I think export is necesserry for other ppl to consume
+    - permissions
+      - collaboration: full permission mechanics of GH
+      - secret gists
+        - can be only accessed by those with the URL
+    - sharing fragments
+      - for collaboration this is the difficult question
+      - for sharing this just needs a subtree export
+    - live/realtime update?
+      - this is too hard and an overkill for now
+
+    Workflow
+    - Two stage workflow for publishing
+      - this will work because is unidirectional flow
+        - so there can be modifications to published versoin because they will never have to be incorporated back into the original
+    - review the original note: to make sure that base changes are there
+    - review the copy for publishing: this should be subtractive and slight changes to presentations not to the core. Essential changes should go into phase one
+    - those changes and exports should be recorded with timestamps maybe message
+      - use property drawer for this?
+
+    Gists
+    - seems to already be there
+      - could use this: https://github.com/defunkt/gist.el
+    - can share files and folders
+    - could use markdown, so potentially ppl could edit it and it could take life of it's own
+
+    Dropbox html sharing folder?
+    - I don't think that exists anymore
+
+    Publish to blog, straight away!
+    - would be nice at some point, don't thing I have to guts to do it now
+
+    Export to HTML and push to git repo with gh pages enabled
+    - this is a bit manual, but could be automated ofc
+    - would edit the note as is in the original org file
+    - press keybinding to trigger publishing
+    - would open a capture type window for edits to the final draft
+    - after confirmed with ~C-c C-c~ would export to html in the background, stage changes, and bring up to commit window (and automatically push if not run with prefix argument)
+    - would generate url and copy it to clipboard
+* general emacs projects
+** Easier way to have multiple narrow views of one file
+   I sometimes want to work on multiple things at a time (stretch of time) that are in the same buffer.
+   I can always ~clone-indirect-buffer~ but that's kinda hard ;)
+   - provides no semantics for manipulation/switching etc.
+** Window navigation aware of system windows (kinda)
+   ~SPC w h/l~ should be aware of existence of additional window
+   LOGIC:
+   - if there's window
+     - switch to window
+     - else: use ~s-`~ to switch to other frame
+   - caveats
+     - makes some sense for two frames (also not quite, cause it's not aware of direction, but still usefull)
+     - very little sense for more
+** "Freeze view" for helm
+   say I've got project api to explore
+   would be nice to do that through helm
+   but as soon as I navigate away it either closes or gets in weird state
+   Alternatively this can be done through elisp
+** Persistent undo and jump to last change history
+   Vim has that ;P
+** Hypothes.is for emacs!
+   - viewing annotations tree in Emacs
+   - highlighting/annotations from org files
+     - this would need them to be version controlled (so links work)
+     - do they need to be public?
+     - is it useful?
+** Parse git diff's for org headlines that changed
+   Effectively an org specific change log
+   This could be done with organum (clj parser) or elisp magic
+   - Clean git diff into org document
+   - Save filename
+   - Parse headlines
+   - Join them into links like: file:projects.org::*task
+     - to refer back to those changes
+     - difficulty: this would have to be a (ma)git reference to when the change was introduced??
+       - or just current, yeah!
+   Could this be integrated somehow into a /magit/ function?
+   Taking the commit under point as a starting point for calculating diff
+** look and feel
+*** Playing with font-locks
+    I've had this thing where I wanted: Better elisp mentions in org mode buffers (inline src block?)
+    The regex/matcher used needs to modify to allow for the brackets to be optional
+    Diving into that would be quite cool
+    Experimenting with some wild font-locks ;P
+    Even this example is pretty intresting i.e. achieves 'hiding' of the 'src' part with very small fonts ;) HACK FTW!
+*** Explore limits of emacs display capabilities
+    How to design more modern, clean interfaces in emacs
+    E.g. solarized theme uses variable width font for org so that's possible
+    Some of the things like the customize interface use buttons etc
+* spacemacs/evil specific projects
+** Evil-search improvements: n/N to be consistent, then use ~#~ for first occurence in file
+* clojure related projects
+** Automatic matching against "clojure error message catalogue"
+   https://github.com/yogthos/clojure-error-message-catalog/tree/master/clj
+** Clojure file buffers and repl buffer interactions
+*** Require current ns in repl
+    - I can send the ns form
+    - should I just make a mess and do ~use~
+    - otherwise there is user input needed for the ~:as~ clause
+      - this could be ok if e.g. ~(require '[some.ns :as |])~ gets sent to repl
+      - and focus goes there
+    - not sure how usefult this will actually be
+** Org to handle links to project namesapces
+   eg. ~com.foobar.books~
+   is there a way to delegate this to clojure-mode jump handler?
+** Emacs clojure dev plugin
+   have a state like the lisp state
+   then single letter commmands from most commpon operations
+   #+begin_src clojure
+     some-stuff ; 1
+     (first some-stuff) ; m
+     (map | (first some-stuff)) ; t
+     (take | ((map :some-key (first some-stuff)))) ; f
+     (filter | ...) ; m
+     (map | ...) ; c
+
+
+
+     first : 1
+     map : m
+     reduce : r
+     filter : f
+     and : a
+     or : o
+     take : t
+     count : c
+     etc.
+   #+end_src
+** Auto-save cider repl interactions
+   This would be pretty useful
+   ~cider-repl-history-save~
+   The format is then elisp, would be nice to just get text file with clojure forms
+   - human readable
+   - reusable
