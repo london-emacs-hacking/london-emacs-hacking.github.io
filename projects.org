@@ -107,7 +107,7 @@
    - Clean git diff into org document
    - Save filename
    - Parse headlines
-   - Join them into links like: file:projects.org::*task
+   - Join them into links like: =file:projects.org::*task=
      - to refer back to those changes
      - difficulty: this would have to be a (ma)git reference to when the change was introduced??
        - or just current, yeah!
