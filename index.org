@@ -3,6 +3,29 @@
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/style.css" />
 #+EXPORT_FILE_NAME: ./index.html
 
+* Next meetup: Monday July 29th 7pm, Poetry Society Studio
+
+The next Emacs London meetup is scheduled for Monday July 29th. The meetup will
+be a hands-on Dojo-style session, hosted at the [[https://goo.gl/maps/hQTo4moTHToJwvgG7][Poetry Society Studio]] in
+Holborn, with optional drinks at [[https://goo.gl/maps/AVqtkDoeoDtRmwZV9][Cittie of York]] afterwards.
+
+We will split into small groups/pairs, chat & work on Emacs-related things.
+Food & drink will be available to purchase at the café downstairs.
+
+We will kick off properly at 7pm but attendees are welcome from 6pm.
+
+Going forwards we will meet monthly (exact dates and venue TBC). The format will be
+simple: we may have unplanned/informal presentations or
+coding/demos, or we might just talk over drink and food. To break it up a little
+we will want to do some longer, invited talks every now and then.
+
+You must sign up to the guestlist on [[https://www.meetup.com/London-Emacs-Hacking/][meetup.com]] to attend. For questions and
+other Emacs conversation join the new [[https://emacs-london.herokuapp.com/][emacs-london Slack]].
+
+See you there!
+
+Pawel & Matt
+
 * About
 
   /You can often use Emacs to help you understand what puzzles you or to find out how to do something new./
@@ -16,5 +39,7 @@
   For pre- and post- meetup discussions and all other things Emacs check out [[https://emacs-london.slack.com][slack]]
 
   Go get an [[https://emacs-london.herokuapp.com/][invite]]!
-* Next meetup
+
 * Contact
+
+Join the new [[https://emacs-london.herokuapp.com/][emacs-london Slack]] to discuss the London meetups and all other things Emacs.
