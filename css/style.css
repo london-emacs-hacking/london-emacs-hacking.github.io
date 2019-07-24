@@ -387,7 +387,7 @@ div.figure {
     }
 
     div.outline-2, #footnotes {
-        margin-left: 280px;
+        margin: auto;
         max-width: 960px;
     }
 }
@@ -401,12 +401,7 @@ div.figure {
         display: none;
     }
 
-    h1.title {
-        margin-left: 5%;
-    }
-
     div.outline-2, #footnotes {
-        margin-left: 5%;
         max-width: 90%;
     }
 }
@@ -442,4 +437,12 @@ div.figure {
     div.notice:before {
         display: none;
     }
+}
+
+#preamble {
+    margin-top: 50px;
+}
+
+.logo {
+    width: 75%;
 }
