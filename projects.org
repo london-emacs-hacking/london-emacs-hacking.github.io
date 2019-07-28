@@ -237,3 +237,10 @@ Fun is a number one concern!
    The format is then elisp, would be nice to just get text file with clojure forms
    - human readable
    - reusable
+
+'(("en" "<p class=\"author\">Author: %a (%e)</p>
+<p class=\"date\">Date: %d</p>
+<p class=\"creator\">%c</p>
+<p class=\"validation\">%v</p>"))
+
+* Local vars :noexport:

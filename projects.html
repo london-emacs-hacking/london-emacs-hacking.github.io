@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-07-28 Sun 17:01 -->
+<!-- 2019-07-28 Sun 17:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Hacking Projects</title>
@@ -135,49 +135,49 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0e6cf3a">1. Org Projects</a>
+<li><a href="#orgd6eaa4c">1. Org Projects</a>
 <ul>
-<li><a href="#orge5d5128">1.1. Ability to jump to an org link (e.g. footnotes) in another buffer/window</a></li>
-<li><a href="#org986253e">1.2. Xanadu</a>
+<li><a href="#orgaedad11">1.1. Ability to jump to an org link (e.g. footnotes) in another buffer/window</a></li>
+<li><a href="#orgb10f24d">1.2. Xanadu</a>
 <ul>
-<li><a href="#org7894beb">1.2.1. Sharing fragments</a></li>
-<li><a href="#org5754db1">1.2.2. References</a></li>
+<li><a href="#orgceac73d">1.2.1. Sharing fragments</a></li>
+<li><a href="#org329217a">1.2.2. References</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org358f316">2. General Emacs Projects</a>
+<li><a href="#org7049014">2. General Emacs Projects</a>
 <ul>
-<li><a href="#org194fb2e">2.1. Easier way to have multiple narrow views of one file</a></li>
-<li><a href="#orgdeecaff">2.2. Window navigation aware of system windows (kinda)</a></li>
-<li><a href="#orgf24fa31">2.3. "Freeze view" for helm/which key</a></li>
-<li><a href="#orgcb352cb">2.4. Persistent undo and jump to last change history</a></li>
-<li><a href="#orgb5b114d">2.5. Hypothes.is for emacs!</a></li>
-<li><a href="#org0600eba">2.6. Parse git diff's for org headlines that changed</a>
+<li><a href="#org91224f9">2.1. Easier way to have multiple narrow views of one file</a></li>
+<li><a href="#org1c06602">2.2. Window navigation aware of system windows (kinda)</a></li>
+<li><a href="#orgd0e5ef7">2.3. "Freeze view" for helm/which key</a></li>
+<li><a href="#orgfd1fc96">2.4. Persistent undo and jump to last change history</a></li>
+<li><a href="#org02cfb8e">2.5. Hypothes.is for emacs!</a></li>
+<li><a href="#orgc81ccfd">2.6. Parse git diff's for org headlines that changed</a>
 <ul>
-<li><a href="#org3ab8725">2.6.1. Example approach</a></li>
+<li><a href="#orgcf8be2a">2.6.1. Example approach</a></li>
 </ul>
 </li>
-<li><a href="#orgeee921f">2.7. look and feel</a>
+<li><a href="#orga1e7296">2.7. look and feel</a>
 <ul>
-<li><a href="#org8d48af4">2.7.1. Playing with font-locks</a></li>
-<li><a href="#org039aee2">2.7.2. Explore limits of emacs display capabilities</a></li>
+<li><a href="#orgf4aa224">2.7.1. Playing with font-locks</a></li>
+<li><a href="#org5aae6ae">2.7.2. Explore limits of emacs display capabilities</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org4d155ef">3. Spacemacs/Evil Specific Projects</a>
+<li><a href="#org1cbc57b">3. Spacemacs/Evil Specific Projects</a>
 <ul>
-<li><a href="#orgac2ad48">3.1. Evil-search improvements: n/N to be consistent</a></li>
+<li><a href="#orgb4b2ff6">3.1. Evil-search improvements: n/N to be consistent</a></li>
 </ul>
 </li>
-<li><a href="#orgdf2bb16">4. Clojure Related Projects</a>
+<li><a href="#orgf8d0950">4. Clojure Related Projects</a>
 <ul>
-<li><a href="#org750e5b3">4.1. Automatic matching against "clojure error message catalogue"</a></li>
-<li><a href="#orgb7d5e76">4.2. Clojure file buffers and repl buffer interactions</a></li>
-<li><a href="#org80b0e9d">4.3. Org to handle links to project namesapces</a></li>
-<li><a href="#org217f404">4.4. Emacs clojure dev plugin</a></li>
-<li><a href="#orga2a1d7f">4.5. Auto-save cider repl interactions</a></li>
+<li><a href="#orgf387233">4.1. Automatic matching against "clojure error message catalogue"</a></li>
+<li><a href="#orgc104ecb">4.2. Clojure file buffers and repl buffer interactions</a></li>
+<li><a href="#org6d9b1cc">4.3. Org to handle links to project namesapces</a></li>
+<li><a href="#org66d992c">4.4. Emacs clojure dev plugin</a></li>
+<li><a href="#org6ed374e">4.5. Auto-save cider repl interactions</a></li>
 </ul>
 </li>
 </ul>
@@ -188,12 +188,12 @@ for the JavaScript code in this tag.
 Fun is a number one concern!
 </p>
 
-<div id="outline-container-org0e6cf3a" class="outline-2">
-<h2 id="org0e6cf3a"><span class="section-number-2">1</span> Org Projects</h2>
+<div id="outline-container-orgd6eaa4c" class="outline-2">
+<h2 id="orgd6eaa4c"><span class="section-number-2">1</span> Org Projects</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orge5d5128" class="outline-3">
-<h3 id="orge5d5128"><span class="section-number-3">1.1</span> Ability to jump to an org link (e.g. footnotes) in another buffer/window</h3>
+<div id="outline-container-orgaedad11" class="outline-3">
+<h3 id="orgaedad11"><span class="section-number-3">1.1</span> Ability to jump to an org link (e.g. footnotes) in another buffer/window</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 <b>PROBLEM</b>
@@ -205,8 +205,8 @@ When buffer is narrowed can't preview the footnotes (for reference)
 </ul>
 </div>
 </div>
-<div id="outline-container-org986253e" class="outline-3">
-<h3 id="org986253e"><span class="section-number-3">1.2</span> Xanadu</h3>
+<div id="outline-container-orgb10f24d" class="outline-3">
+<h3 id="orgb10f24d"><span class="section-number-3">1.2</span> Xanadu</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 <b>PROBLEM</b>
@@ -220,8 +220,8 @@ Nevertheless I think that this would make for a great elisp exercise and I would
 I believe some of the results may prove to be practical (I know I want some of that) but I want to do it mainly for the fun of it!
 </p>
 </div>
-<div id="outline-container-org7894beb" class="outline-4">
-<h4 id="org7894beb"><span class="section-number-4">1.2.1</span> Sharing fragments</h4>
+<div id="outline-container-orgceac73d" class="outline-4">
+<h4 id="orgceac73d"><span class="section-number-4">1.2.1</span> Sharing fragments</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 <b>Sharing writing done in org mode</b>
@@ -325,17 +325,17 @@ Export to HTML and push to git repo with gh pages enabled
 </ul>
 </div>
 </div>
-<div id="outline-container-org5754db1" class="outline-4">
-<h4 id="org5754db1"><span class="section-number-4">1.2.2</span> References</h4>
+<div id="outline-container-org329217a" class="outline-4">
+<h4 id="org329217a"><span class="section-number-4">1.2.2</span> References</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org358f316" class="outline-2">
-<h2 id="org358f316"><span class="section-number-2">2</span> General Emacs Projects</h2>
+<div id="outline-container-org7049014" class="outline-2">
+<h2 id="org7049014"><span class="section-number-2">2</span> General Emacs Projects</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org194fb2e" class="outline-3">
-<h3 id="org194fb2e"><span class="section-number-3">2.1</span> Easier way to have multiple narrow views of one file</h3>
+<div id="outline-container-org91224f9" class="outline-3">
+<h3 id="org91224f9"><span class="section-number-3">2.1</span> Easier way to have multiple narrow views of one file</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 I sometimes want to work on multiple things at a time that are in the same buffer.
@@ -346,8 +346,8 @@ I can always <code>clone-indirect-buffer</code> but that's kinda hard ;)
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdeecaff" class="outline-3">
-<h3 id="orgdeecaff"><span class="section-number-3">2.2</span> Window navigation aware of system windows (kinda)</h3>
+<div id="outline-container-org1c06602" class="outline-3">
+<h3 id="org1c06602"><span class="section-number-3">2.2</span> Window navigation aware of system windows (kinda)</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 <b>GOAL</b>
@@ -370,8 +370,8 @@ e.g. navigating to window 'on the left' on Mac
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf24fa31" class="outline-3">
-<h3 id="orgf24fa31"><span class="section-number-3">2.3</span> "Freeze view" for helm/which key</h3>
+<div id="outline-container-orgd0e5ef7" class="outline-3">
+<h3 id="orgd0e5ef7"><span class="section-number-3">2.3</span> "Freeze view" for helm/which key</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 <b>GOAL</b>
@@ -424,8 +424,8 @@ Example approach
 </div>
 </div>
 
-<div id="outline-container-orgcb352cb" class="outline-3">
-<h3 id="orgcb352cb"><span class="section-number-3">2.4</span> Persistent undo and jump to last change history</h3>
+<div id="outline-container-orgfd1fc96" class="outline-3">
+<h3 id="orgfd1fc96"><span class="section-number-3">2.4</span> Persistent undo and jump to last change history</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 Vim has that ;P
@@ -434,8 +434,8 @@ Not even sure how vim implements that?
 </p>
 </div>
 </div>
-<div id="outline-container-orgb5b114d" class="outline-3">
-<h3 id="orgb5b114d"><span class="section-number-3">2.5</span> Hypothes.is for emacs!</h3>
+<div id="outline-container-org02cfb8e" class="outline-3">
+<h3 id="org02cfb8e"><span class="section-number-3">2.5</span> Hypothes.is for emacs!</h3>
 <div class="outline-text-3" id="text-2-5">
 <ul class="org-ul">
 <li>interface hypothes.is
@@ -450,15 +450,15 @@ Not even sure how vim implements that?
 </ul>
 </div>
 </div>
-<div id="outline-container-org0600eba" class="outline-3">
-<h3 id="org0600eba"><span class="section-number-3">2.6</span> Parse git diff's for org headlines that changed</h3>
+<div id="outline-container-orgc81ccfd" class="outline-3">
+<h3 id="orgc81ccfd"><span class="section-number-3">2.6</span> Parse git diff's for org headlines that changed</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 Effectively an org-specific/automatic change log
 </p>
 </div>
-<div id="outline-container-org3ab8725" class="outline-4">
-<h4 id="org3ab8725"><span class="section-number-4">2.6.1</span> Example approach</h4>
+<div id="outline-container-orgcf8be2a" class="outline-4">
+<h4 id="orgcf8be2a"><span class="section-number-4">2.6.1</span> Example approach</h4>
 <div class="outline-text-4" id="text-2-6-1">
 <ul class="org-ul">
 <li>Clean git diff into org document</li>
@@ -480,12 +480,12 @@ Taking the commit under point as a starting point for calculating diff
 </div>
 </div>
 </div>
-<div id="outline-container-orgeee921f" class="outline-3">
-<h3 id="orgeee921f"><span class="section-number-3">2.7</span> look and feel</h3>
+<div id="outline-container-orga1e7296" class="outline-3">
+<h3 id="orga1e7296"><span class="section-number-3">2.7</span> look and feel</h3>
 <div class="outline-text-3" id="text-2-7">
 </div>
-<div id="outline-container-org8d48af4" class="outline-4">
-<h4 id="org8d48af4"><span class="section-number-4">2.7.1</span> Playing with font-locks</h4>
+<div id="outline-container-orgf4aa224" class="outline-4">
+<h4 id="orgf4aa224"><span class="section-number-4">2.7.1</span> Playing with font-locks</h4>
 <div class="outline-text-4" id="text-2-7-1">
 <p>
 <b>MOTIVATION</b>
@@ -527,8 +527,8 @@ Experimenting with some wild font-locks ;P
 </p>
 </div>
 </div>
-<div id="outline-container-org039aee2" class="outline-4">
-<h4 id="org039aee2"><span class="section-number-4">2.7.2</span> Explore limits of emacs display capabilities</h4>
+<div id="outline-container-org5aae6ae" class="outline-4">
+<h4 id="org5aae6ae"><span class="section-number-4">2.7.2</span> Explore limits of emacs display capabilities</h4>
 <div class="outline-text-4" id="text-2-7-2">
 <p>
 How to design more modern, clean interfaces in emacs
@@ -547,12 +547,12 @@ I think <b>path for exploration</b> would be to try to copy interfaces in other 
 </div>
 </div>
 </div>
-<div id="outline-container-org4d155ef" class="outline-2">
-<h2 id="org4d155ef"><span class="section-number-2">3</span> Spacemacs/Evil Specific Projects</h2>
+<div id="outline-container-org1cbc57b" class="outline-2">
+<h2 id="org1cbc57b"><span class="section-number-2">3</span> Spacemacs/Evil Specific Projects</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgac2ad48" class="outline-3">
-<h3 id="orgac2ad48"><span class="section-number-3">3.1</span> Evil-search improvements: n/N to be consistent</h3>
+<div id="outline-container-orgb4b2ff6" class="outline-3">
+<h3 id="orgb4b2ff6"><span class="section-number-3">3.1</span> Evil-search improvements: n/N to be consistent</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 <code>n</code> always go down in search
@@ -561,28 +561,28 @@ I think <b>path for exploration</b> would be to try to copy interfaces in other 
 </div>
 </div>
 </div>
-<div id="outline-container-orgdf2bb16" class="outline-2">
-<h2 id="orgdf2bb16"><span class="section-number-2">4</span> Clojure Related Projects</h2>
+<div id="outline-container-orgf8d0950" class="outline-2">
+<h2 id="orgf8d0950"><span class="section-number-2">4</span> Clojure Related Projects</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org750e5b3" class="outline-3">
-<h3 id="org750e5b3"><span class="section-number-3">4.1</span> Automatic matching against "clojure error message catalogue"</h3>
+<div id="outline-container-orgf387233" class="outline-3">
+<h3 id="orgf387233"><span class="section-number-3">4.1</span> Automatic matching against "clojure error message catalogue"</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 <a href="https://github.com/yogthos/clojure-error-message-catalog/tree/master/clj">https://github.com/yogthos/clojure-error-message-catalog/tree/master/clj</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgb7d5e76" class="outline-3">
-<h3 id="orgb7d5e76"><span class="section-number-3">4.2</span> Clojure file buffers and repl buffer interactions</h3>
+<div id="outline-container-orgc104ecb" class="outline-3">
+<h3 id="orgc104ecb"><span class="section-number-3">4.2</span> Clojure file buffers and repl buffer interactions</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 Better interaction between REPL buffer and source file buffers
 </p>
 </div>
 </div>
-<div id="outline-container-org80b0e9d" class="outline-3">
-<h3 id="org80b0e9d"><span class="section-number-3">4.3</span> Org to handle links to project namesapces</h3>
+<div id="outline-container-org6d9b1cc" class="outline-3">
+<h3 id="org6d9b1cc"><span class="section-number-3">4.3</span> Org to handle links to project namesapces</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 eg. <code>com.foobar.books</code>
@@ -590,8 +590,8 @@ Custom link type? Is there a way to delegate this to clojure-mode jump handler?
 </p>
 </div>
 </div>
-<div id="outline-container-org217f404" class="outline-3">
-<h3 id="org217f404"><span class="section-number-3">4.4</span> Emacs clojure dev plugin</h3>
+<div id="outline-container-org66d992c" class="outline-3">
+<h3 id="org66d992c"><span class="section-number-3">4.4</span> Emacs clojure dev plugin</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 have a state like the lisp state
@@ -620,8 +620,8 @@ etc.
 </div>
 </div>
 </div>
-<div id="outline-container-orga2a1d7f" class="outline-3">
-<h3 id="orga2a1d7f"><span class="section-number-3">4.5</span> Auto-save cider repl interactions</h3>
+<div id="outline-container-org6ed374e" class="outline-3">
+<h3 id="org6ed374e"><span class="section-number-3">4.5</span> Auto-save cider repl interactions</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 This would be pretty useful
@@ -632,13 +632,20 @@ The format is then elisp, would be nice to just get text file with clojure forms
 <li>human readable</li>
 <li>reusable</li>
 </ul>
+
+<p>
+'(("en" "&lt;p class=\"author\"&gt;Author: %a (%e)&lt;/p&gt;
+&lt;p class=\"date\"&gt;Date: %d&lt;/p&gt;
+&lt;p class=\"creator\"&gt;%c&lt;/p&gt;
+&lt;p class=\"validation\"&gt;%v&lt;/p&gt;"))
+</p>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Pawel</p>
-<p class="date">Created: 2019-07-28 Sun 17:01</p>
+<p class="date">Created: 2019-07-28 Sun 17:14</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
