@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-07-28 Sun 16:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs Hacking Projects</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Pawel" />
+<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+<script type="text/javascript" src="https://orgmode.org/org-info.js">
+/**
+ *
+ * @source: https://orgmode.org/org-info.js
+ *
+ * @licstart  The following is the entire license notice for the
+ *  JavaScript code in https://orgmode.org/org-info.js.
+ *
+ * Copyright (C) 2012-2018 Free Software Foundation, Inc.
+ *
+ *
+ * The JavaScript code in this tag is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License (GNU GPL) as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option)
+ * any later version.  The code is distributed WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+ *
+ * As additional permission under GNU GPL version 3 section 7, you
+ * may distribute non-source (e.g., minimized or compacted) forms of
+ * that code without the copy of the GNU GPL normally required by
+ * section 4, provided you include this license notice and a URL
+ * through which recipients can access the Corresponding Source.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in https://orgmode.org/org-info.js.
+ *
+ */
+</script>
+
+<script type="text/javascript">
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+
+<!--/*--><![CDATA[/*><!--*/
+org_html_manager.set("TOC_DEPTH", "3");
+org_html_manager.set("LINK_HOME", "http://emacs.london/");
+org_html_manager.set("LINK_UP", "");
+org_html_manager.set("LOCAL_TOC", "1");
+org_html_manager.set("VIEW_BUTTONS", "0");
+org_html_manager.set("MOUSE_HINT", "underline");
+org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("TOC", "1");
+org_html_manager.set("VIEW", "info");
+org_html_manager.setup();  // activate after the parameters are set
+/*]]>*///-->
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Emacs Hacking Projects</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org3402286">1. Org Projects</a>
+<ul>
+<li><a href="#orgbe3352e">1.1. Ability to jump to an org link (e.g. footnotes) in another buffer/window</a></li>
+<li><a href="#org3f28a62">1.2. Xanadu</a>
+<ul>
+<li><a href="#org7bf7803">1.2.1. Sharing fragments</a></li>
+<li><a href="#org86cb829">1.2.2. References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgcec04eb">2. General Emacs Projects</a>
+<ul>
+<li><a href="#orga757bd7">2.1. Easier way to have multiple narrow views of one file</a></li>
+<li><a href="#org416fdff">2.2. Window navigation aware of system windows (kinda)</a></li>
+<li><a href="#orge31f26d">2.3. "Freeze view" for helm/which key</a></li>
+<li><a href="#org7c55d3f">2.4. Persistent undo and jump to last change history</a></li>
+<li><a href="#orgbcc2cff">2.5. Hypothes.is for emacs!</a></li>
+<li><a href="#org35c4a8f">2.6. Parse git diff's for org headlines that changed</a>
+<ul>
+<li><a href="#org35455f6">2.6.1. Example approach</a></li>
+</ul>
+</li>
+<li><a href="#org7f3dfb3">2.7. look and feel</a>
+<ul>
+<li><a href="#org033d545">2.7.1. Playing with font-locks</a></li>
+<li><a href="#org24759e8">2.7.2. Explore limits of emacs display capabilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org94d23db">3. Spacemacs/Evil Specific Projects</a>
+<ul>
+<li><a href="#org2c4d588">3.1. Evil-search improvements: n/N to be consistent</a></li>
+</ul>
+</li>
+<li><a href="#org966c922">4. Clojure Related Projects</a>
+<ul>
+<li><a href="#orgb41fdaa">4.1. Automatic matching against "clojure error message catalogue"</a></li>
+<li><a href="#orgd0f14b3">4.2. Clojure file buffers and repl buffer interactions</a></li>
+<li><a href="#org6eb73ad">4.3. Org to handle links to project namesapces</a></li>
+<li><a href="#orgb196119">4.4. Emacs clojure dev plugin</a></li>
+<li><a href="#orgeab28ea">4.5. Auto-save cider repl interactions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<i>REMINDER</i> Some projects may have, some utility although that's mostly a secondary concern :)
+Fun is a number one concern!
+</p>
+
+<div id="outline-container-org3402286" class="outline-2">
+<h2 id="org3402286"><span class="section-number-2">1</span> Org Projects</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgbe3352e" class="outline-3">
+<h3 id="orgbe3352e"><span class="section-number-3">1.1</span> Ability to jump to an org link (e.g. footnotes) in another buffer/window</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<b>PROBLEM</b>
+When buffer is narrowed can't preview the footnotes (for reference)
+<b>HOW</b>
+</p>
+<ul class="org-ul">
+<li>using <code>clone-indirect-buffer</code> functionality</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f28a62" class="outline-3">
+<h3 id="org3f28a62"><span class="section-number-3">1.2</span> Xanadu</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<b>PROBLEM</b>
+I find myself writing more and more stuff in org.
+With that comes the need of having a way to make and show the interconnections between those writings.
+<b>DESCRIPTION</b>
+In other words I'm finding myslef in need of a more powerful reference mechanism.
+Every now and then when I'm looking for answers on-line or try to sketch some solutions myself I'm going back to Ted Nelson and Xanadu and keep thinking that I'm just would like to re-implement some of his ideas in Emacs :)
+When I've realised that and started to look around myself I found that some people already did some of that.
+Nevertheless I think that this would make for a great elisp exercise and I would love to see how far we can go.
+I believe some of the results may prove to be practical (I know I want some of that) but I want to do it mainly for the fun of it!
+</p>
+</div>
+<div id="outline-container-org7bf7803" class="outline-4">
+<h4 id="org7bf7803"><span class="section-number-4">1.2.1</span> Sharing fragments</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+<b>Sharing writing done in org mode</b>
+There are two main options here
+</p>
+<ul class="org-ul">
+<li>collaboration
+<ul class="org-ul">
+<li>two way mechanism with syncing etc.</li>
+<li>this is solved through github</li>
+</ul></li>
+<li>publishing
+<ul class="org-ul">
+<li>this only requires one way mechanis</li>
+<li>can this be solved by e.g. gists?</li>
+</ul></li>
+</ul>
+<p>
+There are questions pertinent to both
+</p>
+<ul class="org-ul">
+<li>format
+<ul class="org-ul">
+<li>for collaboration it stays in org</li>
+<li>I think export is necesserry for other ppl to consume</li>
+</ul></li>
+<li>permissions
+<ul class="org-ul">
+<li>collaboration: full permission mechanics of GH</li>
+<li>secret gists
+<ul class="org-ul">
+<li>can be only accessed by those with the URL</li>
+</ul></li>
+</ul></li>
+<li>sharing fragments
+<ul class="org-ul">
+<li>for collaboration this is the difficult question</li>
+<li>for sharing this just needs a subtree export</li>
+</ul></li>
+<li>live/realtime update?
+<ul class="org-ul">
+<li>this is too hard and an overkill for now</li>
+</ul></li>
+</ul>
+
+<p>
+Workflow
+</p>
+<ul class="org-ul">
+<li>Two stage workflow for publishing
+<ul class="org-ul">
+<li>this will work because is unidirectional flow
+<ul class="org-ul">
+<li>so there can be modifications to published versoin because they will never have to be incorporated back into the original</li>
+</ul></li>
+</ul></li>
+<li>review the original note: to make sure that base changes are there</li>
+<li>review the copy for publishing: this should be subtractive and slight changes to presentations not to the core. Essential changes should go into phase one</li>
+<li>those changes and exports should be recorded with timestamps maybe message
+<ul class="org-ul">
+<li>use property drawer for this?</li>
+</ul></li>
+</ul>
+
+<p>
+Gists
+</p>
+<ul class="org-ul">
+<li>seems to already be there
+<ul class="org-ul">
+<li>could use this: <a href="https://github.com/defunkt/gist.el">https://github.com/defunkt/gist.el</a></li>
+</ul></li>
+<li>can share files and folders</li>
+<li>could use markdown, so potentially ppl could edit it and it could take life of it's own</li>
+</ul>
+
+<p>
+Dropbox html sharing folder?
+</p>
+<ul class="org-ul">
+<li>I don't think that exists anymore</li>
+</ul>
+
+<p>
+Publish to blog, straight away!
+</p>
+<ul class="org-ul">
+<li>would be nice at some point, don't thing I have to guts to do it now</li>
+</ul>
+
+<p>
+Export to HTML and push to git repo with gh pages enabled
+</p>
+<ul class="org-ul">
+<li>this is a bit manual, but could be automated ofc</li>
+<li>would edit the note as is in the original org file</li>
+<li>press keybinding to trigger publishing</li>
+<li>would open a capture type window for edits to the final draft</li>
+<li>after confirmed with <code>C-c C-c</code> would export to html in the background, stage changes, and bring up to commit window (and automatically push if not run with prefix argument)</li>
+<li>would generate url and copy it to clipboard</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org86cb829" class="outline-4">
+<h4 id="org86cb829"><span class="section-number-4">1.2.2</span> References</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcec04eb" class="outline-2">
+<h2 id="orgcec04eb"><span class="section-number-2">2</span> General Emacs Projects</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orga757bd7" class="outline-3">
+<h3 id="orga757bd7"><span class="section-number-3">2.1</span> Easier way to have multiple narrow views of one file</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+I sometimes want to work on multiple things at a time that are in the same buffer.
+I can always <code>clone-indirect-buffer</code> but that's kinda hard ;)
+</p>
+<ul class="org-ul">
+<li>provides no semantics for manipulation/switching etc.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org416fdff" class="outline-3">
+<h3 id="org416fdff"><span class="section-number-3">2.2</span> Window navigation aware of system windows (kinda)</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<b>GOAL</b>
+set-up: More than one emacs frame
+<code>SPC w h/l</code> should be aware of existence of additional frames (system windows)
+<b>FIRST APPROXIMATION</b>
+e.g. navigating to window 'on the left' on Mac
+</p>
+<ul class="org-ul">
+<li>if there's an emacs window
+<ul class="org-ul">
+<li>switch to that window</li>
+<li>else: use <code>s-`</code> to switch to other emacs frame</li>
+</ul></li>
+<li>caveats
+<ul class="org-ul">
+<li>makes some sense for two frames (also not quite, cause it's not aware of direction, but still usefull)</li>
+<li>very little sense for more</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge31f26d" class="outline-3">
+<h3 id="orge31f26d"><span class="section-number-3">2.3</span> "Freeze view" for helm/which key</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+<b>GOAL</b>
+Get output of helm/which key commands into a buffer.
+</p>
+
+<p>
+Helm:
+Say I've got an api to explore e.g. some elisp library
+would be nice to do that through helm and have full emacs editing power at the same time
+</p>
+
+<p>
+Which key:
+Example approach
+<a href="https://github.com/justbur/emacs-which-key/commit/77586e62b6d306bae07e4e3e093ba488724f4131">https://github.com/justbur/emacs-which-key/commit/77586e62b6d306bae07e4e3e093ba488724f4131</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">original--inserts into buffer, swithches the window</span>
+(<span style="color: #3a81c3; font-weight: bold;">defun</span> <span style="color: #6c3163; font-weight: bold;">which-key-dump-bindings</span> (prefix buffer-name)
+  <span style="color: #da8b55;">"Dump bindings from PREFIX into buffer named BUFFER-NAME.</span>
+<span style="color: #da8b55;">PREFIX should be a string suitable for `</span><span style="color: #4e3163;">kbd</span><span style="color: #da8b55;">'."</span>
+  (<span style="color: #3a81c3; font-weight: bold;">interactive</span> <span style="color: #2d9574;">"sPrefix: \nB"</span>)
+  (<span style="color: #3a81c3; font-weight: bold;">let*</span> ((buffer (get-buffer-create buffer-name))
+         (keys (which-key--get-bindings (kbd prefix))))
+    (<span style="color: #3a81c3; font-weight: bold;">with-current-buffer</span> buffer
+      (point-max)
+      (<span style="color: #3a81c3; font-weight: bold;">save-excursion</span>
+        (<span style="color: #3a81c3; font-weight: bold;">dolist</span> (key keys)
+          (insert (apply #'format <span style="color: #2d9574;">"%s%s%s\n"</span> key)))))
+    (switch-to-buffer-other-window buffer)))
+
+
+<span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">edited--returns values</span>
+(<span style="color: #3a81c3; font-weight: bold;">defun</span> <span style="color: #6c3163; font-weight: bold;">which-key-dump-bindings</span> (prefix buffer-name)
+  <span style="color: #da8b55;">"Dump bindings from PREFIX into buffer named BUFFER-NAME.</span>
+<span style="color: #da8b55;">     PREFIX should be a string suitable for `</span><span style="color: #4e3163;">kbd</span><span style="color: #da8b55;">'."</span>
+  (<span style="color: #3a81c3; font-weight: bold;">interactive</span> <span style="color: #2d9574;">"sPrefix: \nB"</span>)
+  (<span style="color: #3a81c3; font-weight: bold;">let*</span> ((buffer (get-buffer-create buffer-name))
+         (keys (which-key--get-bindings (kbd prefix))))
+    (<span style="color: #3a81c3; font-weight: bold;">with-current-buffer</span> buffer
+      (point-max)
+      (<span style="color: #3a81c3; font-weight: bold;">save-excursion</span>
+        (mapcar (<span style="color: #3a81c3; font-weight: bold;">lambda</span> (x) (apply #'format <span style="color: #2d9574;">"%s%s%s\n"</span> x)) keys)))
+    ))
+
+(which-key-dump-bindings <span style="color: #2d9574;">"SPC f"</span> <span style="color: #2d9574;">"emacs.org"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7c55d3f" class="outline-3">
+<h3 id="org7c55d3f"><span class="section-number-3">2.4</span> Persistent undo and jump to last change history</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Vim has that ;P
+I'm pretty used to being able to use jump/edit history after coming back to a file after a while.
+Not even sure how vim implements that?
+</p>
+</div>
+</div>
+<div id="outline-container-orgbcc2cff" class="outline-3">
+<h3 id="orgbcc2cff"><span class="section-number-3">2.5</span> Hypothes.is for emacs!</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>interface hypothes.is
+<ul class="org-ul">
+<li>viewing annotations tree in Emacs</li>
+</ul></li>
+<li>highlights/annotations in org files
+<ul class="org-ul">
+<li>this would need them to be version controlled (so links work)</li>
+<li>need to be public</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org35c4a8f" class="outline-3">
+<h3 id="org35c4a8f"><span class="section-number-3">2.6</span> Parse git diff's for org headlines that changed</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Effectively an org-specific/automatic change log
+</p>
+</div>
+<div id="outline-container-org35455f6" class="outline-4">
+<h4 id="org35455f6"><span class="section-number-4">2.6.1</span> Example approach</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<ul class="org-ul">
+<li>Clean git diff into org document</li>
+<li>Save filename</li>
+<li>Parse headlines</li>
+<li>Join them into links like: <code>file:projects.org::*task</code>
+<ul class="org-ul">
+<li>to refer back to those changes</li>
+<li>difficulty: this would have to be a (ma)git reference to when the change was introduced??
+<ul class="org-ul">
+<li>or just current, yeah!</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>
+Could this be integrated somehow into a <i>magit</i> function?
+Taking the commit under point as a starting point for calculating diff
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7f3dfb3" class="outline-3">
+<h3 id="org7f3dfb3"><span class="section-number-3">2.7</span> look and feel</h3>
+<div class="outline-text-3" id="text-2-7">
+</div>
+<div id="outline-container-org033d545" class="outline-4">
+<h4 id="org033d545"><span class="section-number-4">2.7.1</span> Playing with font-locks</h4>
+<div class="outline-text-4" id="text-2-7-1">
+<p>
+<b>MOTIVATION</b>
+I've had this thing where I wanted: nice way to display inline src block
+OFC there is a way to do this&#x2026;
+</p>
+
+<ul class="org-ul">
+<li>Inline code <code class="src src-elisp">clone-indirect-buffer</code></li>
+</ul>
+<p>
+<a href="https://orgmode.org/manual/Structure-of-code-blocks.html">Full syntax</a>:
+</p>
+<pre class="example">
+An inline code block conforms to this structure:
+
+src_&lt;language&gt;{&lt;body&gt;}
+or
+
+src_&lt;language&gt;[&lt;header arguments&gt;]{&lt;body&gt;}
+</pre>
+<p>
+There seems to even be a <a href="https://stackoverflow.com/questions/20309842/how-to-syntax-highlight-for-org-mode-inline-source-code-src-lang/28059832#28059832">way</a> to fontify that
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(font-lock-add-keywords 'org-mode
+                 '((<span style="color: #2d9574;">"</span><span style="color: #2d9574; font-weight: bold;">\\</span><span style="color: #2d9574; font-weight: bold;">(</span><span style="color: #2d9574;">src_</span><span style="color: #2d9574; font-weight: bold;">\\</span><span style="color: #2d9574; font-weight: bold;">)</span><span style="color: #2d9574; font-weight: bold;">\\</span><span style="color: #2d9574; font-weight: bold;">(</span><span style="color: #2d9574;">[</span><span style="color: #4e3163;">^</span><span style="color: #2d9574;">[{]+</span><span style="color: #2d9574; font-weight: bold;">\\</span><span style="color: #2d9574; font-weight: bold;">)</span><span style="color: #2d9574; font-weight: bold;">\\</span><span style="color: #2d9574; font-weight: bold;">(</span><span style="color: #2d9574;">\\[</span><span style="color: #4e3163;">:.*\\</span><span style="color: #2d9574;">]</span><span style="color: #2d9574; font-weight: bold;">\\</span><span style="color: #2d9574; font-weight: bold;">)</span><span style="color: #2d9574;">{</span><span style="color: #2d9574; font-weight: bold;">\\</span><span style="color: #2d9574; font-weight: bold;">(</span><span style="color: #2d9574;">[</span><span style="color: #4e3163;">^</span><span style="color: #2d9574;">}]*</span><span style="color: #2d9574; font-weight: bold;">\\</span><span style="color: #2d9574; font-weight: bold;">)</span><span style="color: #2d9574;">}"</span>
+                    (<span style="color: #4e3163;">1</span> '(<span style="color: #3a81c3;">:foreground</span> <span style="color: #2d9574;">"black"</span> <span style="color: #3a81c3;">:weight</span> 'normal <span style="color: #3a81c3;">:height</span> <span style="color: #4e3163;">5</span>)) <span style="color: #2aa1ae; background-color: #ecf3ec;">; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">src_ part</span>
+                    (<span style="color: #4e3163;">2</span> '(<span style="color: #3a81c3;">:foreground</span> <span style="color: #2d9574;">"cyan"</span> <span style="color: #3a81c3;">:weight</span> 'bold <span style="color: #3a81c3;">:height</span> <span style="color: #4e3163;">75</span> <span style="color: #3a81c3;">:underline</span> <span style="color: #2d9574;">"red"</span>)) <span style="color: #2aa1ae; background-color: #ecf3ec;">; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">"lang" part.</span>
+                    (<span style="color: #4e3163;">3</span> '(<span style="color: #3a81c3;">:foreground</span> <span style="color: #2d9574;">"#555555"</span> <span style="color: #3a81c3;">:height</span> <span style="color: #4e3163;">5</span>)) <span style="color: #2aa1ae; background-color: #ecf3ec;">; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">[:header arguments] part.</span>
+                    (<span style="color: #4e3163;">4</span> 'org-code) <span style="color: #2aa1ae; background-color: #ecf3ec;">; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">"code..." part.</span>
+                    )))
+</pre>
+</div>
+<p>
+Example challenge: regex/matcher used here could to modify to allow for the brackets to be optional
+Diving into that would be quite cool
+Experimenting with some wild font-locks ;P
+</p>
+</div>
+</div>
+<div id="outline-container-org24759e8" class="outline-4">
+<h4 id="org24759e8"><span class="section-number-4">2.7.2</span> Explore limits of emacs display capabilities</h4>
+<div class="outline-text-4" id="text-2-7-2">
+<p>
+How to design more modern, clean interfaces in emacs
+E.g. solarized theme uses variable width font for org headlines
+Customize is a pretty interesting form like interface
+I've seen some ppl with cool doom emacs configs
+I think <b>path for exploration</b> would be to try to copy interfaces in other medium
+</p>
+<ul class="org-ul">
+<li>try to make something that looks like web form</li>
+<li>try to make a more 'native' look</li>
+<li>distraction free emacs</li>
+<li>emacs for writers</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org94d23db" class="outline-2">
+<h2 id="org94d23db"><span class="section-number-2">3</span> Spacemacs/Evil Specific Projects</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org2c4d588" class="outline-3">
+<h3 id="org2c4d588"><span class="section-number-3">3.1</span> Evil-search improvements: n/N to be consistent</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<code>n</code> always go down in search
+<code>N</code> always go up in search
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org966c922" class="outline-2">
+<h2 id="org966c922"><span class="section-number-2">4</span> Clojure Related Projects</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgb41fdaa" class="outline-3">
+<h3 id="orgb41fdaa"><span class="section-number-3">4.1</span> Automatic matching against "clojure error message catalogue"</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+<a href="https://github.com/yogthos/clojure-error-message-catalog/tree/master/clj">https://github.com/yogthos/clojure-error-message-catalog/tree/master/clj</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgd0f14b3" class="outline-3">
+<h3 id="orgd0f14b3"><span class="section-number-3">4.2</span> Clojure file buffers and repl buffer interactions</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Better interaction between REPL buffer and source file buffers
+</p>
+</div>
+</div>
+<div id="outline-container-org6eb73ad" class="outline-3">
+<h3 id="org6eb73ad"><span class="section-number-3">4.3</span> Org to handle links to project namesapces</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+eg. <code>com.foobar.books</code>
+Custom link type? Is there a way to delegate this to clojure-mode jump handler?
+</p>
+</div>
+</div>
+<div id="outline-container-orgb196119" class="outline-3">
+<h3 id="orgb196119"><span class="section-number-3">4.4</span> Emacs clojure dev plugin</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+have a state like the lisp state
+then single letter commmands from most commpon operations
+</p>
+<div class="org-src-container">
+<pre class="src src-clojure">some-stuff <span style="color: #2aa1ae; background-color: #ecf3ec;">; 1</span>
+<span style="color: #a094a2;">(</span>first some-stuff<span style="color: #a094a2;">)</span> <span style="color: #2aa1ae; background-color: #ecf3ec;">; m</span>
+<span style="color: #a094a2;">(</span>map | <span style="color: #a094a2;">(</span>first some-stuff<span style="color: #a094a2;">))</span> <span style="color: #2aa1ae; background-color: #ecf3ec;">; t</span>
+<span style="color: #a094a2;">(</span>take | <span style="color: #a094a2;">((</span>map <span style="color: #4e3163;">:some-key</span> <span style="color: #a094a2;">(</span>first some-stuff<span style="color: #a094a2;">))))</span> <span style="color: #2aa1ae; background-color: #ecf3ec;">; f</span>
+<span style="color: #a094a2;">(</span>filter | ...<span style="color: #a094a2;">)</span> <span style="color: #2aa1ae; background-color: #ecf3ec;">; m</span>
+<span style="color: #a094a2;">(</span>map | ...<span style="color: #a094a2;">)</span> <span style="color: #2aa1ae; background-color: #ecf3ec;">; c</span>
+
+
+
+first : <span style="color: #4e3163;">1</span>
+map : m
+reduce : r
+filter : f
+and : a
+or : o
+take : t
+count : c
+etc.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeab28ea" class="outline-3">
+<h3 id="orgeab28ea"><span class="section-number-3">4.5</span> Auto-save cider repl interactions</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+This would be pretty useful
+<code>cider-repl-history-save</code>
+The format is then elisp, would be nice to just get text file with clojure forms
+</p>
+<ul class="org-ul">
+<li>human readable</li>
+<li>reusable</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Pawel</p>
+<p class="date">Created: 2019-07-28 Sun 16:45</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
