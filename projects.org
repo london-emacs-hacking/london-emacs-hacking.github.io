@@ -1,3 +1,9 @@
+#+TITLE: Emacs Hacking Projects
+#+OPTIONS: html-style:nil
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+#+INFOJS_OPT: ltoc:t toc:t view:info home:http://emacs.london/
+#+EXPORT_FILE_NAME: ./projects.html
+
 * org projects
 ** Ability to jump to org link (e.g. footnotes) in another buffer/window
    When buffer is narrowed can't preview the footnotes (for reference)

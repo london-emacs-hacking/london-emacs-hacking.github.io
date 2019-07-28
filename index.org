@@ -46,7 +46,10 @@ Join the new [[https://emacs-london.herokuapp.com/][emacs-london Slack]] to disc
 
 * Projects
   Project inspiration for our meetups. Mostly comes from our own Emacs setup woes.
-  #+INCLUDE: projects.org
+
+  #+BEGIN_EXPORT html
+  <h1><a href="./projects.html">Projects</a></h1>
+  #+END_EXPORT
 
 * experiments :noexport:
   #+ATTR_HTML: :alt emacs-london image :title Logo! :class logo
