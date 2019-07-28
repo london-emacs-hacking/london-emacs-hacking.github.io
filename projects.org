@@ -3,6 +3,7 @@
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 #+INFOJS_OPT: ltoc:t toc:t view:info home:http://emacs.london/
 #+EXPORT_FILE_NAME: ./projects.html
+#+AUTHOR: Emacs London
 
 /REMINDER/ Some projects may have, some utility although that's mostly a secondary concern :)
 Fun is a number one concern!
