@@ -1,7 +1,11 @@
-#+TITLE: London Emacs Hacking
-#+OPTIONS: html-style:nil
-#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="css/style.css" />
+# #+TITLE: London Emacs Hacking
+#+OPTIONS: html-style:nil toc:nil
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 #+EXPORT_FILE_NAME: ./index.html
+
+# Local Variables:
+# org-html-preamble: "<center><img src=\"./assets/images/emacs-london-logo.png\" alt=\"emacs-london image\" class=\"logo\"></center>"
+# End:
 
 * Next meetup: Monday July 29th 7pm, Poetry Society Studio
 
@@ -43,3 +47,17 @@ Pawel & Matt
 * Contact
 
 Join the new [[https://emacs-london.herokuapp.com/][emacs-london Slack]] to discuss the London meetups and all other things Emacs.
+
+* Projects
+  Hands on projects--main idea is to use this semi-real-world projects as:
+  - ways to explore emacs
+  - learn new packages
+  - elisp workout
+
+#+BEGIN_EXPORT html
+<h1><a href="./projects.html">Check out projects info pages &rangle;&rangle;&rangle;</a></h1>
+#+END_EXPORT
+
+* experiments :noexport:
+  #+ATTR_HTML: :alt emacs-london image :title Logo! :class logo
+  [[./assets/images/emacs-london-logo.png]]
