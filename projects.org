@@ -8,6 +8,19 @@
 /REMINDER/ Some projects may have, some utility although that's mostly a secondary concern :)
 Fun is a number one concern!
 
+Please feel free to open [[https://github.com/london-emacs-hacking/london-emacs-hacking.github.io][Pull Request]] with your projects idea!
+
+
+* Beginner projects a.k.a learn elisp
+** Learning materials
+    - quick overview: https://learnxinyminutes.com/docs/elisp/
+    - [[info:eintr#Top][info:eintr#Top]] OR [[https://www.emacswiki.org/emacs/EmacsLispIntro][Emacs Lisp Intro]] OR https://www.gnu.org/software/emacs/manual/eintr.html
+    - [[info:elisp#Top][info:elisp#Top]] OR [[https://www.emacswiki.org/emacs/EmacsLispReference][Emacs Lisp Reference]]
+    - http://emacslife.com/emacs-lisp-tutorial.html
+    - https://www.emacswiki.org/emacs/ElispCookbook
+    - for lispers: http://hyperpolyglot.org/lisp
+** Projects/exercises
+    - http://exercism.io/languages/elisp
 * Org Projects
 ** Ability to jump to an org link (e.g. footnotes) in another buffer/window
    *PROBLEM*
@@ -197,6 +210,13 @@ Fun is a number one concern!
     - try to make a more 'native' look
     - distraction free emacs
     - emacs for writers
+** Emacs synth
+   There's this meme of playing emacs like an instrument...
+   *GOAL* Write a synth (a music related thing) in elisp?
+   Inspiration:
+   - There is of course Sam Arons Emacs Live (mainly for Overtone -- Clojure)
+   - But maybe the most complete exploration is in [[http://blog.josephwilk.net/art/emacs-as-a-musical-instrument.html][Emacs as a Musical Instrument]]
+     - first goal could be recreating and/or reverse engineering the above
 * Spacemacs/Evil Specific Projects
 ** Evil-search improvements: n/N to be consistent
    ~n~ always go down in search
