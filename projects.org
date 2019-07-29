@@ -212,11 +212,19 @@ Please feel free to open [[https://github.com/london-emacs-hacking/london-emacs-
     - emacs for writers
 ** Emacs synth
    There's this meme of playing emacs like an instrument...
+
    *GOAL* Write a synth (a music related thing) in elisp?
+
    Inspiration:
    - There is of course Sam Arons Emacs Live (mainly for Overtone -- Clojure)
    - But maybe the most complete exploration is in [[http://blog.josephwilk.net/art/emacs-as-a-musical-instrument.html][Emacs as a Musical Instrument]]
      - first goal could be recreating and/or reverse engineering the above
+** Find some elisp to read
+   There a list of packages on emacs wiki : https://www.emacswiki.org/emacs/WikifiedEmacsLispList
+
+   *GOAL* find the /shortest/ packages by LOC!
+
+   That seems to be a good starting point to reading other peoples code :)
 * Spacemacs/Evil Specific Projects
 ** Evil-search improvements: n/N to be consistent
    ~n~ always go down in search
