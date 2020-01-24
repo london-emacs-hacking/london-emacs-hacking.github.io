@@ -8,14 +8,15 @@
 # org-html-preamble: "<center><img src=\"./assets/images/emacs-london-logo.png\" alt=\"emacs-london image\" class=\"logo\"></center>"
 # End:
 
-* Next meetup: Monday October 28th 7pm, Poetry Society Studio
+* Next meetup: Friday the 31st of January (7pm), Poetry Society Studio
 
-    The next Emacs London meetup is scheduled for Monday the 28th of October.
+    The next Emacs London meetup is scheduled for Friday the 31st of January.
     The meetup will be hosted at the [[https://goo.gl/maps/hQTo4moTHToJwvgG7][Poetry Society Studio]] in Holborn,
     with optional drinks at [[https://goo.gl/maps/AVqtkDoeoDtRmwZV9][Cittie of York]] afterwards.
 
     We will split into small groups/pairs, chat & work on Emacs-related
-    things. Food & drink will be available to purchase at the café downstairs.
+    things.
+    Food & drink will be available to purchase at the café downstairs.
 
     We will kick off properly at 7pm but attendees are welcome from 6.30pm.
 
