@@ -7,27 +7,26 @@
 #+TITLE: Dojo | Emacs London
 #+OPTIONS: html-style:nil toc:nil title:nil
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-#+EXPORT_FILE_NAME: ./index.html
+#+EXPORT_FILE_NAME: ./dojo.html
 #+AUTHOR: Emacs London
 * An Emacs Lisp dojo format
 
-A code dojo is a meeting format that involves coding on projects or exercises,
-usually in groups, for the purpose of practice and learning. There are many
-examples of dojo meetups. Attendees may be familiar with the [[http://www.londonclojurians.org/code-dojo/][London Clojure
-Dojo]].
+A dojo is a meetup format that involves coding on projects or exercises, usually
+in groups, for the purpose of practice and learning. There are many examples of
+dojo meetups. Attendees may be familiar with the [[http://www.londonclojurians.org/code-dojo/][London Clojure Dojo]].
 
 Our format is:
 
 1. Suggest ideas for projects.
 2. Break into groups of 2-4, each focusing on a project.
 3. Work for 90 minutes.
-4. Wrap up.
+4. Present some learnings, or maybe head straight to a pub!
 
 
 * Elisp resources
 
-If you're new to the language, the resources below can act as useful starting
-points or references.
+If you're new to the language, the resources below can act as starting points or
+references.
 
 - Emacs itself: Emacs contains some very useful features to help you learn about
   the language, available functions, current values of your variables, and
@@ -44,46 +43,146 @@ points or references.
   manual, and covers a lot of topics.
 
 
-* Project ideas
+* Open project ideas
 
 Some ideas to get the conversation started:
 
 - Write your own modeline.
 - Write a syntax highlighter for a language of your choice.
-- Build a fuzzy browser search interface to replacement Spotlight/Alfred. You can use [Alvaro's post] for inspiration.
+- Build a fuzzy browser search interface to replace Spotlight/Alfred. You can use [Alvaro's post] for inspiration.
 - Build a Tic-Tac-Toe game in Emacs.
+- Write a test runner that can run tests and display their output.
 
-Alternatively, you can work on the exercises below.
+Alternatively, you can work on (or contribute to!) the exercises below.
 
 
-* Elisp Exercises
+* Exercises
 
 Below are some exercises to help learn and explore Elisp. They are inspired by
 the interactive Clojure exercises on [[https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwiTyNypxavnAhXLQEEAHVdVB5gQjBAwAXoECAgQCA&url=http%3A%2F%2Fwww.4clojure.com%2Fproblems&usg=AOvVaw0pa24yxcj-qETh0ze7m_08][4Clojure]].
 
-The aim is to fill in the functions labelled ~__~, so that the equality check
-returns ~t~.
+The aim is to fill in the functions labelled ~__~, so that the equality checks
+return ~t~.
 
-** Working with org-mode
+** Working with the org-mode file
 
 This web page is written as an org-mode file, which means you can [[https://github.com/london-emacs-hacking/london-emacs-hacking.github.io/blob/master/dojo.org][view it on
-Github]], open it in Emacs, and execute the code snippets by moving to a code
+github]], open it in Emacs, and execute the code snippets by moving to a code
 block and pressing ~C-c C-c~. You can also open the code block in emacs-lisp more
 by pressing ~C-c '~.
 
-** Contents
+** Contributing
 
-| Title     | Topics  |
-|-----------+---------|
-| [[Uppercase]] | strings |
+Changes and new exercises are very welcome! Please [[https://github.com/london-emacs-hacking/london-emacs-hacking.github.io][submit PRs on github]].
 
-** Strings
-*** Uppercase
+** Table of contents
+
+| Title                                            |
+|--------------------------------------------------|
+| [[Strings - Uppercase]]                              |
+| [[Penultimate element]]                              |
+| [[Fizzbuzz]]                                         |
+| [[Anagram Finder]]                                   |
+| [[Make an HTTP request and parse the JSON response]] |
+| [[Parse data from an org buffer]]                    |
+
+** Strings - Uppercase
 
 Transform the given string into uppercase:
 
 #+begin_src emacs-lisp
-  (defun __ (s))
+  (defun __ (s) nil)
 
-  (string= (__ "helloworld") "HELLOWORLD")
+  (format "Result: %s" (string= (__ "helloworld") "HELLOWORLD"))
+#+end_src
+
+** Penultimate element
+
+Return the second last element in an item. If there is only one item in the
+list, return nil.
+
+#+begin_src emacs-lisp
+  (defun __ (li) nil)
+
+  (let ((test1 (equal (__ '(1 2 3 4 5)) 4))
+        (test2 (equal (__ '("a" "b" "c")) "b"))
+        (test3 (equal (__ '([1 2] [3 4])) [1 2]))
+        (test4 (equal (__ '(1)) nil)))
+    (format "Result 1: %s\nResult 2: %s\nResult 3: %s\nResult4: %s" test1 test2 test3 test4))
+#+end_src
+
+(Ported from [[http://www.4clojure.com/problem/20][4Clojure #20]])
+
+** Fizzbuzz
+
+A classic that will prepare you for many job interviews. Return a list with the
+results of fizzbuzz for a range of 1-100. This means:
+
+- If the number is divisible by 3, the value is "Fizz".
+- If the number is divisible by 5, the value is "Buzz".
+- If the number is divisible by 3 and 5, the value is "FizzBuzz".
+
+#+begin_src emacs-lisp
+  (defun __ () nil)
+
+  (let ((results '(1 2 "Fizz" 4 "Buzz" "Fizz" 7 8 "Fizz" "Buzz" 11 "Fizz" 13 14 "FizzBuzz" 16 17
+                     "Fizz" 19 "Buzz" "Fizz" 22 23 "Fizz" "Buzz" 26 "Fizz" 28 29 "FizzBuzz" 31 32
+                     "Fizz" 34 "Buzz" "Fizz" 37 38 "Fizz" "Buzz" 41 "Fizz" 43 44 "FizzBuzz" 46 47
+                     "Fizz" 49 "Buzz" "Fizz" 52 53 "Fizz" "Buzz" 56 "Fizz" 58 59 "FizzBuzz" 61 62
+                     "Fizz" 64 "Buzz" "Fizz" 67 68 "Fizz" "Buzz" 71 "Fizz" 73 74 "FizzBuzz" 76 77
+                     "Fizz" 79 "Buzz" "Fizz" 82 83 "Fizz" "Buzz" 86 "Fizz" 88 89 "FizzBuzz" 91 92
+                     "Fizz" 94 "Buzz" "Fizz" 97 98 "Fizz" "Buzz" )))
+    (format "Result: %s" (equal (__) results)))
+#+end_src
+
+** Anagram Finder
+
+Write a function which finds all the anagrams in a given vector of words. Your
+function should return a list of lists, where each sub-list is a group of words
+which are anagrams of each other. Words without any anagrams should not be
+included in the result.
+
+#+begin_src emacs-lisp
+  (defun __ (v) nil)
+
+  (let ((first (equal (__ ["meat" "mat" "team" "mate" "eat"])
+                          '(("meat" "team" "mate"))))
+        (second (equal (__ ["veer" "lake" "item" "kale" "mite" "ever"])
+                            '(("veer" "ever") ("lake" "kale") ("mite item")))))
+    (format "Result 1: %s\nResult 2: %s" first second))
+#+end_src
+
+(Ported from [[http://www.4clojure.com/problem/77][4Clojure #77]]).
+
+** Make an HTTP request and parse the JSON response
+
+Make an HTTP request to jsontest.com and put the parsed JSON response into a
+hash table.
+
+For clarity, the literal hash table below represents ~{"one": "two", "three": "four"}~.
+
+#+begin_src emacs-lisp
+  (defun __ (url) nil)
+
+  (format "Result: %s" (equal (__ "http://echo.jsontest.com/one/two/three/four")
+                              #s(hash-table size 2 data ("one" "two" "three" "four"))))
+#+end_src
+
+** Parse data from an org buffer
+
+Given the string below, convert it to an org-mode buffer, parse out the headline
+and tags, and return a list where each item looks like ~("HEADLINE" . '("TAG1" "TAG2"))~.
+
+#+begin_src emacs-lisp
+  (defun __ (s) nil)
+
+  (let* ((org-string "* Headline one    :foo:
+  ,* Headline two     :foo:bar:
+  ,* Headline three   :bar:")
+         (expected '(("Headline one" . ("foo"))
+                     ("Headline two" . ("foo" "bar"))
+                     ("Headline three" . ("bar"))))
+         (result (__ org-string))
+         (passed (equal expected result)))
+    (format "Passed: %s\nResult: %s": passed result))
 #+end_src

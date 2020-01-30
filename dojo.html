@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-01-30 Thu 11:21 -->
+<!-- 2020-01-30 Thu 16:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dojo | Emacs London</title>
@@ -62,86 +62,296 @@ for the JavaScript code in this tag.
 <center><img src="./assets/images/emacs-london-logo.png" alt="emacs-london image" class="logo"></center>
 </div>
 <div id="content">
-<div id="outline-container-orgdce02f9" class="outline-2">
-<h2 id="orgdce02f9">The Dojo format</h2>
-<div class="outline-text-2" id="text-orgdce02f9">
+<div id="outline-container-org2423ae9" class="outline-2">
+<h2 id="org2423ae9">An Emacs Lisp dojo format</h2>
+<div class="outline-text-2" id="text-org2423ae9">
+<p>
+A dojo is a meetup format that involves coding on projects or exercises, usually
+in groups, for the purpose of practice and learning. There are many examples of
+dojo meetups. Attendees may be familiar with the <a href="http://www.londonclojurians.org/code-dojo/">London Clojure Dojo</a>.
+</p>
+
+<p>
+Our format is:
+</p>
+
 <ol class="org-ol">
 <li>Suggest ideas for projects.</li>
-<li>Break into groups of 2-4.</li>
+<li>Break into groups of 2-4, each focusing on a project.</li>
 <li>Work for 90 minutes.</li>
-<li>Wrap up.</li>
+<li>Present some learnings, or maybe head straight to a pub!</li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-orgf54d4fc" class="outline-2">
-<h2 id="orgf54d4fc">Project ideas</h2>
-<div class="outline-text-2" id="text-orgf54d4fc">
+
+<div id="outline-container-org77ca0b8" class="outline-2">
+<h2 id="org77ca0b8">Elisp resources</h2>
+<div class="outline-text-2" id="text-org77ca0b8">
 <p>
-Some ideas to get started:
+If you're new to the language, the resources below can act as starting points or
+references.
 </p>
 
 <ul class="org-ul">
-<li>The emacs-lisp exercises below.</li>
+<li>Emacs itself: Emacs contains some very useful features to help you learn about
+the language, available functions, current values of your variables, and
+more. These are all accessible via <code>C-h</code>. You can <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Help.html">start reading about them in
+the manual</a>.</li>
+
+<li>The <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html">Emacs Lisp reference manual</a> is very comprehensive if you know what you
+want to read about. This can be read within Emacs by using <code>C-h i m Elisp RET</code>.</li>
+
+<li><a href="https://steve-yegge.blogspot.com/2008/01/emergency-elisp.html">Steve Yegge wrote</a> a brief overview of all the language features. It's quite
+old now but is still a nice place to start.</li>
+
+<li><a href="http://ergoemacs.org/emacs/elisp.html">Xah Lee's practical Emacs Lisp guide</a> may be easier to digest than the full
+manual, and covers a lot of topics.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgdf72c88" class="outline-2">
-<h2 id="orgdf72c88">Exercises</h2>
-<div class="outline-text-2" id="text-orgdf72c88">
+
+<div id="outline-container-org2a4ecba" class="outline-2">
+<h2 id="org2a4ecba">Open project ideas</h2>
+<div class="outline-text-2" id="text-org2a4ecba">
 <p>
-The elisp exercises below are inspired by 4clojure.
+Some ideas to get the conversation started:
+</p>
+
+<ul class="org-ul">
+<li>Write your own modeline.</li>
+<li>Write a syntax highlighter for a language of your choice.</li>
+<li>Build a fuzzy browser search interface to replace Spotlight/Alfred. You can use [Alvaro's post] for inspiration.</li>
+<li>Build a Tic-Tac-Toe game in Emacs.</li>
+<li>Write a test runner that can run tests and display their output.</li>
+</ul>
+
+<p>
+Alternatively, you can work on (or contribute to!) the exercises below.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org79bfe68" class="outline-2">
+<h2 id="org79bfe68">Exercises</h2>
+<div class="outline-text-2" id="text-org79bfe68">
+<p>
+Below are some exercises to help learn and explore Elisp. They are inspired by
+the interactive Clojure exercises on <a href="https://www.google.co.uk/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;ved=2ahUKEwiTyNypxavnAhXLQEEAHVdVB5gQjBAwAXoECAgQCA&amp;url=http%3A%2F%2Fwww.4clojure.com%2Fproblems&amp;usg=AOvVaw0pa24yxcj-qETh0ze7m_08">4Clojure</a>.
 </p>
 
 <p>
-You have to fill in the __ functions.
+The aim is to fill in the functions labelled <code>__</code>, so that the equality checks
+return <code>t</code>.
 </p>
+</div>
 
+<div id="outline-container-org9695812" class="outline-3">
+<h3 id="org9695812">Working with the org-mode file</h3>
+<div class="outline-text-3" id="text-org9695812">
+<p>
+This web page is written as an org-mode file, which means you can <a href="https://github.com/london-emacs-hacking/london-emacs-hacking.github.io/blob/master/dojo.org">view it on
+github</a>, open it in Emacs, and execute the code snippets by moving to a code
+block and pressing <code>C-c C-c</code>. You can also open the code block in emacs-lisp more
+by pressing <code>C-c '</code>.
+</p>
+</div>
+</div>
 
+<div id="outline-container-orgc951a8f" class="outline-3">
+<h3 id="orgc951a8f">Contributing</h3>
+<div class="outline-text-3" id="text-orgc951a8f">
+<p>
+Changes and new exercises are very welcome! Please <a href="https://github.com/london-emacs-hacking/london-emacs-hacking.github.io">submit PRs on github</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org549bd4f" class="outline-3">
+<h3 id="org549bd4f">Table of contents</h3>
+<div class="outline-text-3" id="text-org549bd4f">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
 <col  class="org-left" />
-
-<col  class="org-left" />
 </colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Title</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="org-left">contents table</td>
-<td class="org-left">foo</td>
+<td class="org-left"><a href="#org8c31a38">Strings - Uppercase</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#orgbaea894">Penultimate element</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#org04c5426">Fizzbuzz</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#org215868a">Anagram Finder</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#orgbfd0c53">Make an HTTP request and parse the JSON response</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#org135795c">Parse data from an org buffer</a></td>
 </tr>
 </tbody>
 </table>
 </div>
-
-
-<div id="outline-container-org4de28e7" class="outline-3">
-<h3 id="org4de28e7">Working with org-mode</h3>
-<div class="outline-text-3" id="text-org4de28e7">
-<p>
-You can find the org file for these exercises at <span class="underline"><span class="underline">__</span></span>
-</p>
-
-<p>
-To execute a block, you do press <code>C-c</code>. You should see the result.
-</p>
-
-<p>
-To load
-</p>
-</div>
 </div>
 
-<div id="outline-container-orgfb25d64" class="outline-3">
-<h3 id="orgfb25d64">Strings&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag">tag</span></span></h3>
-<div class="outline-text-3" id="text-orgfb25d64">
+<div id="outline-container-org8c31a38" class="outline-3">
+<h3 id="org8c31a38">Strings - Uppercase</h3>
+<div class="outline-text-3" id="text-org8c31a38">
+<p>
+Transform the given string into uppercase:
+</p>
+
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (s)
-  "Return an uppercase string")
+<pre class="src src-emacs-lisp">(defun __ (s) nil)
 
-(string= (__ "helloworld") "HELLOWORLD")
+(format "Result: %s" (string= (__ "helloworld") "HELLOWORLD"))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbaea894" class="outline-3">
+<h3 id="orgbaea894">Penultimate element</h3>
+<div class="outline-text-3" id="text-orgbaea894">
+<p>
+Return the second last element in an item. If there is only one item in the
+list, return nil.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (li) nil)
+
+(let ((test1 (equal (__ '(1 2 3 4 5)) 4))
+      (test2 (equal (__ '("a" "b" "c")) "b"))
+      (test3 (equal (__ '([1 2] [3 4])) [1 2]))
+      (test4 (equal (__ '(1)) nil)))
+  (format "Result 1: %s\nResult 2: %s\nResult 3: %s\nResult4: %s" test1 test2 test3 test4))
+</pre>
+</div>
+
+<p>
+(Ported from <a href="http://www.4clojure.com/problem/20">4Clojure #20</a>)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org04c5426" class="outline-3">
+<h3 id="org04c5426">Fizzbuzz</h3>
+<div class="outline-text-3" id="text-org04c5426">
+<p>
+A classic that will prepare you for many job interviews. Return a list with the
+results of fizzbuzz for a range of 1-100. This means:
+</p>
+
+<ul class="org-ul">
+<li>If the number is divisible by 3, the value is "Fizz".</li>
+<li>If the number is divisible by 5, the value is "Buzz".</li>
+<li>If the number is divisible by 3 and 5, the value is "FizzBuzz".</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ () nil)
+
+(let ((results '(1 2 "Fizz" 4 "Buzz" "Fizz" 7 8 "Fizz" "Buzz" 11 "Fizz" 13 14 "FizzBuzz" 16 17
+                   "Fizz" 19 "Buzz" "Fizz" 22 23 "Fizz" "Buzz" 26 "Fizz" 28 29 "FizzBuzz" 31 32
+                   "Fizz" 34 "Buzz" "Fizz" 37 38 "Fizz" "Buzz" 41 "Fizz" 43 44 "FizzBuzz" 46 47
+                   "Fizz" 49 "Buzz" "Fizz" 52 53 "Fizz" "Buzz" 56 "Fizz" 58 59 "FizzBuzz" 61 62
+                   "Fizz" 64 "Buzz" "Fizz" 67 68 "Fizz" "Buzz" 71 "Fizz" 73 74 "FizzBuzz" 76 77
+                   "Fizz" 79 "Buzz" "Fizz" 82 83 "Fizz" "Buzz" 86 "Fizz" 88 89 "FizzBuzz" 91 92
+                   "Fizz" 94 "Buzz" "Fizz" 97 98 "Fizz" "Buzz" )))
+  (format "Result: %s" (equal (__) results)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org215868a" class="outline-3">
+<h3 id="org215868a">Anagram Finder</h3>
+<div class="outline-text-3" id="text-org215868a">
+<p>
+Write a function which finds all the anagrams in a given vector of words. Your
+function should return a list of lists, where each sub-list is a group of words
+which are anagrams of each other. Words without any anagrams should not be
+included in the result.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (v) nil)
+
+(let ((first (equal (__ ["meat" "mat" "team" "mate" "eat"])
+                        '(("meat" "team" "mate"))))
+      (second (equal (__ ["veer" "lake" "item" "kale" "mite" "ever"])
+                          '(("veer" "ever") ("lake" "kale") ("mite item")))))
+  (format "Result 1: %s\nResult 2: %s" first second))
+</pre>
+</div>
+
+<p>
+(Ported from <a href="http://www.4clojure.com/problem/77">4Clojure #77</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbfd0c53" class="outline-3">
+<h3 id="orgbfd0c53">Make an HTTP request and parse the JSON response</h3>
+<div class="outline-text-3" id="text-orgbfd0c53">
+<p>
+Make an HTTP request to jsontest.com and put the parsed JSON response into a
+hash table.
+</p>
+
+<p>
+For clarity, the literal hash table below represents <code>{"one": "two", "three": "four"}</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (url) nil)
+
+(format "Result: %s" (equal (__ "http://echo.jsontest.com/one/two/three/four")
+                            #s(hash-table size 2 data ("one" "two" "three" "four"))))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org135795c" class="outline-3">
+<h3 id="org135795c">Parse data from an org buffer</h3>
+<div class="outline-text-3" id="text-org135795c">
+<p>
+Given the string below, convert it to an org-mode buffer, parse out the headline
+and tags, and return a list where each item looks like <code>("HEADLINE" . '("TAG1" "TAG2"))</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (s) nil)
+
+(let* ((org-string "* Headline one    :foo:
+* Headline two     :foo:bar:
+* Headline three   :bar:")
+       (expected '(("Headline one" . ("foo"))
+                   ("Headline two" . ("foo" "bar"))
+                   ("Headline three" . ("bar"))))
+       (result (__ org-string))
+       (passed (equal expected result)))
+  (format "Passed: %s\nResult: %s": passed result))
 </pre>
 </div>
 </div>
