@@ -1,19 +1,21 @@
-# Local Variables:
-# org-html-preamble: "<center><img src=\"./assets/images/emacs-london-logo.png\" alt=\"emacs-london image\" class=\"logo\"></center>"
-# org-html-head: nil
-# org-html-postamble-format: '("en" " <p class=\"date\">Date: %d</p> ")
-# End:
-
 #+TITLE: Dojo | Emacs London
 #+OPTIONS: html-style:nil toc:nil title:nil
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 #+EXPORT_FILE_NAME: ./dojo.html
 #+AUTHOR: Emacs London
-* An Emacs Lisp dojo format
+
+# Local Variables:
+# org-html-preamble: "<center><a href=\"/index.html\"><img src=\"./assets/images/emacs-london-logo.png\" alt=\"emacs-london image\" class=\"logo\"></a></center>"
+# org-html-head: nil
+# org-html-postamble-format: '("en" " <p class=\"date\">Date: %d</p> ")
+# End:
+
+* Emacs Lisp dojo
 
 A dojo is a meetup format that involves coding on projects or exercises, usually
-in groups, for the purpose of practice and learning. There are many examples of
-dojo meetups. Attendees may be familiar with the [[http://www.londonclojurians.org/code-dojo/][London Clojure Dojo]].
+in groups, for the purpose of practice and learning. There are many dojo meetups
+that run for different audiences. Attendees may be familiar with the [[http://www.londonclojurians.org/code-dojo/][London
+Clojure Dojo]].
 
 Our format is:
 
@@ -23,53 +25,55 @@ Our format is:
 4. Present some learnings, or maybe head straight to a pub!
 
 
-* Elisp resources
-
-If you're new to the language, the resources below can act as starting points or
-references.
-
-- Emacs itself: Emacs contains some very useful features to help you learn about
-  the language, available functions, current values of your variables, and
-  more. These are all accessible via ~C-h~. You can [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Help.html][start reading about them in
-  the manual]].
-
-- The [[https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html][Emacs Lisp reference manual]] is very comprehensive if you know what you
-  want to read about. This can be read within Emacs by using ~C-h i m Elisp RET~.
-
-- [[https://steve-yegge.blogspot.com/2008/01/emergency-elisp.html][Steve Yegge wrote]] a brief overview of all the language features. It's quite
-  old now but is still a nice place to start.
-
-- [[http://ergoemacs.org/emacs/elisp.html][Xah Lee's practical Emacs Lisp guide]] may be easier to digest than the full
-  manual, and covers a lot of topics.
-
-
-* Open project ideas
+* Project ideas
 
 Some ideas to get the conversation started:
 
 - Write your own modeline.
 - Write a syntax highlighter for a language of your choice.
-- Build a fuzzy browser search interface to replace Spotlight/Alfred. You can use [Alvaro's post] for inspiration.
+- Build a fuzzy browser search interface to replace Spotlight/Alfred. You can
+  use [[http://xenodium.com/emacs-utilities-for-your-os/][Alvaro's excellent post]] as a starting point..
 - Build a Tic-Tac-Toe game in Emacs.
 - Write a test runner that can run tests and display their output.
 
-Alternatively, you can work on (or contribute to!) the exercises below.
+*Alternatively, you can work on (or contribute to) the exercises below!*. You may
+find them useful if you're new to Elisp, or if you're just stuck for ideas.
+
 
 
 * Exercises
 
-Below are some exercises to help learn and explore Elisp. They are inspired by
-the interactive Clojure exercises on [[https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwiTyNypxavnAhXLQEEAHVdVB5gQjBAwAXoECAgQCA&url=http%3A%2F%2Fwww.4clojure.com%2Fproblems&usg=AOvVaw0pa24yxcj-qETh0ze7m_08][4Clojure]].
+These are some exercises to help learn and explore Emacs and Elisp. The aim is
+to fill in the functions labelled ~__~, so that all the ~Pass:~ messages show ~t~
+instead of ~nil~.
 
-The aim is to fill in the functions labelled ~__~, so that the equality checks
-return ~t~.
+They are inspired by the interactive Clojure exercises on [[https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwiTyNypxavnAhXLQEEAHVdVB5gQjBAwAXoECAgQCA&url=http%3A%2F%2Fwww.4clojure.com%2Fproblems&usg=AOvVaw0pa24yxcj-qETh0ze7m_08][4Clojure]].
 
-** Working with the org-mode file
+** Working with this org-mode file
 
 This web page is written as an org-mode file, which means you can [[https://github.com/london-emacs-hacking/london-emacs-hacking.github.io/blob/master/dojo.org][view it on
 github]], open it in Emacs, and execute the code snippets by moving to a code
-block and pressing ~C-c C-c~. You can also open the code block in emacs-lisp more
-by pressing ~C-c '~.
+block and pressing ~C-c C-c~. You can also open and edit the code block in
+emacs-lisp mode by pressing ~C-c '~.
+
+** Resources to help
+
+If you're new to Elisp, the resources below can act as starting points or
+references.
+
+- Emacs itself: there are some very useful features to help you learn about
+  the language, available functions, current values of your variables, and
+  more. These are all accessible via ~C-h~. You can [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Help.html][start reading about them in
+  the manual]].
+
+- The [[https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html][Emacs Lisp reference manual]] is very comprehensive if you know what you
+  want to read about. This can also be read within Emacs by using ~C-h i m Elisp RET~.
+
+- Steve Yegge wrote [[https://steve-yegge.blogspot.com/2008/01/emergency-elisp.html][a brief overview of all the language features]]. It's quite
+  old now but is still a nice place to start.
+
+- [[http://ergoemacs.org/emacs/elisp.html][Xah Lee's practical Emacs Lisp guide]] may be easier to digest than the full
+  manual, and covers a lot of topics.
 
 ** Contributing
 
@@ -79,21 +83,24 @@ Changes and new exercises are very welcome! Please [[https://github.com/london-e
 
 | Title                                            |
 |--------------------------------------------------|
-| [[Strings - Uppercase]]                              |
+| [[Strings - uppercase]]                              |
 | [[Penultimate element]]                              |
 | [[Fizzbuzz]]                                         |
-| [[Anagram Finder]]                                   |
+| [[Anagram finder]]                                   |
 | [[Make an HTTP request and parse the JSON response]] |
 | [[Parse data from an org buffer]]                    |
+| [[Advice: 2 + 2 = 5]]                                |
 
-** Strings - Uppercase
+** Strings - uppercase
 
 Transform the given string into uppercase:
 
 #+begin_src emacs-lisp
   (defun __ (s) nil)
 
-  (format "Result: %s" (string= (__ "helloworld") "HELLOWORLD"))
+  (let* ((res (__ "helloworld"))
+         (pass (string= res "HELLOWORLD")))
+    (format "Pass:%s\n%s" pass res))
 #+end_src
 
 ** Penultimate element
@@ -104,19 +111,24 @@ list, return nil.
 #+begin_src emacs-lisp
   (defun __ (li) nil)
 
-  (let ((test1 (equal (__ '(1 2 3 4 5)) 4))
-        (test2 (equal (__ '("a" "b" "c")) "b"))
-        (test3 (equal (__ '([1 2] [3 4])) [1 2]))
-        (test4 (equal (__ '(1)) nil)))
-    (format "Result 1: %s\nResult 2: %s\nResult 3: %s\nResult4: %s" test1 test2 test3 test4))
+  (let* ((res1 (__ '(1 2 3 4 5)))
+         (pass1 (equal res1 4))
+         (res2 (__ '("a" "b" "c")))
+         (pass2 (equal res2 "b"))
+         (res3 (__ '([1 2] [3 4])))
+         (pass3 (equal res3 [1 2]))
+         (res4 (__ '(1)))
+         (pass4 (equal res4 nil)))
+
+    (format "Pass:%s\n%s\n\nPass:%s:\n%s\n\nPass:%s\n%s\n\nPass:%s\n%s"
+            pass1 res1 pass2 res2 pass3 res3 pass4 res4))
 #+end_src
 
 (Ported from [[http://www.4clojure.com/problem/20][4Clojure #20]])
 
 ** Fizzbuzz
 
-A classic that will prepare you for many job interviews. Return a list with the
-results of fizzbuzz for a range of 1-100. This means:
+Return a list with the results of fizzbuzz for a range of 1-100. This means:
 
 - If the number is divisible by 3, the value is "Fizz".
 - If the number is divisible by 5, the value is "Buzz".
@@ -125,17 +137,19 @@ results of fizzbuzz for a range of 1-100. This means:
 #+begin_src emacs-lisp
   (defun __ () nil)
 
-  (let ((results '(1 2 "Fizz" 4 "Buzz" "Fizz" 7 8 "Fizz" "Buzz" 11 "Fizz" 13 14 "FizzBuzz" 16 17
-                     "Fizz" 19 "Buzz" "Fizz" 22 23 "Fizz" "Buzz" 26 "Fizz" 28 29 "FizzBuzz" 31 32
-                     "Fizz" 34 "Buzz" "Fizz" 37 38 "Fizz" "Buzz" 41 "Fizz" 43 44 "FizzBuzz" 46 47
-                     "Fizz" 49 "Buzz" "Fizz" 52 53 "Fizz" "Buzz" 56 "Fizz" 58 59 "FizzBuzz" 61 62
-                     "Fizz" 64 "Buzz" "Fizz" 67 68 "Fizz" "Buzz" 71 "Fizz" 73 74 "FizzBuzz" 76 77
-                     "Fizz" 79 "Buzz" "Fizz" 82 83 "Fizz" "Buzz" 86 "Fizz" 88 89 "FizzBuzz" 91 92
-                     "Fizz" 94 "Buzz" "Fizz" 97 98 "Fizz" "Buzz" )))
-    (format "Result: %s" (equal (__) results)))
+  (let* ((expected '(1 2 "Fizz" 4 "Buzz" "Fizz" 7 8 "Fizz" "Buzz" 11 "Fizz" 13 14 "FizzBuzz" 16 17
+                       "Fizz" 19 "Buzz" "Fizz" 22 23 "Fizz" "Buzz" 26 "Fizz" 28 29 "FizzBuzz" 31 32
+                       "Fizz" 34 "Buzz" "Fizz" 37 38 "Fizz" "Buzz" 41 "Fizz" 43 44 "FizzBuzz" 46 47
+                       "Fizz" 49 "Buzz" "Fizz" 52 53 "Fizz" "Buzz" 56 "Fizz" 58 59 "FizzBuzz" 61 62
+                       "Fizz" 64 "Buzz" "Fizz" 67 68 "Fizz" "Buzz" 71 "Fizz" 73 74 "FizzBuzz" 76 77
+                       "Fizz" 79 "Buzz" "Fizz" 82 83 "Fizz" "Buzz" 86 "Fizz" 88 89 "FizzBuzz" 91 92
+                       "Fizz" 94 "Buzz" "Fizz" 97 98 "Fizz" "Buzz" ))
+         (res (__))
+         (pass (equal res expected)))
+    (format "Pass:%s\n%s" pass res))
 #+end_src
 
-** Anagram Finder
+** Anagram finder
 
 Write a function which finds all the anagrams in a given vector of words. Your
 function should return a list of lists, where each sub-list is a group of words
@@ -145,11 +159,12 @@ included in the result.
 #+begin_src emacs-lisp
   (defun __ (v) nil)
 
-  (let ((first (equal (__ ["meat" "mat" "team" "mate" "eat"])
-                          '(("meat" "team" "mate"))))
-        (second (equal (__ ["veer" "lake" "item" "kale" "mite" "ever"])
-                            '(("veer" "ever") ("lake" "kale") ("mite item")))))
-    (format "Result 1: %s\nResult 2: %s" first second))
+  (let* ((res (__ ["meat" "mat" "team" "mate" "eat"]))
+         (pass (equal res '(("meat" "team" "mate"))))
+         (res2 (__ ["veer" "lake" "item" "kale" "mite" "ever"]))
+         (pass2 (equal res '(("veer" "ever") ("lake" "kale") ("mite item")))))
+
+    (format "Pass:%s\n%s\n\nPass:%s\n%s" pass res pass2 res2))
 #+end_src
 
 (Ported from [[http://www.4clojure.com/problem/77][4Clojure #77]]).
@@ -164,8 +179,9 @@ For clarity, the literal hash table below represents ~{"one": "two", "three": "f
 #+begin_src emacs-lisp
   (defun __ (url) nil)
 
-  (format "Result: %s" (equal (__ "http://echo.jsontest.com/one/two/three/four")
-                              #s(hash-table size 2 data ("one" "two" "three" "four"))))
+  (let* ((res (__ "http://echo.jsontest.com/one/two/three/four"))
+         (pass (equal res #s(hash-table size 2 data ("one" "two" "three" "four")))))
+    (format "Pass:%s\n%s" pass res))
 #+end_src
 
 ** Parse data from an org buffer
@@ -179,10 +195,32 @@ and tags, and return a list where each item looks like ~("HEADLINE" . '("TAG1" "
   (let* ((org-string "* Headline one    :foo:
   ,* Headline two     :foo:bar:
   ,* Headline three   :bar:")
-         (expected '(("Headline one" . ("foo"))
-                     ("Headline two" . ("foo" "bar"))
-                     ("Headline three" . ("bar"))))
-         (result (__ org-string))
-         (passed (equal expected result)))
-    (format "Passed: %s\nResult: %s": passed result))
+         (res (__ org-string))
+         (pass (equal res '(("Headline one" . ("foo"))
+                            ("Headline two" . ("foo" "bar"))
+                            ("Headline three" . ("bar"))))))
+         (format "Pass:%s\n%s" pass res))
+#+end_src
+
+
+** Advice: 2 + 2 = 5
+
+The advice feature allows you to decorate other functions. This means you can
+patch existing code to change its behaviour.
+
+The first time your function is called, it should advise the ~+~ function so that
+~(+ 2 2)~ returns 5. The second time it's called, it should remove the advise, so
+that subsequent calls to ~+~ return 4 again.
+
+#+begin_src emacs-lisp
+  (defun __ () nil)
+
+  (let* ((res1 (+ 2 2))
+         (pass1 (equal res1 4))
+         (res2 (progn (__) (+ 2 2)))
+         (pass2 (equal res2 5))
+         (res3 (progn (__) (+ 2 2)))
+         (pass3 (equal res3 4)))
+    (format "Pass:%s\n%s\n\nPass:%s:\n%s\n\nPass:%s\n%s"
+            pass1 res1 pass2 res2 pass3 res3))
 #+end_src
