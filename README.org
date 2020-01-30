@@ -1,0 +1,15 @@
+* emacs.london
+
+This is the source for https://emacs.london, the website for the Emacs London
+meetup.
+
+It's hosted on Github Pages, so any changes that are merged into master will
+automatically go live.
+
+** Building the site
+
+The source is in org-mode. So far it is compiled by exporting individual pages
+to html using ~C-c C-e h h~, and committing the exported HTML. This has worked OK
+so far but can be awkward if people have different export variables
+configured. The workflow will be a bit nicer if we configure a specific org
+publish project - that will hopefully be updated soon.
