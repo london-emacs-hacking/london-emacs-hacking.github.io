@@ -1,0 +1,89 @@
+# Local Variables:
+# org-html-preamble: "<center><img src=\"./assets/images/emacs-london-logo.png\" alt=\"emacs-london image\" class=\"logo\"></center>"
+# org-html-head: nil
+# org-html-postamble-format: '("en" " <p class=\"date\">Date: %d</p> ")
+# End:
+
+#+TITLE: Dojo | Emacs London
+#+OPTIONS: html-style:nil toc:nil title:nil
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+#+EXPORT_FILE_NAME: ./index.html
+#+AUTHOR: Emacs London
+* An Emacs Lisp dojo format
+
+A code dojo is a meeting format that involves coding on projects or exercises,
+usually in groups, for the purpose of practice and learning. There are many
+examples of dojo meetups. Attendees may be familiar with the [[http://www.londonclojurians.org/code-dojo/][London Clojure
+Dojo]].
+
+Our format is:
+
+1. Suggest ideas for projects.
+2. Break into groups of 2-4, each focusing on a project.
+3. Work for 90 minutes.
+4. Wrap up.
+
+
+* Elisp resources
+
+If you're new to the language, the resources below can act as useful starting
+points or references.
+
+- Emacs itself: Emacs contains some very useful features to help you learn about
+  the language, available functions, current values of your variables, and
+  more. These are all accessible via ~C-h~. You can [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Help.html][start reading about them in
+  the manual]].
+
+- The [[https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html][Emacs Lisp reference manual]] is very comprehensive if you know what you
+  want to read about. This can be read within Emacs by using ~C-h i m Elisp RET~.
+
+- [[https://steve-yegge.blogspot.com/2008/01/emergency-elisp.html][Steve Yegge wrote]] a brief overview of all the language features. It's quite
+  old now but is still a nice place to start.
+
+- [[http://ergoemacs.org/emacs/elisp.html][Xah Lee's practical Emacs Lisp guide]] may be easier to digest than the full
+  manual, and covers a lot of topics.
+
+
+* Project ideas
+
+Some ideas to get the conversation started:
+
+- Write your own modeline.
+- Write a syntax highlighter for a language of your choice.
+- Build a fuzzy browser search interface to replacement Spotlight/Alfred. You can use [Alvaro's post] for inspiration.
+- Build a Tic-Tac-Toe game in Emacs.
+
+Alternatively, you can work on the exercises below.
+
+
+* Elisp Exercises
+
+Below are some exercises to help learn and explore Elisp. They are inspired by
+the interactive Clojure exercises on [[https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwiTyNypxavnAhXLQEEAHVdVB5gQjBAwAXoECAgQCA&url=http%3A%2F%2Fwww.4clojure.com%2Fproblems&usg=AOvVaw0pa24yxcj-qETh0ze7m_08][4Clojure]].
+
+The aim is to fill in the functions labelled ~__~, so that the equality check
+returns ~t~.
+
+** Working with org-mode
+
+This web page is written as an org-mode file, which means you can [[https://github.com/london-emacs-hacking/london-emacs-hacking.github.io/blob/master/dojo.org][view it on
+Github]], open it in Emacs, and execute the code snippets by moving to a code
+block and pressing ~C-c C-c~. You can also open the code block in emacs-lisp more
+by pressing ~C-c '~.
+
+** Contents
+
+| Title     | Topics  |
+|-----------+---------|
+| [[Uppercase]] | strings |
+
+** Strings
+*** Uppercase
+
+Transform the given string into uppercase:
+
+#+begin_src emacs-lisp
+  (defun __ (s))
+
+  (string= (__ "helloworld") "HELLOWORLD")
+#+end_src

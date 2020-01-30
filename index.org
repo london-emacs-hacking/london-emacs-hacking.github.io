@@ -1,11 +1,13 @@
-# #+TITLE: London Emacs Hacking
-#+OPTIONS: html-style:nil toc:nil
+#+TITLE: Emacs London
+#+OPTIONS: html-style:nil toc:nil title:nil
 #+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 #+EXPORT_FILE_NAME: ./index.html
 #+AUTHOR: Emacs London
 
 # Local Variables:
 # org-html-preamble: "<center><img src=\"./assets/images/emacs-london-logo.png\" alt=\"emacs-london image\" class=\"logo\"></center>"
+# org-html-head: nil
+# org-html-postamble-format: '("en" " <p class=\"date\">Date: %d</p> ")
 # End:
 
 * Next meetup: Friday the 31st of January (7pm), Poetry Society Studio
