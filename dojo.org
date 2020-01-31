@@ -19,26 +19,24 @@ Clojure Dojo]].
 
 Our format is:
 
-1. Suggest ideas for projects.
+1. Everyone suggests ideas for projects.
 2. Break into groups of 2-4, each focusing on a project.
 3. Work for 90 minutes.
-4. Present some learnings, or maybe head straight to a pub!
-
+4. Present some learnings, or maybe head straight to a pub.
 
 * Project ideas
 
 Some ideas to get the conversation started:
 
-- Write your own modeline.
 - Write a syntax highlighter for a language of your choice.
 - Build a fuzzy browser search interface to replace Spotlight/Alfred. You can
-  use [[http://xenodium.com/emacs-utilities-for-your-os/][Alvaro's excellent post]] as a starting point..
+  use [[http://xenodium.com/emacs-utilities-for-your-os/][Alvaro's excellent post]] as a starting point!
 - Build a Tic-Tac-Toe game in Emacs.
 - Write a test runner that can run tests and display their output.
+- Write your own modeline.
 
 *Alternatively, you can work on (or contribute to) the exercises below!*. You may
 find them useful if you're new to Elisp, or if you're just stuck for ideas.
-
 
 
 * Exercises
