@@ -8,11 +8,8 @@ automatically go live.
 
 ** Building the site
 
-The source is in org-mode. So far it is compiled by exporting individual pages
-to html using ~C-c C-e h h~, and committing the exported HTML. This has worked OK
-so far but can be awkward if people have different export variables
-configured. The workflow will be a bit nicer if we configure a specific org
-publish project - that will hopefully be updated soon.
+You can build the site locally by evaluating the snippet below, and then running
+the command ~emacs-london/publish~.
 
 #+begin_src emacs-lisp
   (defvar emacs-london/directory (expand-file-name "."))
