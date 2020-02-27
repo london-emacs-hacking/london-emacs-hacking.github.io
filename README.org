@@ -13,3 +13,32 @@ to html using ~C-c C-e h h~, and committing the exported HTML. This has worked O
 so far but can be awkward if people have different export variables
 configured. The workflow will be a bit nicer if we configure a specific org
 publish project - that will hopefully be updated soon.
+
+#+begin_src emacs-lisp
+  (defvar emacs-london/directory (expand-file-name "."))
+
+  (defun emacs-london/publish ()
+    (interactive)
+    (let ((org-publish-project-alist
+           `(("emacs-london"
+              :base-directory ,emacs-london/directory
+              :publishing-directory ,emacs-london/directory
+              :base-extension "org"
+              :exclude ,(regexp-opt '("README.org"))
+              :recursive nil
+              :auto-sitemap nil
+              :auto-preamble t
+              :headline-levels 4
+              :author "Emacs London"
+              :with-toc nil
+              :with-date t
+              :with-author nil
+              :with-creator nil
+              :with-title nil
+              :html-style nil
+              :html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/css/style.css\"/>"
+              :html-preamble "<center><a class=\"logo-href\" href=\"/index.html\"><img src=\"./assets/images/emacs-london-logo.png\" alt=\"emacs-london image\" class=\"logo\"></a></center>"
+              :html-postamble-format '("en" " <p class=\"date\">Date: %d</p> ")
+              :publishing-function org-html-publish-to-html))))
+      (org-publish-project "emacs-london" t nil)))
+#+end_src

@@ -446,3 +446,7 @@ div.figure {
 .logo {
     width: 75%;
 }
+
+.logo-href {
+    background: transparent !important;
+}

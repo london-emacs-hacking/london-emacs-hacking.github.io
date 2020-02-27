@@ -1,14 +1,5 @@
 #+TITLE: Dojo | Emacs London
-#+OPTIONS: html-style:nil toc:nil title:nil
-#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 #+EXPORT_FILE_NAME: ./dojo.html
-#+AUTHOR: Emacs London
-
-# Local Variables:
-# org-html-preamble: "<center><a href=\"/index.html\"><img src=\"./assets/images/emacs-london-logo.png\" alt=\"emacs-london image\" class=\"logo\"></a></center>"
-# org-html-head: nil
-# org-html-postamble-format: '("en" " <p class=\"date\">Date: %d</p> ")
-# End:
 
 * Emacs Lisp dojo
 

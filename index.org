@@ -1,13 +1,5 @@
 #+TITLE: Emacs London
-#+OPTIONS: html-style:nil toc:nil title:nil date:t
-#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 #+EXPORT_FILE_NAME: ./index.html
-#+AUTHOR: Emacs London
-
-# Local Variables:
-# org-html-preamble: "<center><img src=\"./assets/images/emacs-london-logo.png\" alt=\"emacs-london image\" class=\"logo\"></center>"
-# org-html-head: nil
-# End:
 
 * Next meetup: Wednesday March 4th at 7pm, Poetry Society Studio
 

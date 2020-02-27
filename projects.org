@@ -1,9 +1,9 @@
 #+TITLE: Emacs Hacking Projects
-#+OPTIONS: html-style:nil
-#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 #+INFOJS_OPT: ltoc:t toc:t view:info home:http://emacs.london/
+#+OPTIONS: title:t
 #+EXPORT_FILE_NAME: ./projects.html
-#+AUTHOR: Emacs London
+#+LINK_UP: index.html
+#+LINK_HOME: index.html
 
 /REMINDER/ Some projects may have, some utility although that's mostly a secondary concern :)
 Fun is a number one concern!
