@@ -1,10 +1,36 @@
 #+TITLE: Emacs London
 #+EXPORT_FILE_NAME: ./index.html
 
-* Next meetup: Wednesday March 4th at 7pm, Poetry Society Studio
+* welcome!
 
-The next Emacs London meetup is scheduled for Wednesday, March 4th. As usual it
-will be hosted [[https://goo.gl/maps/hQTo4moTHToJwvgG7][above the Poetry Café in Holborn]].
+This website provides information and resources for the Emacs London meetup. We
+welcome anyone who is interested in Emacs:
+
+- if you use the defaults, spacemacs, doom, evil or anything else
+- if you're a text editor or lisp geek, a programmer, writer, academic, or even [[https://bofh.org.uk/2019/02/25/baking-with-emacs/][baker]]
+- whether you discovered Emacs last week or in 1976
+
+We try to meet every month in a central place in London. We usually do not have
+speakers, because we find a lot of the fun is in interacting with other Emacs
+users (and it makes it a bit easier to organise).
+
+There have been many meetups over the years in London, and a lot of people from
+the community have contributed. Currently it is organised by
+[[https://github.com/qazwsxpawel][Pawel]] and
+[[https://github.com/mattduck][Matt]]. If you'd like to get involved, speak, or
+just have questions, you can contact us on:
+
+- [[https://www.meetup.com/London-Emacs-Hacking/][meetup.com]]
+- The [[https://emacs-london.herokuapp.com/][emacs-london Slack]]
+- or via [[mailto:hi@mattduck.com][email]].
+
+
+
+* [[https://www.meetup.com/London-Emacs-Hacking][next meetup]]: Wednesday March 4th
+
+The next meetup is scheduled for Wednesday, March 4th. As usual it will be
+hosted [[https://goo.gl/maps/hQTo4moTHToJwvgG7][above the Poetry Café in
+Holborn]].
 
 This month we'll be running a dojo-style format to learn about emacs-lisp.
 We'll be providing [[file:dojo.org][some runnable exercises]] as a starting point.
@@ -13,29 +39,25 @@ Food and drink will be available to purchase downstairs. Attendees are welcome f
 
 Please sign up to the guest list on [[https://www.meetup.com/London-Emacs-Hacking/][meetup.com]] to attend.
 
-For questions and other Emacs conversation, join the emacs-london slack group [[https://emacs-london.herokuapp.com/][emacs-london Slack]].
+For questions and other Emacs conversation, join the [[https://emacs-london.herokuapp.com/][emacs-london Slack group]].
 
-Pawel & Matt
 
-* About
+* [[file:dojo.org][emacs-lisp coding materials]]
 
-  /You can often use Emacs to help you understand what puzzles you or to find out how to do something new./
-  /This self-reliance is not only a pleasure, but an advantage./
-  /--Emacs Lisp Intro Info pages/
+See the linked page for ideas and materials that can be used to run a meetup focused on emacs-lisp.
 
-  Your friendly local Emacs User Group and useful resources about Emacs!
-  Open to all persuasions--emacs, spacemacs, doom etc.
-  Open to all text editor & lisp geeks--programmers, writers, [[https://bofh.org.uk/2019/02/25/baking-with-emacs/][bakers]].
-  Meant to be a regular meetup--a beginner vs. advanced topics and talks vs. hands on sessions (config, elisp, new packages, new ideas in emacs etc.).
-  For pre- and post- meetup discussions and all other things Emacs check out [[https://emacs-london.slack.com][slack]]
+* [[https://emacs-london.herokuapp.com/][emacs-london Slack]]
 
-  Go get an [[https://emacs-london.herokuapp.com/][invite]]!
+Join the Slack group to discuss Emacs and the London meetups.
 
-* Contact
+* [[https://github.com/london-emacs-hacking/london-emacs-hacking.github.io][contribute to this website]]
 
-Join the new [[https://emacs-london.herokuapp.com/][emacs-london Slack]] to discuss the London meetups and all other things Emacs.
+You can find the org-mode source for this website on the linked Github
+repository. We're very happy for you to contribute, especially to the
+[[file:dojo.org][coding materials]].
 
-* Projects
+
+* Projects :noexport:
   Hands on projects--main idea is to use this semi-real-world projects as:
   - ways to explore emacs
   - learn new packages

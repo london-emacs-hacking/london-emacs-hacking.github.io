@@ -10,27 +10,12 @@ Clojure Dojo]].
 
 Our format is:
 
-1. Everyone suggests ideas for projects.
-2. Break into groups of 2-4, each focusing on a project.
+1. Everyone suggests ideas for a project.
+2. Break into small groups, each focusing on a project (or on the exercises below).
 3. Work for 90 minutes.
 4. Present some learnings, or maybe head straight to a pub.
 
-* Project ideas
-
-Some ideas to get the conversation started:
-
-- Write a syntax highlighter for a language of your choice.
-- Build a fuzzy browser search interface to replace Spotlight/Alfred. You can
-  use [[http://xenodium.com/emacs-utilities-for-your-os/][Alvaro's excellent post]] as a starting point!
-- Build a Tic-Tac-Toe game in Emacs.
-- Write a test runner that can run tests and display their output.
-- Write your own modeline.
-
-*Alternatively, you can work on (or contribute to) the exercises below!*. You may
-find them useful if you're new to Elisp, or if you're just stuck for ideas.
-
-
-* Exercises
+* [[https://raw.githubusercontent.com/london-emacs-hacking/london-emacs-hacking.github.io/master/dojo.org][Interactive exercises]]
 
 These are some exercises to help learn and explore Emacs and Elisp. The aim is
 to fill in the functions labelled ~__~, so that all the ~Pass:~ messages show ~t~
@@ -38,9 +23,12 @@ instead of ~nil~.
 
 They are inspired by the interactive Clojure exercises on [[https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwiTyNypxavnAhXLQEEAHVdVB5gQjBAwAXoECAgQCA&url=http%3A%2F%2Fwww.4clojure.com%2Fproblems&usg=AOvVaw0pa24yxcj-qETh0ze7m_08][4Clojure]].
 
+Alternatively, you may want to explore the [[Open-ended project
+ideas][open-ended project ideas]] at the bottom of this page.
+
 ** Working with this org-mode file
 
-This web page is written as an org-mode file, which means you can [[https://github.com/london-emacs-hacking/london-emacs-hacking.github.io/blob/master/dojo.org][view it on
+This web page is written as an org-mode file, which means you can [[https://raw.githubusercontent.com/london-emacs-hacking/london-emacs-hacking.github.io/master/dojo.org][get it on
 github]], open it in Emacs, and execute the code snippets by moving to a code
 block and pressing ~C-c C-c~. You can also open and edit the code block in
 emacs-lisp mode by pressing ~C-c '~.
@@ -68,7 +56,7 @@ references.
 
 Changes and new exercises are very welcome! Please [[https://github.com/london-emacs-hacking/london-emacs-hacking.github.io][submit PRs on github]].
 
-** Table of contents
+** Index
 
 | Title                                            |
 |--------------------------------------------------|
@@ -213,3 +201,17 @@ that subsequent calls to ~+~ return 4 again.
     (format "Pass:%S\n%S\n\nPass:%S:\n%S\n\nPass:%S\n%S"
             pass1 res1 pass2 res2 pass3 res3))
 #+end_src
+
+
+* Open-ended project ideas
+
+Some ideas to get the conversation started:
+
+- Write a syntax highlighter for a language of your choice.
+- Build a fuzzy browser search interface to replace Spotlight/Alfred. You can
+  use [[http://xenodium.com/emacs-utilities-for-your-os/][Alvaro's excellent post]] as a starting point!
+- Build a Tic-Tac-Toe game in Emacs.
+- Write a test runner that can run tests and display their output.
+- Write your own modeline.
+
+See the [[file:projects.org][projects page]] for more ideas.
