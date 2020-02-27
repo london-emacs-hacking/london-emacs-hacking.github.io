@@ -94,16 +94,16 @@ Changes and new exercises are very welcome! Please [[https://github.com/london-e
 Transform the given string into uppercase:
 
 #+begin_src emacs-lisp
-  (defun __ (s) nil)
+  (defun __ (s))
 
   (let* ((res (__ "helloworld"))
          (pass (string= res "HELLOWORLD")))
-    (format "Pass:%s\n%s" pass res))
+    (format "Pass:%S\n%S" pass res))
 #+end_src
 
 ** Penultimate element
 
-Return the second last element in an item. If there is only one item in the
+Return the second last element in a list. If there is only one item in the
 list, return nil.
 
 #+begin_src emacs-lisp
@@ -118,7 +118,7 @@ list, return nil.
          (res4 (__ '(1)))
          (pass4 (equal res4 nil)))
 
-    (format "Pass:%s\n%s\n\nPass:%s:\n%s\n\nPass:%s\n%s\n\nPass:%s\n%s"
+    (format "Pass:%S\n%S\n\nPass:%S:\n%S\n\nPass:%S\n%S\n\nPass:%S\n%S"
             pass1 res1 pass2 res2 pass3 res3 pass4 res4))
 #+end_src
 
@@ -144,7 +144,7 @@ Return a list with the results of fizzbuzz for a range of 1-100. This means:
                        "Fizz" 94 "Buzz" "Fizz" 97 98 "Fizz" "Buzz" ))
          (res (__))
          (pass (equal res expected)))
-    (format "Pass:%s\n%s" pass res))
+    (format "Pass:%S\n%S" pass res))
 #+end_src
 
 ** Anagram finder
@@ -162,25 +162,25 @@ included in the result.
          (res2 (__ ["veer" "lake" "item" "kale" "mite" "ever"]))
          (pass2 (equal res '(("veer" "ever") ("lake" "kale") ("mite item")))))
 
-    (format "Pass:%s\n%s\n\nPass:%s\n%s" pass res pass2 res2))
+    (format "Pass:%S\n%S\n\nPass:%S\n%S" pass res pass2 res2))
 #+end_src
 
 (Ported from [[http://www.4clojure.com/problem/77][4Clojure #77]]).
 
+
 ** Make an HTTP request and parse the JSON response
 
-Make an HTTP request to jsontest.com and put the parsed JSON response into a
-hash table.
-
-For clarity, the literal hash table below represents ~{"one": "two", "three": "four"}~.
+Make an HTTP request to httpbin.org and convert the "args" from the JSON
+response into an alist.
 
 #+begin_src emacs-lisp
   (defun __ (url) nil)
 
-  (let* ((res (__ "http://echo.jsontest.com/one/two/three/four"))
-         (pass (equal res #s(hash-table size 2 data ("one" "two" "three" "four")))))
-    (format "Pass:%s\n%s" pass res))
+  (let* ((res (__ "https://httpbin.org/get?one=two&three=four"))
+         (pass (equal res '((one . "two") (three . "four")))))
+    (format "Pass:%S\n%S" pass res))
 #+end_src
+
 
 ** Parse data from an org buffer
 
@@ -197,7 +197,7 @@ and tags, and return a list where each item looks like ~("HEADLINE" . '("TAG1" "
          (pass (equal res '(("Headline one" . ("foo"))
                             ("Headline two" . ("foo" "bar"))
                             ("Headline three" . ("bar"))))))
-         (format "Pass:%s\n%s" pass res))
+         (format "Pass:%S\n%S" pass res))
 #+end_src
 
 
@@ -219,6 +219,6 @@ that subsequent calls to ~+~ return 4 again.
          (pass2 (equal res2 5))
          (res3 (progn (__) (+ 2 2)))
          (pass3 (equal res3 4)))
-    (format "Pass:%s\n%s\n\nPass:%s:\n%s\n\nPass:%s\n%s"
+    (format "Pass:%S\n%S\n\nPass:%S:\n%S\n\nPass:%S\n%S"
             pass1 res1 pass2 res2 pass3 res3))
 #+end_src
