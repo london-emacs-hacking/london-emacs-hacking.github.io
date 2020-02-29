@@ -75,9 +75,9 @@ Transform the given string into uppercase:
 #+begin_src emacs-lisp
   (defun __ (s))
 
-  (let* ((res (__ "helloworld"))
-         (pass (string= res "HELLOWORLD")))
-    (format "Pass:%S\n%S" pass res))
+  (let* ((result (__ "helloworld"))
+         (pass (string= result "HELLOWORLD")))
+    (format "Pass:%S\n%S" pass result))
 #+end_src
 
 ** Penultimate element
@@ -88,17 +88,17 @@ list, return nil.
 #+begin_src emacs-lisp
   (defun __ (li) nil)
 
-  (let* ((res1 (__ '(1 2 3 4 5)))
-         (pass1 (equal res1 4))
-         (res2 (__ '("a" "b" "c")))
-         (pass2 (equal res2 "b"))
-         (res3 (__ '([1 2] [3 4])))
-         (pass3 (equal res3 [1 2]))
-         (res4 (__ '(1)))
-         (pass4 (equal res4 nil)))
+  (let* ((result1 (__ '(1 2 3 4 5)))
+         (pass1 (equal result1 4))
+         (result2 (__ '("a" "b" "c")))
+         (pass2 (equal result2 "b"))
+         (result3 (__ '([1 2] [3 4])))
+         (pass3 (equal result3 [1 2]))
+         (result4 (__ '(1)))
+         (pass4 (equal result4 nil)))
 
     (format "Pass:%S\n%S\n\nPass:%S:\n%S\n\nPass:%S\n%S\n\nPass:%S\n%S"
-            pass1 res1 pass2 res2 pass3 res3 pass4 res4))
+            pass1 result1 pass2 result2 pass3 result3 pass4 result4))
 #+end_src
 
 (Ported from [[http://www.4clojure.com/problem/20][4Clojure #20]])
@@ -121,9 +121,9 @@ Return a list with the results of fizzbuzz for a range of 1-100. This means:
                        "Fizz" 64 "Buzz" "Fizz" 67 68 "Fizz" "Buzz" 71 "Fizz" 73 74 "FizzBuzz" 76 77
                        "Fizz" 79 "Buzz" "Fizz" 82 83 "Fizz" "Buzz" 86 "Fizz" 88 89 "FizzBuzz" 91 92
                        "Fizz" 94 "Buzz" "Fizz" 97 98 "Fizz" "Buzz" ))
-         (res (__))
-         (pass (equal res expected)))
-    (format "Pass:%S\n%S" pass res))
+         (result (__))
+         (pass (equal result expected)))
+    (format "Pass:%S\n%S" pass result))
 #+end_src
 
 ** Anagram finder
@@ -136,12 +136,12 @@ included in the result.
 #+begin_src emacs-lisp
   (defun __ (v) nil)
 
-  (let* ((res (__ ["meat" "mat" "team" "mate" "eat"]))
-         (pass (equal res '(("meat" "team" "mate"))))
-         (res2 (__ ["veer" "lake" "item" "kale" "mite" "ever"]))
-         (pass2 (equal res '(("veer" "ever") ("lake" "kale") ("mite item")))))
+  (let* ((result (__ ["meat" "mat" "team" "mate" "eat"]))
+         (pass (equal result '(("meat" "team" "mate"))))
+         (result2 (__ ["veer" "lake" "item" "kale" "mite" "ever"]))
+         (pass2 (equal result '(("veer" "ever") ("lake" "kale") ("mite item")))))
 
-    (format "Pass:%S\n%S\n\nPass:%S\n%S" pass res pass2 res2))
+    (format "Pass:%S\n%S\n\nPass:%S\n%S" pass result pass2 result2))
 #+end_src
 
 (Ported from [[http://www.4clojure.com/problem/77][4Clojure #77]]).
@@ -155,9 +155,9 @@ response into an alist.
 #+begin_src emacs-lisp
   (defun __ (url) nil)
 
-  (let* ((res (__ "https://httpbin.org/get?one=two&three=four"))
-         (pass (equal res '((one . "two") (three . "four")))))
-    (format "Pass:%S\n%S" pass res))
+  (let* ((result (__ "https://httpbin.org/get?one=two&three=four"))
+         (pass (equal result '((one . "two") (three . "four")))))
+    (format "Pass:%S\n%S" pass result))
 #+end_src
 
 
@@ -172,11 +172,11 @@ and tags, and return a list where each item looks like ~("HEADLINE" . '("TAG1" "
   (let* ((org-string "* Headline one    :foo:
   ,* Headline two     :foo:bar:
   ,* Headline three   :bar:")
-         (res (__ org-string))
-         (pass (equal res '(("Headline one" . ("foo"))
+         (result (__ org-string))
+         (pass (equal result '(("Headline one" . ("foo"))
                             ("Headline two" . ("foo" "bar"))
                             ("Headline three" . ("bar"))))))
-         (format "Pass:%S\n%S" pass res))
+         (format "Pass:%S\n%S" pass result))
 #+end_src
 
 
@@ -192,14 +192,14 @@ that subsequent calls to ~+~ return 4 again.
 #+begin_src emacs-lisp
   (defun __ () nil)
 
-  (let* ((res1 (+ 2 2))
-         (pass1 (equal res1 4))
-         (res2 (progn (__) (+ 2 2)))
-         (pass2 (equal res2 5))
-         (res3 (progn (__) (+ 2 2)))
-         (pass3 (equal res3 4)))
+  (let* ((result1 (+ 2 2))
+         (pass1 (equal result1 4))
+         (result2 (progn (__) (+ 2 2)))
+         (pass2 (equal result2 5))
+         (result3 (progn (__) (+ 2 2)))
+         (pass3 (equal result3 4)))
     (format "Pass:%S\n%S\n\nPass:%S:\n%S\n\nPass:%S\n%S"
-            pass1 res1 pass2 res2 pass3 res3))
+            pass1 result1 pass2 result2 pass3 result3))
 #+end_src
 
 
