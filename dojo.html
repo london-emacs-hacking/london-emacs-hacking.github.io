@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-29 Sat 14:27 -->
+<!-- 2020-03-02 Mon 16:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dojo | Emacs London</title>
@@ -178,7 +178,27 @@ Changes and new exercises are very welcome! Please <a href="https://github.com/l
 </tr>
 
 <tr>
-<td class="org-left"><a href="#org6725689">Anagram finder</a></td>
+<td class="org-left"><a href="#org5795d41">Flatten an arbitrarily nested list</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#orgc679152">Count the lines and words in a buffer</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#org27f1489">Convert a list into a hash table</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#org7b2bb77">Reimplement mapcar</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#orgcd51970">Handle errors</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#orgf0a47fa">Throw and catch</a></td>
 </tr>
 
 <tr>
@@ -186,7 +206,19 @@ Changes and new exercises are very welcome! Please <a href="https://github.com/l
 </tr>
 
 <tr>
+<td class="org-left"><a href="#org22feba5">Read output from a shell command</a></td>
+</tr>
+
+<tr>
 <td class="org-left"><a href="#org930c2c0">Parse data from an org buffer</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#org6725689">Anagram finder</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#org22ac9e1">Analyse a tic tac toe board</a></td>
 </tr>
 
 <tr>
@@ -277,6 +309,222 @@ Return a list with the results of fizzbuzz for a range of 1-100. This means:
 </div>
 </div>
 
+<div id="outline-container-org5795d41" class="outline-3">
+<h3 id="org5795d41">Flatten an arbitrarily nested list</h3>
+<div class="outline-text-3" id="text-org5795d41">
+<p>
+Pull out all the nested elements into a single list:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (a &amp;rest b))
+
+(let* ((result1 (__ '(1 2 3)))
+       (pass1 (equal result1 '(1 2 3)))
+       (result2 (__ '(1 2 (3 4) (5 (6 (7))))))
+       (pass2 (equal result2 '(1 2 3 4 5 6 7)))
+       (result3 (__ '("a" "b") '(c nil d) '(1 (2 3 (4 5)))))
+       (pass3 (equal result3 '("a" "b" c d 1 2 3 4 5))))
+  (format "Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2 pass3 result3))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org27f1489" class="outline-3">
+<h3 id="org27f1489">Convert a list into a hash table</h3>
+<div class="outline-text-3" id="text-org27f1489">
+<p>
+Given a list of cons cells (eg. <code>'((a . 123) (b . 456))</code>) create a hash table
+where the car is the key and the cdr is the value.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (s))
+
+(let* ((result (__ '((a . 123) (b . 456) (c . "789"))))
+       (pass (equal result #s(hash-table size 3 data (a 123 b 456 c "789")))))
+  (format "Pass:%S\n%S" pass result))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc679152" class="outline-3">
+<h3 id="orgc679152">Count the lines and words in a buffer</h3>
+<div class="outline-text-3" id="text-orgc679152">
+<p>
+Depending on whether the second argument is the symbol <code>'lines</code> or <code>'words</code>, you
+should return a number that represents the appropriate count. Bonus points if
+you don't use any of the default line/word count functions.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (buffer arg) 0)
+
+(with-temp-buffer
+  (insert "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua. Maecenas sed enim ut sem viverra aliquet. In mollis nunc sed id semper risus
+in. In hac habitasse platea dictumst quisque sagittis. Facilisis magna etiam tempor orci eu. Tempus
+egestas sed sed risus pretium quam vulputate dignissim. Eros donec ac odio tempor orci dapibus
+ultrices. Nam libero justo laoreet sit. Quis imperdiet massa tincidunt nunc pulvinar. Quis imperdiet
+massa tincidunt nunc pulvinar sapien et. Consequat semper viverra nam libero justo. Volutpat
+maecenas volutpat blandit aliquam etiam erat. Viverra tellus in hac habitasse platea. Condimentum
+vitae sapien pellentesque habitant. Eleifend mi in nulla posuere sollicitudin aliquam ultrices
+sagittis orci. Vitae elementum curabitur vitae nunc sed velit dignissim sodales. Vel risus commodo
+viverra maecenas. Tellus molestie nunc non blandit massa enim. Sed ullamcorper morbi tincidunt
+ornare massa eget egestas purus viverra. Donec ultrices tincidunt arcu non sodales neque sodales ut.
+
+Eu tincidunt tortor aliquam nulla. Amet justo donec enim diam vulputate. Tristique senectus et netus
+et malesuada fames. Tellus elementum sagittis vitae et. Blandit cursus risus at ultrices mi
+tempus. Sit amet purus gravida quis blandit turpis. Metus vulputate eu scelerisque felis
+imperdiet. Nulla porttitor massa id neque. Dictum fusce ut placerat orci nulla
+pellentesque. Pulvinar mattis nunc sed blandit libero volutpat sed. Amet venenatis urna cursus eget
+nunc scelerisque viverra mauris in. Morbi quis commodo odio aenean. Pellentesque massa placerat duis
+ultricies. Tristique sollicitudin nibh sit amet. Gravida cum sociis natoque penatibus et magnis dis
+parturient. Ut ornare lectus sit amet est. Enim nunc faucibus a pellentesque sit amet
+porttitor. Nisl suscipit adipiscing bibendum est ultricies integer quis. Risus pretium quam
+vulputate dignissim suspendisse in.")
+
+  (let* ((result1 (__ (current-buffer) 'lines))
+         (pass1 (= result1 21))
+         (result2 (__ (current-buffer) 'words))
+         (pass2 (= result2 283)))
+    (format "Pass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7b2bb77" class="outline-3">
+<h3 id="org7b2bb77">Reimplement mapcar</h3>
+<div class="outline-text-3" id="text-org7b2bb77">
+<p>
+<a href="https://en.wikipedia.org/wiki/Map_(higher-order_function)">map</a> is a function that applies a given function to each element of a given
+list. In Emacs there are a <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Mapping-Functions.html">few variants of map functions</a>. Write a function that
+mimics the behaviour of <code>mapcar</code>. It accepts two argument: the function to apply,
+and the list of args to operate on.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (fn args))
+
+(let* ((result1 (__ 'upcase '("apple" "banana" "pear")))
+       (pass1 (equal result1 '("APPLE" "BANANA" "PEAR")))
+       (result2 (__ (lambda (arg) (= 0 (mod arg 2))) '(0 1 2 3 4 5 6 7 8 9)))
+       (pass2 (equal result2 '(t nil t nil t nil t nil t nil))))
+  (format "Pass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcd51970" class="outline-3">
+<h3 id="orgcd51970">Handle errors</h3>
+<div class="outline-text-3" id="text-orgcd51970">
+<p>
+You can find some information on error handling <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Handling-Errors.html#Handling-Errors">in the manual</a>, along with a <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Standard-Errors.html#Standard-Errors">list
+of standard errors</a>. Write a function that catches some particular errors and
+returns their value. Hint: you probably want to use <code>(condition-case)</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (fn))
+
+(let* ((result1 (__ (lambda () (error "Something went wrong: %s" 'mysymbol))))
+       (pass1 (equal result1 "Something went wrong: mysymbol"))
+       (result2 (__ (lambda () (/ 5 0))))
+       (pass2 (equal result2 "Division by zero"))
+       (result3 (__ (lambda () (throw 'catchmeplease "myvalue"))))
+       (pass3 (equal result3 '(uncaught . "myvalue"))))
+  (format "Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2 pass3 result3))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf0a47fa" class="outline-3">
+<h3 id="orgf0a47fa">Throw and catch</h3>
+<div class="outline-text-3" id="text-orgf0a47fa">
+<p>
+<code>catch</code> and <code>throw</code> are used for control flow, but not necessarily errors. Write a
+function that executes the given <code>fn</code>, catches the <code>throw</code> from our lambda, and
+returns the expected value:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (fn))
+
+(let* ((result (__ (lambda () (throw 'label "message"))))
+       (pass (equal result '(label . "message"))))
+  (format "Pass:%S\n%S" pass result))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf24b133" class="outline-3">
+<h3 id="orgf24b133">Make an HTTP request and parse the JSON response</h3>
+<div class="outline-text-3" id="text-orgf24b133">
+<p>
+Make an HTTP request to httpbin.org and convert the "args" from the JSON
+response into an alist.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (url) nil)
+
+(let* ((result (__ "https://httpbin.org/get?one=two&amp;three=four"))
+       (pass (equal result '((one . "two") (three . "four")))))
+  (format "Pass:%S\n%S" pass result))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org22feba5" class="outline-3">
+<h3 id="org22feba5">Read output from a shell command</h3>
+<div class="outline-text-3" id="text-org22feba5">
+<p>
+There are various ways to call external processes in Emacs. Eval the given
+argument in a shell and return the result.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (shellcommand))
+
+(let* ((result (__ "echo 'always eval user input'"))
+       (pass (equal result "always eval user input")))
+  (format "Pass:%S\n%S" pass result))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org930c2c0" class="outline-3">
+<h3 id="org930c2c0">Parse data from an org buffer</h3>
+<div class="outline-text-3" id="text-org930c2c0">
+<p>
+Given the string below, convert it to an org-mode buffer, parse out the headline
+and tags, and return a list where each item looks like <code>("HEADLINE" . '("TAG1" "TAG2"))</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (s) nil)
+
+(let* ((org-string "* Headline one    :foo:
+* Headline two     :foo:bar:
+* Headline three   :bar:")
+       (result (__ org-string))
+       (pass (equal result '(("Headline one" . ("foo"))
+                          ("Headline two" . ("foo" "bar"))
+                          ("Headline three" . ("bar"))))))
+       (format "Pass:%S\n%S" pass result))
+</pre>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org6725689" class="outline-3">
 <h3 id="org6725689">Anagram finder</h3>
 <div class="outline-text-3" id="text-org6725689">
@@ -305,51 +553,50 @@ included in the result.
 </div>
 </div>
 
-
-<div id="outline-container-orgf24b133" class="outline-3">
-<h3 id="orgf24b133">Make an HTTP request and parse the JSON response</h3>
-<div class="outline-text-3" id="text-orgf24b133">
+<div id="outline-container-org22ac9e1" class="outline-3">
+<h3 id="org22ac9e1">Analyse a tic tac toe board</h3>
+<div class="outline-text-3" id="text-org22ac9e1">
 <p>
-Make an HTTP request to httpbin.org and convert the "args" from the JSON
-response into an alist.
+A tic-tac-toe board is represented by a two dimensional vector. X is represented
+by <code>'x</code>, O is represented by <code>'o</code>, and empty is represented by <code>'e</code>. A player wins by
+placing three Xs or three Os in a horizontal, vertical, or diagonal row. Write a
+function which analyses a tic-tac-toe board and returns <code>'x</code> if X has won, <code>'o</code> if O
+has won, and <code>nil</code> if neither player has won.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (url) nil)
+<pre class="src src-emacs-lisp">(defun __ (board) nil)
 
-(let* ((result (__ "https://httpbin.org/get?one=two&amp;three=four"))
-       (pass (equal result '((one . "two") (three . "four")))))
-  (format "Pass:%S\n%S" pass result))
+(let* ((result1 (__ [[e e e]
+                     [e e e]
+                     [e e e]]))
+       (pass1 (equal nil result1))
+       (result2 (__ [[x e o]
+                     [x e e]
+                     [x e o]]))
+       (pass2 (equal 'x result2))
+       (result3 (__ [[e x e]
+                     [o o o]
+                     [x e x]]))
+       (pass3 (equal 'o result3))
+       (result4 (__ [[x e o]
+                     [x x e]
+                     [o x o]]))
+       (pass4 (equal nil result4))
+       (result5 (__ [[x e o]
+                     [o o e]
+                     [o e x]]))
+       (pass5 (equal 'o result5)))
+  (format "Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\n"
+          pass1 result1 pass2 result2 pass3 result3 pass4 result4 pass5 result5))
 </pre>
 </div>
-</div>
-</div>
 
-
-<div id="outline-container-org930c2c0" class="outline-3">
-<h3 id="org930c2c0">Parse data from an org buffer</h3>
-<div class="outline-text-3" id="text-org930c2c0">
 <p>
-Given the string below, convert it to an org-mode buffer, parse out the headline
-and tags, and return a list where each item looks like <code>("HEADLINE" . '("TAG1" "TAG2"))</code>.
+(Ported from <a href="http://www.4clojure.com/problem/73">http://www.4clojure.com/problem/73</a>).
 </p>
-
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (s) nil)
-
-(let* ((org-string "* Headline one    :foo:
-* Headline two     :foo:bar:
-* Headline three   :bar:")
-       (result (__ org-string))
-       (pass (equal result '(("Headline one" . ("foo"))
-                          ("Headline two" . ("foo" "bar"))
-                          ("Headline three" . ("bar"))))))
-       (format "Pass:%S\n%S" pass result))
-</pre>
 </div>
 </div>
-</div>
-
 
 <div id="outline-container-org5f10b01" class="outline-3">
 <h3 id="org5f10b01">Advice: 2 + 2 = 5</h3>
@@ -363,6 +610,10 @@ patch existing code to change its behaviour.
 The first time your function is called, it should advise the <code>+</code> function so that
 <code>(+ 2 2)</code> returns 5. The second time it's called, it should remove the advise, so
 that subsequent calls to <code>+</code> return 4 again.
+</p>
+
+<p>
+<b>Be careful with this. Breaking <code>(+)</code> could have unintended consequences!</b>
 </p>
 
 <div class="org-src-container">
@@ -382,7 +633,6 @@ that subsequent calls to <code>+</code> return 4 again.
 </div>
 </div>
 
-
 <div id="outline-container-orgf59b3c8" class="outline-2">
 <h2 id="orgf59b3c8">Open-ended project ideas</h2>
 <div class="outline-text-2" id="text-orgf59b3c8">
@@ -393,8 +643,7 @@ Some ideas to get the conversation started:
 <ul class="org-ul">
 <li>Write a syntax highlighter for a language of your choice.</li>
 <li>Build a fuzzy browser search interface to replace Spotlight/Alfred. You can
-use <a href="http://xenodium.com/emacs-utilities-for-your-os/">Alvaro's excellent post</a> as a starting point!</li>
-<li>Build a Tic-Tac-Toe game in Emacs.</li>
+use <a href="http://xenodium.com/emacs-utilities-for-your-os/">Alvaro's excellent post</a> as a starting point.</li>
 <li>Write a test runner that can run tests and display their output.</li>
 <li>Write your own modeline.</li>
 </ul>

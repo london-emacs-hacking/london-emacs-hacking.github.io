@@ -63,9 +63,17 @@ Changes and new exercises are very welcome! Please [[https://github.com/london-e
 | [[Strings - uppercase]]                              |
 | [[Penultimate element]]                              |
 | [[Fizzbuzz]]                                         |
-| [[Anagram finder]]                                   |
+| [[Flatten an arbitrarily nested list]]               |
+| [[Count the lines and words in a buffer]]            |
+| [[Convert a list into a hash table]]                 |
+| [[Reimplement mapcar]]                               |
+| [[Handle errors]]                                    |
+| [[Throw and catch]]                                  |
 | [[Make an HTTP request and parse the JSON response]] |
+| [[Read output from a shell command]]                          |
 | [[Parse data from an org buffer]]                    |
+| [[Anagram finder]]                                   |
+| [[Analyse a tic tac toe board]]                      |
 | [[Advice: 2 + 2 = 5]]                                |
 
 ** Strings - uppercase
@@ -126,6 +134,168 @@ Return a list with the results of fizzbuzz for a range of 1-100. This means:
     (format "Pass:%S\n%S" pass result))
 #+end_src
 
+** Flatten an arbitrarily nested list
+
+Pull out all the nested elements into a single list:
+
+#+begin_src emacs-lisp
+  (defun __ (a &rest b))
+
+  (let* ((result1 (__ '(1 2 3)))
+         (pass1 (equal result1 '(1 2 3)))
+         (result2 (__ '(1 2 (3 4) (5 (6 (7))))))
+         (pass2 (equal result2 '(1 2 3 4 5 6 7)))
+         (result3 (__ '("a" "b") '(c nil d) '(1 (2 3 (4 5)))))
+         (pass3 (equal result3 '("a" "b" c d 1 2 3 4 5))))
+    (format "Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2 pass3 result3))
+#+end_src
+
+** Convert a list into a hash table
+
+Given a list of cons cells (eg. ~'((a . 123) (b . 456))~) create a hash table
+where the car is the key and the cdr is the value.
+
+#+begin_src emacs-lisp
+  (defun __ (s))
+
+  (let* ((result (__ '((a . 123) (b . 456) (c . "789"))))
+         (pass (equal result #s(hash-table size 3 data (a 123 b 456 c "789")))))
+    (format "Pass:%S\n%S" pass result))
+#+end_src
+
+** Count the lines and words in a buffer
+
+Depending on whether the second argument is the symbol ~'lines~ or ~'words~, you
+should return a number that represents the appropriate count. Bonus points if
+you don't use any of the default line/word count functions.
+
+#+begin_src emacs-lisp
+  (defun __ (buffer arg) 0)
+
+  (with-temp-buffer
+    (insert "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+  et dolore magna aliqua. Maecenas sed enim ut sem viverra aliquet. In mollis nunc sed id semper risus
+  in. In hac habitasse platea dictumst quisque sagittis. Facilisis magna etiam tempor orci eu. Tempus
+  egestas sed sed risus pretium quam vulputate dignissim. Eros donec ac odio tempor orci dapibus
+  ultrices. Nam libero justo laoreet sit. Quis imperdiet massa tincidunt nunc pulvinar. Quis imperdiet
+  massa tincidunt nunc pulvinar sapien et. Consequat semper viverra nam libero justo. Volutpat
+  maecenas volutpat blandit aliquam etiam erat. Viverra tellus in hac habitasse platea. Condimentum
+  vitae sapien pellentesque habitant. Eleifend mi in nulla posuere sollicitudin aliquam ultrices
+  sagittis orci. Vitae elementum curabitur vitae nunc sed velit dignissim sodales. Vel risus commodo
+  viverra maecenas. Tellus molestie nunc non blandit massa enim. Sed ullamcorper morbi tincidunt
+  ornare massa eget egestas purus viverra. Donec ultrices tincidunt arcu non sodales neque sodales ut.
+
+  Eu tincidunt tortor aliquam nulla. Amet justo donec enim diam vulputate. Tristique senectus et netus
+  et malesuada fames. Tellus elementum sagittis vitae et. Blandit cursus risus at ultrices mi
+  tempus. Sit amet purus gravida quis blandit turpis. Metus vulputate eu scelerisque felis
+  imperdiet. Nulla porttitor massa id neque. Dictum fusce ut placerat orci nulla
+  pellentesque. Pulvinar mattis nunc sed blandit libero volutpat sed. Amet venenatis urna cursus eget
+  nunc scelerisque viverra mauris in. Morbi quis commodo odio aenean. Pellentesque massa placerat duis
+  ultricies. Tristique sollicitudin nibh sit amet. Gravida cum sociis natoque penatibus et magnis dis
+  parturient. Ut ornare lectus sit amet est. Enim nunc faucibus a pellentesque sit amet
+  porttitor. Nisl suscipit adipiscing bibendum est ultricies integer quis. Risus pretium quam
+  vulputate dignissim suspendisse in.")
+
+    (let* ((result1 (__ (current-buffer) 'lines))
+           (pass1 (= result1 21))
+           (result2 (__ (current-buffer) 'words))
+           (pass2 (= result2 283)))
+      (format "Pass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2)))
+#+end_src
+
+** Reimplement mapcar
+
+[[https://en.wikipedia.org/wiki/Map_(higher-order_function)][map]] is a function that applies a given function to each element of a given
+list. In Emacs there are a [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Mapping-Functions.html][few variants of map functions]]. Write a function that
+mimics the behaviour of ~mapcar~. It accepts two argument: the function to apply,
+and the list of args to operate on.
+
+#+begin_src emacs-lisp
+    (defun __ (fn args))
+
+    (let* ((result1 (__ 'upcase '("apple" "banana" "pear")))
+           (pass1 (equal result1 '("APPLE" "BANANA" "PEAR")))
+           (result2 (__ (lambda (arg) (= 0 (mod arg 2))) '(0 1 2 3 4 5 6 7 8 9)))
+           (pass2 (equal result2 '(t nil t nil t nil t nil t nil))))
+      (format "Pass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2))
+#+end_src
+
+** Handle errors
+
+You can find some information on error handling [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Handling-Errors.html#Handling-Errors][in the manual]], along with a [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Standard-Errors.html#Standard-Errors][list
+of standard errors]]. Write a function that catches some particular errors and
+returns their value. Hint: you probably want to use ~(condition-case)~.
+
+#+begin_src emacs-lisp
+  (defun __ (fn))
+
+  (let* ((result1 (__ (lambda () (error "Something went wrong: %s" 'mysymbol))))
+         (pass1 (equal result1 "Something went wrong: mysymbol"))
+         (result2 (__ (lambda () (/ 5 0))))
+         (pass2 (equal result2 "Division by zero"))
+         (result3 (__ (lambda () (throw 'catchmeplease "myvalue"))))
+         (pass3 (equal result3 '(uncaught . "myvalue"))))
+    (format "Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2 pass3 result3))
+#+end_src
+
+** Throw and catch
+
+~catch~ and ~throw~ are used for control flow, but not necessarily errors. Write a
+function that executes the given ~fn~, catches the ~throw~ from our lambda, and
+returns the expected value:
+
+#+begin_src emacs-lisp
+  (defun __ (fn))
+
+  (let* ((result (__ (lambda () (throw 'label "message"))))
+         (pass (equal result '(label . "message"))))
+    (format "Pass:%S\n%S" pass result))
+#+end_src
+
+** Make an HTTP request and parse the JSON response
+
+Make an HTTP request to httpbin.org and convert the "args" from the JSON
+response into an alist.
+
+#+begin_src emacs-lisp
+  (defun __ (url) nil)
+
+  (let* ((result (__ "https://httpbin.org/get?one=two&three=four"))
+         (pass (equal result '((one . "two") (three . "four")))))
+    (format "Pass:%S\n%S" pass result))
+#+end_src
+
+** Read output from a shell command
+
+There are various ways to call external processes in Emacs. Eval the given
+argument in a shell and return the result.
+
+#+begin_src emacs-lisp
+  (defun __ (shellcommand))
+
+  (let* ((result (__ "echo 'always eval user input'"))
+         (pass (equal result "always eval user input")))
+    (format "Pass:%S\n%S" pass result))
+#+end_src
+
+** Parse data from an org buffer
+
+Given the string below, convert it to an org-mode buffer, parse out the headline
+and tags, and return a list where each item looks like ~("HEADLINE" . '("TAG1" "TAG2"))~.
+
+#+begin_src emacs-lisp
+  (defun __ (s) nil)
+
+  (let* ((org-string "* Headline one    :foo:
+  ,* Headline two     :foo:bar:
+  ,* Headline three   :bar:")
+         (result (__ org-string))
+         (pass (equal result '(("Headline one" . ("foo"))
+                            ("Headline two" . ("foo" "bar"))
+                            ("Headline three" . ("bar"))))))
+         (format "Pass:%S\n%S" pass result))
+#+end_src
+
 ** Anagram finder
 
 Write a function which finds all the anagrams in a given vector of words. Your
@@ -146,39 +316,42 @@ included in the result.
 
 (Ported from [[http://www.4clojure.com/problem/77][4Clojure #77]]).
 
+** Analyse a tic tac toe board
 
-** Make an HTTP request and parse the JSON response
-
-Make an HTTP request to httpbin.org and convert the "args" from the JSON
-response into an alist.
-
-#+begin_src emacs-lisp
-  (defun __ (url) nil)
-
-  (let* ((result (__ "https://httpbin.org/get?one=two&three=four"))
-         (pass (equal result '((one . "two") (three . "four")))))
-    (format "Pass:%S\n%S" pass result))
-#+end_src
-
-
-** Parse data from an org buffer
-
-Given the string below, convert it to an org-mode buffer, parse out the headline
-and tags, and return a list where each item looks like ~("HEADLINE" . '("TAG1" "TAG2"))~.
+A tic-tac-toe board is represented by a two dimensional vector. X is represented
+by ~'x~, O is represented by ~'o~, and empty is represented by ~'e~. A player wins by
+placing three Xs or three Os in a horizontal, vertical, or diagonal row. Write a
+function which analyses a tic-tac-toe board and returns ~'x~ if X has won, ~'o~ if O
+has won, and ~nil~ if neither player has won.
 
 #+begin_src emacs-lisp
-  (defun __ (s) nil)
+  (defun __ (board) nil)
 
-  (let* ((org-string "* Headline one    :foo:
-  ,* Headline two     :foo:bar:
-  ,* Headline three   :bar:")
-         (result (__ org-string))
-         (pass (equal result '(("Headline one" . ("foo"))
-                            ("Headline two" . ("foo" "bar"))
-                            ("Headline three" . ("bar"))))))
-         (format "Pass:%S\n%S" pass result))
+  (let* ((result1 (__ [[e e e]
+                       [e e e]
+                       [e e e]]))
+         (pass1 (equal nil result1))
+         (result2 (__ [[x e o]
+                       [x e e]
+                       [x e o]]))
+         (pass2 (equal 'x result2))
+         (result3 (__ [[e x e]
+                       [o o o]
+                       [x e x]]))
+         (pass3 (equal 'o result3))
+         (result4 (__ [[x e o]
+                       [x x e]
+                       [o x o]]))
+         (pass4 (equal nil result4))
+         (result5 (__ [[x e o]
+                       [o o e]
+                       [o e x]]))
+         (pass5 (equal 'o result5)))
+    (format "Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\n"
+            pass1 result1 pass2 result2 pass3 result3 pass4 result4 pass5 result5))
 #+end_src
 
+(Ported from http://www.4clojure.com/problem/73).
 
 ** Advice: 2 + 2 = 5
 
@@ -188,6 +361,8 @@ patch existing code to change its behaviour.
 The first time your function is called, it should advise the ~+~ function so that
 ~(+ 2 2)~ returns 5. The second time it's called, it should remove the advise, so
 that subsequent calls to ~+~ return 4 again.
+
+*Be careful with this. Breaking ~(+)~ could have unintended consequences!*
 
 #+begin_src emacs-lisp
   (defun __ () nil)
@@ -202,6 +377,32 @@ that subsequent calls to ~+~ return 4 again.
             pass1 result1 pass2 result2 pass3 result3))
 #+end_src
 
+** COMMENT exercise topics
+
+- vectors
+- buffers
+- frames
+- moving the point
+- hash tables
+- strings
+- regex
+- catch / throw / unwind-protect
+- defstruct
+- class
+- manipulating dates
+- macros
+- environment variables
+- clipboard
+- keymaps
+- replacing stdlib functions, eg. count-lines
+- files
+- windows
+- external commands/processes
+- regions
+- text properties
+- indirect buffers
+- defining modes
+- variable scope
 
 * Open-ended project ideas
 
@@ -209,8 +410,7 @@ Some ideas to get the conversation started:
 
 - Write a syntax highlighter for a language of your choice.
 - Build a fuzzy browser search interface to replace Spotlight/Alfred. You can
-  use [[http://xenodium.com/emacs-utilities-for-your-os/][Alvaro's excellent post]] as a starting point!
-- Build a Tic-Tac-Toe game in Emacs.
+  use [[http://xenodium.com/emacs-utilities-for-your-os/][Alvaro's excellent post]] as a starting point.
 - Write a test runner that can run tests and display their output.
 - Write your own modeline.
 
