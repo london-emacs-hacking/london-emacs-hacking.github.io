@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-03-02 Mon 18:42 -->
+<!-- 2020-03-02 Mon 18:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Hacking Projects</title>
@@ -432,35 +432,35 @@ Example approach
 <a href="https://github.com/justbur/emacs-which-key/commit/77586e62b6d306bae07e4e3e093ba488724f4131">https://github.com/justbur/emacs-which-key/commit/77586e62b6d306bae07e4e3e093ba488724f4131</a>
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp">;; original--inserts into buffer, swithches the window
-(defun which-key-dump-bindings (prefix buffer-name)
-  "Dump bindings from PREFIX into buffer named BUFFER-NAME.
-PREFIX should be a string suitable for `kbd'."
-  (interactive "sPrefix: \nB")
-  (let* ((buffer (get-buffer-create buffer-name))
-         (keys (which-key--get-bindings (kbd prefix))))
-    (with-current-buffer buffer
-      (point-max)
-      (save-excursion
-        (dolist (key keys)
-          (insert (apply #'format "%s%s%s\n" key)))))
-    (switch-to-buffer-other-window buffer)))
+<pre class="src src-elisp"><span style="color: #a89984;">;; </span><span style="color: #a89984;">original--inserts into buffer, swithches the window</span>
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">which-key-dump-bindings</span> <span style="color: #b16286;">(</span>prefix buffer-name<span style="color: #b16286;">)</span>
+  <span style="color: #bdae93;">"Dump bindings from PREFIX into buffer named BUFFER-NAME.</span>
+<span style="color: #bdae93;">PREFIX should be a string suitable for `</span><span style="color: #b57614; font-weight: bold;">kbd</span><span style="color: #bdae93;">'."</span>
+  <span style="color: #b16286;">(</span><span style="color: #9d0006; font-weight: bold;">interactive</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"sPrefix: \nB"</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #8ec07c;">(</span><span style="color: #d65d0e;">(</span>buffer <span style="color: #458588;">(</span>get-buffer-create buffer-name<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span>
+         <span style="color: #d65d0e;">(</span>keys <span style="color: #458588;">(</span>which-key--get-bindings <span style="color: #b16286;">(</span>kbd prefix<span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #8ec07c;">(</span><span style="color: #9d0006; font-weight: bold;">with-current-buffer</span> buffer
+      <span style="color: #d65d0e;">(</span>point-max<span style="color: #d65d0e;">)</span>
+      <span style="color: #d65d0e;">(</span><span style="color: #9d0006; font-weight: bold;">save-excursion</span>
+        <span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">dolist</span> <span style="color: #b16286;">(</span>key keys<span style="color: #b16286;">)</span>
+          <span style="color: #b16286;">(</span>insert <span style="color: #8ec07c;">(</span>apply #'format <span style="color: #427b58; font-weight: bold; font-style: italic;">"%s%s%s\n"</span> key<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #8ec07c;">(</span>switch-to-buffer-other-window buffer<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
 
-;; edited--returns values
-(defun which-key-dump-bindings (prefix buffer-name)
-  "Dump bindings from PREFIX into buffer named BUFFER-NAME.
-     PREFIX should be a string suitable for `kbd'."
-  (interactive "sPrefix: \nB")
-  (let* ((buffer (get-buffer-create buffer-name))
-         (keys (which-key--get-bindings (kbd prefix))))
-    (with-current-buffer buffer
-      (point-max)
-      (save-excursion
-        (mapcar (lambda (x) (apply #'format "%s%s%s\n" x)) keys)))
-    ))
+<span style="color: #a89984;">;; </span><span style="color: #a89984;">edited--returns values</span>
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">which-key-dump-bindings</span> <span style="color: #b16286;">(</span>prefix buffer-name<span style="color: #b16286;">)</span>
+  <span style="color: #bdae93;">"Dump bindings from PREFIX into buffer named BUFFER-NAME.</span>
+<span style="color: #bdae93;">     PREFIX should be a string suitable for `</span><span style="color: #b57614; font-weight: bold;">kbd</span><span style="color: #bdae93;">'."</span>
+  <span style="color: #b16286;">(</span><span style="color: #9d0006; font-weight: bold;">interactive</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"sPrefix: \nB"</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #8ec07c;">(</span><span style="color: #d65d0e;">(</span>buffer <span style="color: #458588;">(</span>get-buffer-create buffer-name<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span>
+         <span style="color: #d65d0e;">(</span>keys <span style="color: #458588;">(</span>which-key--get-bindings <span style="color: #b16286;">(</span>kbd prefix<span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #8ec07c;">(</span><span style="color: #9d0006; font-weight: bold;">with-current-buffer</span> buffer
+      <span style="color: #d65d0e;">(</span>point-max<span style="color: #d65d0e;">)</span>
+      <span style="color: #d65d0e;">(</span><span style="color: #9d0006; font-weight: bold;">save-excursion</span>
+        <span style="color: #458588;">(</span>mapcar <span style="color: #b16286;">(</span><span style="color: #9d0006; font-weight: bold;">lambda</span> <span style="color: #8ec07c;">(</span>x<span style="color: #8ec07c;">)</span> <span style="color: #8ec07c;">(</span>apply #'format <span style="color: #427b58; font-weight: bold; font-style: italic;">"%s%s%s\n"</span> x<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span> keys<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-(which-key-dump-bindings "SPC f" "emacs.org")
+<span style="color: #458588;">(</span>which-key-dump-bindings <span style="color: #427b58; font-weight: bold; font-style: italic;">"SPC f"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"emacs.org"</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -553,13 +553,13 @@ src_&lt;language&gt;[&lt;header arguments&gt;]{&lt;body&gt;}
 There seems to even be a <a href="https://stackoverflow.com/questions/20309842/how-to-syntax-highlight-for-org-mode-inline-source-code-src-lang/28059832#28059832">way</a> to fontify that
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp">(font-lock-add-keywords 'org-mode
-                 '(("\\(src_\\)\\([^[{]+\\)\\(\\[:.*\\]\\){\\([^}]*\\)}"
-                    (1 '(:foreground "black" :weight 'normal :height 5)) ; src_ part
-                    (2 '(:foreground "cyan" :weight 'bold :height 75 :underline "red")) ; "lang" part.
-                    (3 '(:foreground "#555555" :height 5)) ; [:header arguments] part.
-                    (4 'org-code) ; "code..." part.
-                    )))
+<pre class="src src-elisp"><span style="color: #458588;">(</span>font-lock-add-keywords 'org-mode
+                 '<span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"</span><span style="color: #427b58; font-weight: bold; font-style: italic;">\\</span><span style="color: #427b58; font-weight: bold; font-style: italic;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">src_</span><span style="color: #427b58; font-weight: bold; font-style: italic;">\\</span><span style="color: #427b58; font-weight: bold; font-style: italic;">)</span><span style="color: #427b58; font-weight: bold; font-style: italic;">\\</span><span style="color: #427b58; font-weight: bold; font-style: italic;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">[</span><span style="color: #427b58; font-weight: bold; font-style: italic;">^</span><span style="color: #427b58; font-weight: bold; font-style: italic;">[{]+</span><span style="color: #427b58; font-weight: bold; font-style: italic;">\\</span><span style="color: #427b58; font-weight: bold; font-style: italic;">)</span><span style="color: #427b58; font-weight: bold; font-style: italic;">\\</span><span style="color: #427b58; font-weight: bold; font-style: italic;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">\\[</span><span style="color: #b57614; font-weight: bold; font-style: italic;">:.*\\</span><span style="color: #427b58; font-weight: bold; font-style: italic;">]</span><span style="color: #427b58; font-weight: bold; font-style: italic;">\\</span><span style="color: #427b58; font-weight: bold; font-style: italic;">)</span><span style="color: #427b58; font-weight: bold; font-style: italic;">{</span><span style="color: #427b58; font-weight: bold; font-style: italic;">\\</span><span style="color: #427b58; font-weight: bold; font-style: italic;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">[</span><span style="color: #427b58; font-weight: bold; font-style: italic;">^</span><span style="color: #427b58; font-weight: bold; font-style: italic;">}]*</span><span style="color: #427b58; font-weight: bold; font-style: italic;">\\</span><span style="color: #427b58; font-weight: bold; font-style: italic;">)</span><span style="color: #427b58; font-weight: bold; font-style: italic;">}"</span>
+                    <span style="color: #d65d0e;">(</span>1 '<span style="color: #458588;">(</span><span style="color: #076678; font-weight: bold;">:foreground</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"black"</span> <span style="color: #076678; font-weight: bold;">:weight</span> 'normal <span style="color: #076678; font-weight: bold;">:height</span> 5<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span> <span style="color: #a89984;">; </span><span style="color: #a89984;">src_ part</span>
+                    <span style="color: #d65d0e;">(</span>2 '<span style="color: #458588;">(</span><span style="color: #076678; font-weight: bold;">:foreground</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"cyan"</span> <span style="color: #076678; font-weight: bold;">:weight</span> 'bold <span style="color: #076678; font-weight: bold;">:height</span> 75 <span style="color: #076678; font-weight: bold;">:underline</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"red"</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span> <span style="color: #a89984;">; </span><span style="color: #a89984;">"lang" part.</span>
+                    <span style="color: #d65d0e;">(</span>3 '<span style="color: #458588;">(</span><span style="color: #076678; font-weight: bold;">:foreground</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"#555555"</span> <span style="color: #076678; font-weight: bold;">:height</span> 5<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span> <span style="color: #a89984;">; </span><span style="color: #a89984;">[:header arguments] part.</span>
+                    <span style="color: #d65d0e;">(</span>4 'org-code<span style="color: #d65d0e;">)</span> <span style="color: #a89984;">; </span><span style="color: #a89984;">"code..." part.</span>
+                    <span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 <p>
@@ -679,12 +679,12 @@ have a state like the lisp state
 then single letter commmands from most commpon operations
 </p>
 <div class="org-src-container">
-<pre class="src src-clojure">some-stuff ; 1
-(first some-stuff) ; m
-(map | (first some-stuff)) ; t
-(take | ((map :some-key (first some-stuff)))) ; f
-(filter | ...) ; m
-(map | ...) ; c
+<pre class="src src-clojure">some-stuff <span style="color: #a89984;">; 1</span>
+(first some-stuff) <span style="color: #a89984;">; m</span>
+(map | (first some-stuff)) <span style="color: #a89984;">; t</span>
+(take | ((map <span style="color: #b57614; font-weight: bold;">:some-key</span> (first some-stuff)))) <span style="color: #a89984;">; f</span>
+(filter | ...) <span style="color: #a89984;">; m</span>
+(map | ...) <span style="color: #a89984;">; c</span>
 
 
 

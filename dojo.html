@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-03-02 Mon 18:42 -->
+<!-- 2020-03-02 Mon 18:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dojo | Emacs London</title>
@@ -245,11 +245,11 @@ Transform the given string into uppercase:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (s))
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>s<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-(let* ((result (__ "helloworld"))
-       (pass (string= result "HELLOWORLD")))
-  (format "Pass:%S\n%S" pass result))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result <span style="color: #d65d0e;">(</span>__ <span style="color: #427b58; font-weight: bold; font-style: italic;">"helloworld"</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass <span style="color: #d65d0e;">(</span>string= result <span style="color: #427b58; font-weight: bold; font-style: italic;">"HELLOWORLD"</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S"</span> pass result<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -264,19 +264,19 @@ list, return nil.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (li) nil)
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>li<span style="color: #b16286;">)</span> nil<span style="color: #458588;">)</span>
 
-(let* ((result1 (__ '(1 2 3 4 5)))
-       (pass1 (equal result1 4))
-       (result2 (__ '("a" "b" "c")))
-       (pass2 (equal result2 "b"))
-       (result3 (__ '([1 2] [3 4])))
-       (pass3 (equal result3 [1 2]))
-       (result4 (__ '(1)))
-       (pass4 (equal result4 nil)))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result1 <span style="color: #d65d0e;">(</span>__ '<span style="color: #458588;">(</span>1 2 3 4 5<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass1 <span style="color: #d65d0e;">(</span>equal result1 4<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result2 <span style="color: #d65d0e;">(</span>__ '<span style="color: #458588;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"a"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"b"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"c"</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass2 <span style="color: #d65d0e;">(</span>equal result2 <span style="color: #427b58; font-weight: bold; font-style: italic;">"b"</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result3 <span style="color: #d65d0e;">(</span>__ '<span style="color: #458588;">(</span><span style="color: #b16286;">[</span>1 2<span style="color: #b16286;">]</span> <span style="color: #b16286;">[</span>3 4<span style="color: #b16286;">]</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass3 <span style="color: #d65d0e;">(</span>equal result3 <span style="color: #458588;">[</span>1 2<span style="color: #458588;">]</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result4 <span style="color: #d65d0e;">(</span>__ '<span style="color: #458588;">(</span>1<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass4 <span style="color: #d65d0e;">(</span>equal result4 nil<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
 
-  (format "Pass:%S\n%S\n\nPass:%S:\n%S\n\nPass:%S\n%S\n\nPass:%S\n%S"
-          pass1 result1 pass2 result2 pass3 result3 pass4 result4))
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S\n\nPass:%S:\n%S\n\nPass:%S\n%S\n\nPass:%S\n%S"</span>
+          pass1 result1 pass2 result2 pass3 result3 pass4 result4<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -300,18 +300,18 @@ Return a list with the results of fizzbuzz for a range of 1-100. This means:
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ () nil)
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">()</span> nil<span style="color: #458588;">)</span>
 
-(let* ((expected '(1 2 "Fizz" 4 "Buzz" "Fizz" 7 8 "Fizz" "Buzz" 11 "Fizz" 13 14 "FizzBuzz" 16 17
-                     "Fizz" 19 "Buzz" "Fizz" 22 23 "Fizz" "Buzz" 26 "Fizz" 28 29 "FizzBuzz" 31 32
-                     "Fizz" 34 "Buzz" "Fizz" 37 38 "Fizz" "Buzz" 41 "Fizz" 43 44 "FizzBuzz" 46 47
-                     "Fizz" 49 "Buzz" "Fizz" 52 53 "Fizz" "Buzz" 56 "Fizz" 58 59 "FizzBuzz" 61 62
-                     "Fizz" 64 "Buzz" "Fizz" 67 68 "Fizz" "Buzz" 71 "Fizz" 73 74 "FizzBuzz" 76 77
-                     "Fizz" 79 "Buzz" "Fizz" 82 83 "Fizz" "Buzz" 86 "Fizz" 88 89 "FizzBuzz" 91 92
-                     "Fizz" 94 "Buzz" "Fizz" 97 98 "Fizz" "Buzz" ))
-       (result (__))
-       (pass (equal result expected)))
-  (format "Pass:%S\n%S" pass result))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>expected '<span style="color: #d65d0e;">(</span>1 2 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 4 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 7 8 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> 11 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 13 14 <span style="color: #427b58; font-weight: bold; font-style: italic;">"FizzBuzz"</span> 16 17
+                     <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 19 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 22 23 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> 26 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 28 29 <span style="color: #427b58; font-weight: bold; font-style: italic;">"FizzBuzz"</span> 31 32
+                     <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 34 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 37 38 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> 41 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 43 44 <span style="color: #427b58; font-weight: bold; font-style: italic;">"FizzBuzz"</span> 46 47
+                     <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 49 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 52 53 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> 56 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 58 59 <span style="color: #427b58; font-weight: bold; font-style: italic;">"FizzBuzz"</span> 61 62
+                     <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 64 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 67 68 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> 71 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 73 74 <span style="color: #427b58; font-weight: bold; font-style: italic;">"FizzBuzz"</span> 76 77
+                     <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 79 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 82 83 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> 86 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 88 89 <span style="color: #427b58; font-weight: bold; font-style: italic;">"FizzBuzz"</span> 91 92
+                     <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 94 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> 97 98 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Fizz"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Buzz"</span> <span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result <span style="color: #d65d0e;">(</span>__<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass <span style="color: #d65d0e;">(</span>equal result expected<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S"</span> pass result<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -325,15 +325,15 @@ Pull out all the nested elements into a single list:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (a &amp;rest b))
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>a <span style="color: #8f3f71; font-weight: bold;">&amp;rest</span> b<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-(let* ((result1 (__ '(1 2 3)))
-       (pass1 (equal result1 '(1 2 3)))
-       (result2 (__ '(1 2 (3 4) (5 (6 (7))))))
-       (pass2 (equal result2 '(1 2 3 4 5 6 7)))
-       (result3 (__ '("a" "b") '(c nil d) '(1 (2 3 (4 5)))))
-       (pass3 (equal result3 '("a" "b" c d 1 2 3 4 5))))
-  (format "Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2 pass3 result3))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result1 <span style="color: #d65d0e;">(</span>__ '<span style="color: #458588;">(</span>1 2 3<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass1 <span style="color: #d65d0e;">(</span>equal result1 '<span style="color: #458588;">(</span>1 2 3<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result2 <span style="color: #d65d0e;">(</span>__ '<span style="color: #458588;">(</span>1 2 <span style="color: #b16286;">(</span>3 4<span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span>5 <span style="color: #8ec07c;">(</span>6 <span style="color: #d65d0e;">(</span>7<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass2 <span style="color: #d65d0e;">(</span>equal result2 '<span style="color: #458588;">(</span>1 2 3 4 5 6 7<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result3 <span style="color: #d65d0e;">(</span>__ '<span style="color: #458588;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"a"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"b"</span><span style="color: #458588;">)</span> '<span style="color: #458588;">(</span>c nil d<span style="color: #458588;">)</span> '<span style="color: #458588;">(</span>1 <span style="color: #b16286;">(</span>2 3 <span style="color: #8ec07c;">(</span>4 5<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass3 <span style="color: #d65d0e;">(</span>equal result3 '<span style="color: #458588;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"a"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"b"</span> c d 1 2 3 4 5<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S"</span> pass1 result1 pass2 result2 pass3 result3<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -348,11 +348,11 @@ where the car is the key and the cdr is the value.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (s))
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>s<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-(let* ((result (__ '((a . 123) (b . 456) (c . "789"))))
-       (pass (equal result #s(hash-table size 3 data (a 123 b 456 c "789")))))
-  (format "Pass:%S\n%S" pass result))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result <span style="color: #d65d0e;">(</span>__ '<span style="color: #458588;">(</span><span style="color: #b16286;">(</span>a . 123<span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span>b . 456<span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span>c . <span style="color: #427b58; font-weight: bold; font-style: italic;">"789"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass <span style="color: #d65d0e;">(</span>equal result #s<span style="color: #458588;">(</span>hash-table size 3 data <span style="color: #b16286;">(</span>a 123 b 456 c <span style="color: #427b58; font-weight: bold; font-style: italic;">"789"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S"</span> pass result<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -368,37 +368,37 @@ you don't use any of the default line/word count functions.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (buffer arg) 0)
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>buffer arg<span style="color: #b16286;">)</span> 0<span style="color: #458588;">)</span>
 
-(with-temp-buffer
-  (insert "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. Maecenas sed enim ut sem viverra aliquet. In mollis nunc sed id semper risus
-in. In hac habitasse platea dictumst quisque sagittis. Facilisis magna etiam tempor orci eu. Tempus
-egestas sed sed risus pretium quam vulputate dignissim. Eros donec ac odio tempor orci dapibus
-ultrices. Nam libero justo laoreet sit. Quis imperdiet massa tincidunt nunc pulvinar. Quis imperdiet
-massa tincidunt nunc pulvinar sapien et. Consequat semper viverra nam libero justo. Volutpat
-maecenas volutpat blandit aliquam etiam erat. Viverra tellus in hac habitasse platea. Condimentum
-vitae sapien pellentesque habitant. Eleifend mi in nulla posuere sollicitudin aliquam ultrices
-sagittis orci. Vitae elementum curabitur vitae nunc sed velit dignissim sodales. Vel risus commodo
-viverra maecenas. Tellus molestie nunc non blandit massa enim. Sed ullamcorper morbi tincidunt
-ornare massa eget egestas purus viverra. Donec ultrices tincidunt arcu non sodales neque sodales ut.
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">with-temp-buffer</span>
+  <span style="color: #b16286;">(</span>insert <span style="color: #427b58; font-weight: bold; font-style: italic;">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">et dolore magna aliqua. Maecenas sed enim ut sem viverra aliquet. In mollis nunc sed id semper risus</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">in. In hac habitasse platea dictumst quisque sagittis. Facilisis magna etiam tempor orci eu. Tempus</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">egestas sed sed risus pretium quam vulputate dignissim. Eros donec ac odio tempor orci dapibus</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">ultrices. Nam libero justo laoreet sit. Quis imperdiet massa tincidunt nunc pulvinar. Quis imperdiet</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">massa tincidunt nunc pulvinar sapien et. Consequat semper viverra nam libero justo. Volutpat</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">maecenas volutpat blandit aliquam etiam erat. Viverra tellus in hac habitasse platea. Condimentum</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">vitae sapien pellentesque habitant. Eleifend mi in nulla posuere sollicitudin aliquam ultrices</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">sagittis orci. Vitae elementum curabitur vitae nunc sed velit dignissim sodales. Vel risus commodo</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">viverra maecenas. Tellus molestie nunc non blandit massa enim. Sed ullamcorper morbi tincidunt</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">ornare massa eget egestas purus viverra. Donec ultrices tincidunt arcu non sodales neque sodales ut.</span>
 
-Eu tincidunt tortor aliquam nulla. Amet justo donec enim diam vulputate. Tristique senectus et netus
-et malesuada fames. Tellus elementum sagittis vitae et. Blandit cursus risus at ultrices mi
-tempus. Sit amet purus gravida quis blandit turpis. Metus vulputate eu scelerisque felis
-imperdiet. Nulla porttitor massa id neque. Dictum fusce ut placerat orci nulla
-pellentesque. Pulvinar mattis nunc sed blandit libero volutpat sed. Amet venenatis urna cursus eget
-nunc scelerisque viverra mauris in. Morbi quis commodo odio aenean. Pellentesque massa placerat duis
-ultricies. Tristique sollicitudin nibh sit amet. Gravida cum sociis natoque penatibus et magnis dis
-parturient. Ut ornare lectus sit amet est. Enim nunc faucibus a pellentesque sit amet
-porttitor. Nisl suscipit adipiscing bibendum est ultricies integer quis. Risus pretium quam
-vulputate dignissim suspendisse in.")
+<span style="color: #427b58; font-weight: bold; font-style: italic;">Eu tincidunt tortor aliquam nulla. Amet justo donec enim diam vulputate. Tristique senectus et netus</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">et malesuada fames. Tellus elementum sagittis vitae et. Blandit cursus risus at ultrices mi</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">tempus. Sit amet purus gravida quis blandit turpis. Metus vulputate eu scelerisque felis</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">imperdiet. Nulla porttitor massa id neque. Dictum fusce ut placerat orci nulla</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">pellentesque. Pulvinar mattis nunc sed blandit libero volutpat sed. Amet venenatis urna cursus eget</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">nunc scelerisque viverra mauris in. Morbi quis commodo odio aenean. Pellentesque massa placerat duis</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">ultricies. Tristique sollicitudin nibh sit amet. Gravida cum sociis natoque penatibus et magnis dis</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">parturient. Ut ornare lectus sit amet est. Enim nunc faucibus a pellentesque sit amet</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">porttitor. Nisl suscipit adipiscing bibendum est ultricies integer quis. Risus pretium quam</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">vulputate dignissim suspendisse in."</span><span style="color: #b16286;">)</span>
 
-  (let* ((result1 (__ (current-buffer) 'lines))
-         (pass1 (= result1 21))
-         (result2 (__ (current-buffer) 'words))
-         (pass2 (= result2 283)))
-    (format "Pass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2)))
+  <span style="color: #b16286;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #8ec07c;">(</span><span style="color: #d65d0e;">(</span>result1 <span style="color: #458588;">(</span>__ <span style="color: #b16286;">(</span>current-buffer<span style="color: #b16286;">)</span> 'lines<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span>
+         <span style="color: #d65d0e;">(</span>pass1 <span style="color: #458588;">(</span>= result1 21<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span>
+         <span style="color: #d65d0e;">(</span>result2 <span style="color: #458588;">(</span>__ <span style="color: #b16286;">(</span>current-buffer<span style="color: #b16286;">)</span> 'words<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span>
+         <span style="color: #d65d0e;">(</span>pass2 <span style="color: #458588;">(</span>= result2 283<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #8ec07c;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S\nPass:%S\n%S"</span> pass1 result1 pass2 result2<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -415,13 +415,13 @@ and the list of args to operate on.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (fn args))
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>fn args<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-(let* ((result1 (__ 'upcase '("apple" "banana" "pear")))
-       (pass1 (equal result1 '("APPLE" "BANANA" "PEAR")))
-       (result2 (__ (lambda (arg) (= 0 (mod arg 2))) '(0 1 2 3 4 5 6 7 8 9)))
-       (pass2 (equal result2 '(t nil t nil t nil t nil t nil))))
-  (format "Pass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result1 <span style="color: #d65d0e;">(</span>__ 'upcase '<span style="color: #458588;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"apple"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"banana"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"pear"</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass1 <span style="color: #d65d0e;">(</span>equal result1 '<span style="color: #458588;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"APPLE"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"BANANA"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"PEAR"</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result2 <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">lambda</span> <span style="color: #b16286;">(</span>arg<span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span>= 0 <span style="color: #8ec07c;">(</span>mod arg 2<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span> '<span style="color: #458588;">(</span>0 1 2 3 4 5 6 7 8 9<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass2 <span style="color: #d65d0e;">(</span>equal result2 '<span style="color: #458588;">(</span>t nil t nil t nil t nil t nil<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S\nPass:%S\n%S"</span> pass1 result1 pass2 result2<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -437,15 +437,15 @@ returns their value. Hint: you probably want to use <code>(condition-case)</code
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (fn))
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>fn<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-(let* ((result1 (__ (lambda () (error "Something went wrong: %s" 'mysymbol))))
-       (pass1 (equal result1 "Something went wrong: mysymbol"))
-       (result2 (__ (lambda () (/ 5 0))))
-       (pass2 (equal result2 "Division by zero"))
-       (result3 (__ (lambda () (throw 'catchmeplease "myvalue"))))
-       (pass3 (equal result3 '(uncaught . "myvalue"))))
-  (format "Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2 pass3 result3))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result1 <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">lambda</span> <span style="color: #b16286;">()</span> <span style="color: #b16286;">(</span><span style="color: #af3a03; font-weight: bold; font-style: italic;">error</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"Something went wrong: %s"</span> 'mysymbol<span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass1 <span style="color: #d65d0e;">(</span>equal result1 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Something went wrong: mysymbol"</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result2 <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">lambda</span> <span style="color: #b16286;">()</span> <span style="color: #b16286;">(</span>/ 5 0<span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass2 <span style="color: #d65d0e;">(</span>equal result2 <span style="color: #427b58; font-weight: bold; font-style: italic;">"Division by zero"</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result3 <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">lambda</span> <span style="color: #b16286;">()</span> <span style="color: #b16286;">(</span><span style="color: #9d0006; font-weight: bold;">throw</span> '<span style="color: #b57614; font-weight: bold;">catchmeplease</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"myvalue"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass3 <span style="color: #d65d0e;">(</span>equal result3 '<span style="color: #458588;">(</span>uncaught . <span style="color: #427b58; font-weight: bold; font-style: italic;">"myvalue"</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S"</span> pass1 result1 pass2 result2 pass3 result3<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -461,11 +461,11 @@ returns the expected value:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (fn))
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>fn<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-(let* ((result (__ (lambda () (throw 'label "message"))))
-       (pass (equal result '(label . "message"))))
-  (format "Pass:%S\n%S" pass result))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">lambda</span> <span style="color: #b16286;">()</span> <span style="color: #b16286;">(</span><span style="color: #9d0006; font-weight: bold;">throw</span> '<span style="color: #b57614; font-weight: bold;">label</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"message"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass <span style="color: #d65d0e;">(</span>equal result '<span style="color: #458588;">(</span>label . <span style="color: #427b58; font-weight: bold; font-style: italic;">"message"</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S"</span> pass result<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -479,17 +479,17 @@ The numbers should be extracted into a list. Note: <code>\d</code> is not suppor
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (buffer))
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>buffer<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-(let* ((result1 (with-temp-buffer
-                  (insert "There are 2 numbers in this buffer. The second one is 123")
-                  (__ (current-buffer))))
-       (pass1 (equal result1 '(2 123)))
-       (result2 (with-temp-buffer
-                  (insert "There are no numbers in this buffer")
-                  (__ (current-buffer))))
-       (pass2 (equal result2 nil)))
-  (format "Pass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result1 <span style="color: #d65d0e;">(</span><span style="color: #9d0006; font-weight: bold;">with-temp-buffer</span>
+                  <span style="color: #458588;">(</span>insert <span style="color: #427b58; font-weight: bold; font-style: italic;">"There are 2 numbers in this buffer. The second one is 123"</span><span style="color: #458588;">)</span>
+                  <span style="color: #458588;">(</span>__ <span style="color: #b16286;">(</span>current-buffer<span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass1 <span style="color: #d65d0e;">(</span>equal result1 '<span style="color: #458588;">(</span>2 123<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result2 <span style="color: #d65d0e;">(</span><span style="color: #9d0006; font-weight: bold;">with-temp-buffer</span>
+                  <span style="color: #458588;">(</span>insert <span style="color: #427b58; font-weight: bold; font-style: italic;">"There are no numbers in this buffer"</span><span style="color: #458588;">)</span>
+                  <span style="color: #458588;">(</span>__ <span style="color: #b16286;">(</span>current-buffer<span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass2 <span style="color: #d65d0e;">(</span>equal result2 nil<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S\nPass:%S\n%S"</span> pass1 result1 pass2 result2<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -504,11 +504,11 @@ response into an alist.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (url) nil)
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>url<span style="color: #b16286;">)</span> nil<span style="color: #458588;">)</span>
 
-(let* ((result (__ "https://httpbin.org/get?one=two&amp;three=four"))
-       (pass (equal result '((one . "two") (three . "four")))))
-  (format "Pass:%S\n%S" pass result))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result <span style="color: #d65d0e;">(</span>__ <span style="color: #427b58; font-weight: bold; font-style: italic;">"https://httpbin.org/get?one=two&amp;three=four"</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass <span style="color: #d65d0e;">(</span>equal result '<span style="color: #458588;">(</span><span style="color: #b16286;">(</span>one . <span style="color: #427b58; font-weight: bold; font-style: italic;">"two"</span><span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span>three . <span style="color: #427b58; font-weight: bold; font-style: italic;">"four"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S"</span> pass result<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -523,11 +523,11 @@ argument in a shell and return the result.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (shellcommand))
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>shellcommand<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-(let* ((result (__ "echo 'always eval user input'"))
-       (pass (equal result "always eval user input")))
-  (format "Pass:%S\n%S" pass result))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result <span style="color: #d65d0e;">(</span>__ <span style="color: #427b58; font-weight: bold; font-style: italic;">"echo 'always eval user input'"</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass <span style="color: #d65d0e;">(</span>equal result <span style="color: #427b58; font-weight: bold; font-style: italic;">"always eval user input"</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S"</span> pass result<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -542,16 +542,16 @@ and tags, and return a list where each item looks like <code>("HEADLINE" . '("TA
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (s) nil)
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>s<span style="color: #b16286;">)</span> nil<span style="color: #458588;">)</span>
 
-(let* ((org-string "* Headline one    :foo:
-* Headline two     :foo:bar:
-* Headline three   :bar:")
-       (result (__ org-string))
-       (pass (equal result '(("Headline one" . ("foo"))
-                          ("Headline two" . ("foo" "bar"))
-                          ("Headline three" . ("bar"))))))
-       (format "Pass:%S\n%S" pass result))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>org-string <span style="color: #427b58; font-weight: bold; font-style: italic;">"* Headline one    :foo:</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">* Headline two     :foo:bar:</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">* Headline three   :bar:"</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result <span style="color: #d65d0e;">(</span>__ org-string<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass <span style="color: #d65d0e;">(</span>equal result '<span style="color: #458588;">(</span><span style="color: #b16286;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"Headline one"</span> . <span style="color: #8ec07c;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"foo"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+                          <span style="color: #b16286;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"Headline two"</span> . <span style="color: #8ec07c;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"foo"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"bar"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+                          <span style="color: #b16286;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"Headline three"</span> . <span style="color: #8ec07c;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"bar"</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+       <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S"</span> pass result<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -576,31 +576,31 @@ highlights some user-defined keywords.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defface emacs-london/my-todo-face '((t (:inherit 'warning))) "")
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defface</span> <span style="color: #3c3836; font-weight: bold; font-style: italic;">emacs-london/my-todo-face</span> '<span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>t <span style="color: #d65d0e;">(</span><span style="color: #076678; font-weight: bold;">:inherit</span> 'warning<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span> <span style="color: #bdae93;">""</span><span style="color: #458588;">)</span>
 
-(defun emacs-london/check-faces (buffer)
-  "This returns a list where each item is t if the TODO font matches my-todo-face, else nil"
-  (with-current-buffer buffer
-    (save-excursion
-      (goto-char (point-min))
-      (cl-loop until (not (search-forward-regexp "TODO" nil t))
-               collect (equal (face-at-point t) 'emacs-london/my-todo-face)))))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">emacs-london/check-faces</span> <span style="color: #b16286;">(</span>buffer<span style="color: #b16286;">)</span>
+  <span style="color: #bdae93;">"This returns a list where each item is t if the </span><span style="color: #1d2021; background-color: #ebdbb2;">TODO</span><span style="color: #bdae93;"> font matches my-todo-face, else nil"</span>
+  <span style="color: #b16286;">(</span><span style="color: #9d0006; font-weight: bold;">with-current-buffer</span> buffer
+    <span style="color: #8ec07c;">(</span><span style="color: #9d0006; font-weight: bold;">save-excursion</span>
+      <span style="color: #d65d0e;">(</span>goto-char <span style="color: #458588;">(</span>point-min<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span>
+      <span style="color: #d65d0e;">(</span><span style="color: #9d0006; font-weight: bold;">cl-loop</span> until <span style="color: #458588;">(</span>not <span style="color: #b16286;">(</span>search-forward-regexp <span style="color: #427b58; font-weight: bold; font-style: italic;">"TODO"</span> nil t<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
+               collect <span style="color: #458588;">(</span>equal <span style="color: #b16286;">(</span>face-at-point t<span style="color: #b16286;">)</span> 'emacs-london/my-todo-face<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-(defun __ (buffer))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>buffer<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 
-(with-temp-buffer
-  (insert "import math  # TODO: remove unused import
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">with-temp-buffer</span>
+  <span style="color: #b16286;">(</span>insert <span style="color: #427b58; font-weight: bold; font-style: italic;">"import math  # TODO: remove unused import</span>
 
-def main(arg):
-    helloworld = 'helloworld'  # TODO: inline this?
-    return helloworld
+<span style="color: #427b58; font-weight: bold; font-style: italic;">def main(arg):</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">    helloworld = 'helloworld'  # TODO: inline this?</span>
+<span style="color: #427b58; font-weight: bold; font-style: italic;">    return helloworld</span>
 
-# TODO: execute main()?")
+<span style="color: #427b58; font-weight: bold; font-style: italic;"># TODO: execute main()?"</span><span style="color: #b16286;">)</span>
 
-  (let* ((result (progn (__ (current-buffer))
-                        (emacs-london/check-faces (current-buffer))))
-         (pass (equal result '(t t t) )))
-    (format "Pass:%S\n%S" pass result)))
+  <span style="color: #b16286;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #8ec07c;">(</span><span style="color: #d65d0e;">(</span>result <span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">progn</span> <span style="color: #b16286;">(</span>__ <span style="color: #8ec07c;">(</span>current-buffer<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+                        <span style="color: #b16286;">(</span>emacs-london/check-faces <span style="color: #8ec07c;">(</span>current-buffer<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span>
+         <span style="color: #d65d0e;">(</span>pass <span style="color: #458588;">(</span>equal result '<span style="color: #b16286;">(</span>t t t<span style="color: #b16286;">)</span> <span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+    <span style="color: #8ec07c;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S"</span> pass result<span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
@@ -617,14 +617,14 @@ included in the result.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (v) nil)
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>v<span style="color: #b16286;">)</span> nil<span style="color: #458588;">)</span>
 
-(let* ((result (__ ["meat" "mat" "team" "mate" "eat"]))
-       (pass (equal result '(("meat" "team" "mate"))))
-       (result2 (__ ["veer" "lake" "item" "kale" "mite" "ever"]))
-       (pass2 (equal result '(("veer" "ever") ("lake" "kale") ("mite item")))))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">[</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"meat"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"mat"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"team"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"mate"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"eat"</span><span style="color: #458588;">]</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass <span style="color: #d65d0e;">(</span>equal result '<span style="color: #458588;">(</span><span style="color: #b16286;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"meat"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"team"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"mate"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result2 <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">[</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"veer"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"lake"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"item"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"kale"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"mite"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"ever"</span><span style="color: #458588;">]</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass2 <span style="color: #d65d0e;">(</span>equal result '<span style="color: #458588;">(</span><span style="color: #b16286;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"veer"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"ever"</span><span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"lake"</span> <span style="color: #427b58; font-weight: bold; font-style: italic;">"kale"</span><span style="color: #b16286;">)</span> <span style="color: #b16286;">(</span><span style="color: #427b58; font-weight: bold; font-style: italic;">"mite item"</span><span style="color: #b16286;">)</span><span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
 
-  (format "Pass:%S\n%S\n\nPass:%S\n%S" pass result pass2 result2))
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S\n\nPass:%S\n%S"</span> pass result pass2 result2<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -646,30 +646,30 @@ has won, and <code>nil</code> if neither player has won.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ (board) nil)
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">(</span>board<span style="color: #b16286;">)</span> nil<span style="color: #458588;">)</span>
 
-(let* ((result1 (__ [[e e e]
-                     [e e e]
-                     [e e e]]))
-       (pass1 (equal nil result1))
-       (result2 (__ [[x e o]
-                     [x e e]
-                     [x e o]]))
-       (pass2 (equal 'x result2))
-       (result3 (__ [[e x e]
-                     [o o o]
-                     [x e x]]))
-       (pass3 (equal 'o result3))
-       (result4 (__ [[x e o]
-                     [x x e]
-                     [o x o]]))
-       (pass4 (equal nil result4))
-       (result5 (__ [[x e o]
-                     [o o e]
-                     [o e x]]))
-       (pass5 (equal 'o result5)))
-  (format "Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\n"
-          pass1 result1 pass2 result2 pass3 result3 pass4 result4 pass5 result5))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result1 <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">[</span><span style="color: #b16286;">[</span>e e e<span style="color: #b16286;">]</span>
+                     <span style="color: #b16286;">[</span>e e e<span style="color: #b16286;">]</span>
+                     <span style="color: #b16286;">[</span>e e e<span style="color: #b16286;">]</span><span style="color: #458588;">]</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass1 <span style="color: #d65d0e;">(</span>equal nil result1<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result2 <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">[</span><span style="color: #b16286;">[</span>x e o<span style="color: #b16286;">]</span>
+                     <span style="color: #b16286;">[</span>x e e<span style="color: #b16286;">]</span>
+                     <span style="color: #b16286;">[</span>x e o<span style="color: #b16286;">]</span><span style="color: #458588;">]</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass2 <span style="color: #d65d0e;">(</span>equal 'x result2<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result3 <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">[</span><span style="color: #b16286;">[</span>e x e<span style="color: #b16286;">]</span>
+                     <span style="color: #b16286;">[</span>o o o<span style="color: #b16286;">]</span>
+                     <span style="color: #b16286;">[</span>x e x<span style="color: #b16286;">]</span><span style="color: #458588;">]</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass3 <span style="color: #d65d0e;">(</span>equal 'o result3<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result4 <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">[</span><span style="color: #b16286;">[</span>x e o<span style="color: #b16286;">]</span>
+                     <span style="color: #b16286;">[</span>x x e<span style="color: #b16286;">]</span>
+                     <span style="color: #b16286;">[</span>o x o<span style="color: #b16286;">]</span><span style="color: #458588;">]</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass4 <span style="color: #d65d0e;">(</span>equal nil result4<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result5 <span style="color: #d65d0e;">(</span>__ <span style="color: #458588;">[</span><span style="color: #b16286;">[</span>x e o<span style="color: #b16286;">]</span>
+                     <span style="color: #b16286;">[</span>o o e<span style="color: #b16286;">]</span>
+                     <span style="color: #b16286;">[</span>o e x<span style="color: #b16286;">]</span><span style="color: #458588;">]</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass5 <span style="color: #d65d0e;">(</span>equal 'o result5<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\nPass:%S\n%S\n"</span>
+          pass1 result1 pass2 result2 pass3 result3 pass4 result4 pass5 result5<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 
@@ -698,16 +698,16 @@ that subsequent calls to <code>+</code> return 4 again.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defun __ () nil)
+<pre class="src src-emacs-lisp"><span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">defun</span> <span style="color: #076678; font-style: italic;">__</span> <span style="color: #b16286;">()</span> nil<span style="color: #458588;">)</span>
 
-(let* ((result1 (+ 2 2))
-       (pass1 (equal result1 4))
-       (result2 (progn (__) (+ 2 2)))
-       (pass2 (equal result2 5))
-       (result3 (progn (__) (+ 2 2)))
-       (pass3 (equal result3 4)))
-  (format "Pass:%S\n%S\n\nPass:%S:\n%S\n\nPass:%S\n%S"
-          pass1 result1 pass2 result2 pass3 result3))
+<span style="color: #458588;">(</span><span style="color: #9d0006; font-weight: bold;">let*</span> <span style="color: #b16286;">(</span><span style="color: #8ec07c;">(</span>result1 <span style="color: #d65d0e;">(</span>+ 2 2<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass1 <span style="color: #d65d0e;">(</span>equal result1 4<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result2 <span style="color: #d65d0e;">(</span><span style="color: #9d0006; font-weight: bold;">progn</span> <span style="color: #458588;">(</span>__<span style="color: #458588;">)</span> <span style="color: #458588;">(</span>+ 2 2<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass2 <span style="color: #d65d0e;">(</span>equal result2 5<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>result3 <span style="color: #d65d0e;">(</span><span style="color: #9d0006; font-weight: bold;">progn</span> <span style="color: #458588;">(</span>__<span style="color: #458588;">)</span> <span style="color: #458588;">(</span>+ 2 2<span style="color: #458588;">)</span><span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span>
+       <span style="color: #8ec07c;">(</span>pass3 <span style="color: #d65d0e;">(</span>equal result3 4<span style="color: #d65d0e;">)</span><span style="color: #8ec07c;">)</span><span style="color: #b16286;">)</span>
+  <span style="color: #b16286;">(</span>format <span style="color: #427b58; font-weight: bold; font-style: italic;">"Pass:%S\n%S\n\nPass:%S:\n%S\n\nPass:%S\n%S"</span>
+          pass1 result1 pass2 result2 pass3 result3<span style="color: #b16286;">)</span><span style="color: #458588;">)</span>
 </pre>
 </div>
 </div>
