@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-03-02 Mon 16:40 -->
+<!-- 2020-03-02 Mon 18:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dojo | Emacs London</title>
@@ -202,6 +202,10 @@ Changes and new exercises are very welcome! Please <a href="https://github.com/l
 </tr>
 
 <tr>
+<td class="org-left"><a href="#org4b0cce2">Use a regex to extract numbers from a buffer</a></td>
+</tr>
+
+<tr>
 <td class="org-left"><a href="#orgf24b133">Make an HTTP request and parse the JSON response</a></td>
 </tr>
 
@@ -211,6 +215,10 @@ Changes and new exercises are very welcome! Please <a href="https://github.com/l
 
 <tr>
 <td class="org-left"><a href="#org930c2c0">Parse data from an org buffer</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="#orgea03bbf">Apply a custom font face to TODO words in a buffer</a></td>
 </tr>
 
 <tr>
@@ -463,6 +471,30 @@ returns the expected value:
 </div>
 </div>
 
+<div id="outline-container-org4b0cce2" class="outline-3">
+<h3 id="org4b0cce2">Use a regex to extract numbers from a buffer</h3>
+<div class="outline-text-3" id="text-org4b0cce2">
+<p>
+The numbers should be extracted into a list. Note: <code>\d</code> is not supported.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun __ (buffer))
+
+(let* ((result1 (with-temp-buffer
+                  (insert "There are 2 numbers in this buffer. The second one is 123")
+                  (__ (current-buffer))))
+       (pass1 (equal result1 '(2 123)))
+       (result2 (with-temp-buffer
+                  (insert "There are no numbers in this buffer")
+                  (__ (current-buffer))))
+       (pass2 (equal result2 nil)))
+  (format "Pass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2))
+</pre>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgf24b133" class="outline-3">
 <h3 id="orgf24b133">Make an HTTP request and parse the JSON response</h3>
 <div class="outline-text-3" id="text-orgf24b133">
@@ -520,6 +552,55 @@ and tags, and return a list where each item looks like <code>("HEADLINE" . '("TA
                           ("Headline two" . ("foo" "bar"))
                           ("Headline three" . ("bar"))))))
        (format "Pass:%S\n%S" pass result))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgea03bbf" class="outline-3">
+<h3 id="orgea03bbf">Apply a custom font face to TODO words in a buffer</h3>
+<div class="outline-text-3" id="text-orgea03bbf">
+<p>
+Each "TODO" word in the buffer below should have <code>my-todo-face</code> applied. You might
+find it easier to open a test buffer where you can visually check the faces.
+</p>
+
+<p>
+When you're done, try adjusting the exercise to support and test multiple faces,
+or extend the face to apply to the rest of the line matching TODO.
+</p>
+
+<p>
+The <a href="https://www.emacswiki.org/emacs/fic-mode.el">fic-mode codebase</a> may help you: it's a minor-mode that essentially just
+highlights some user-defined keywords.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defface emacs-london/my-todo-face '((t (:inherit 'warning))) "")
+
+(defun emacs-london/check-faces (buffer)
+  "This returns a list where each item is t if the TODO font matches my-todo-face, else nil"
+  (with-current-buffer buffer
+    (save-excursion
+      (goto-char (point-min))
+      (cl-loop until (not (search-forward-regexp "TODO" nil t))
+               collect (equal (face-at-point t) 'emacs-london/my-todo-face)))))
+
+(defun __ (buffer))
+
+(with-temp-buffer
+  (insert "import math  # TODO: remove unused import
+
+def main(arg):
+    helloworld = 'helloworld'  # TODO: inline this?
+    return helloworld
+
+# TODO: execute main()?")
+
+  (let* ((result (progn (__ (current-buffer))
+                        (emacs-london/check-faces (current-buffer))))
+         (pass (equal result '(t t t) )))
+    (format "Pass:%S\n%S" pass result)))
 </pre>
 </div>
 </div>

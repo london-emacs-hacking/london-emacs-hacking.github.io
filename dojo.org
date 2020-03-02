@@ -58,23 +58,25 @@ Changes and new exercises are very welcome! Please [[https://github.com/london-e
 
 ** Index
 
-| Title                                            |
-|--------------------------------------------------|
-| [[Strings - uppercase]]                              |
-| [[Penultimate element]]                              |
-| [[Fizzbuzz]]                                         |
-| [[Flatten an arbitrarily nested list]]               |
-| [[Count the lines and words in a buffer]]            |
-| [[Convert a list into a hash table]]                 |
-| [[Reimplement mapcar]]                               |
-| [[Handle errors]]                                    |
-| [[Throw and catch]]                                  |
-| [[Make an HTTP request and parse the JSON response]] |
-| [[Read output from a shell command]]                          |
-| [[Parse data from an org buffer]]                    |
-| [[Anagram finder]]                                   |
-| [[Analyse a tic tac toe board]]                      |
-| [[Advice: 2 + 2 = 5]]                                |
+| Title                                              |
+|----------------------------------------------------|
+| [[Strings - uppercase]]                                |
+| [[Penultimate element]]                                |
+| [[Fizzbuzz]]                                           |
+| [[Flatten an arbitrarily nested list]]                 |
+| [[Count the lines and words in a buffer]]              |
+| [[Convert a list into a hash table]]                   |
+| [[Reimplement mapcar]]                                 |
+| [[Handle errors]]                                      |
+| [[Throw and catch]]                                    |
+| [[Use a regex to extract numbers from a buffer ]]      |
+| [[Make an HTTP request and parse the JSON response]]   |
+| [[Read output from a shell command]]                   |
+| [[Parse data from an org buffer]]                      |
+| [[Apply a custom font face to TODO words in a buffer]] |
+| [[Anagram finder]]                                     |
+| [[Analyse a tic tac toe board]]                        |
+| [[Advice: 2 + 2 = 5]]                                  |
 
 ** Strings - uppercase
 
@@ -252,6 +254,24 @@ returns the expected value:
     (format "Pass:%S\n%S" pass result))
 #+end_src
 
+** Use a regex to extract numbers from a buffer
+
+The numbers should be extracted into a list. Note: ~\d~ is not supported.
+
+#+begin_src emacs-lisp
+  (defun __ (buffer))
+
+  (let* ((result1 (with-temp-buffer
+                    (insert "There are 2 numbers in this buffer. The second one is 123")
+                    (__ (current-buffer))))
+         (pass1 (equal result1 '(2 123)))
+         (result2 (with-temp-buffer
+                    (insert "There are no numbers in this buffer")
+                    (__ (current-buffer))))
+         (pass2 (equal result2 nil)))
+    (format "Pass:%S\n%S\nPass:%S\n%S" pass1 result1 pass2 result2))
+#+end_src
+
 ** Make an HTTP request and parse the JSON response
 
 Make an HTTP request to httpbin.org and convert the "args" from the JSON
@@ -294,6 +314,45 @@ and tags, and return a list where each item looks like ~("HEADLINE" . '("TAG1" "
                             ("Headline two" . ("foo" "bar"))
                             ("Headline three" . ("bar"))))))
          (format "Pass:%S\n%S" pass result))
+#+end_src
+
+** Apply a custom font face to TODO words in a buffer
+
+Each "TODO" word in the buffer below should have ~my-todo-face~ applied. You might
+find it easier to open a test buffer where you can visually check the faces.
+
+When you're done, try adjusting the exercise to support and test multiple faces,
+or extend the face to apply to the rest of the line matching TODO.
+
+The [[https://www.emacswiki.org/emacs/fic-mode.el][fic-mode codebase]] may help you: it's a minor-mode that essentially just
+highlights some user-defined keywords.
+
+#+begin_src emacs-lisp
+  (defface emacs-london/my-todo-face '((t (:inherit 'warning))) "")
+
+  (defun emacs-london/check-faces (buffer)
+    "This returns a list where each item is t if the TODO font matches my-todo-face, else nil"
+    (with-current-buffer buffer
+      (save-excursion
+        (goto-char (point-min))
+        (cl-loop until (not (search-forward-regexp "TODO" nil t))
+                 collect (equal (face-at-point t) 'emacs-london/my-todo-face)))))
+
+  (defun __ (buffer))
+
+  (with-temp-buffer
+    (insert "import math  # TODO: remove unused import
+
+  def main(arg):
+      helloworld = 'helloworld'  # TODO: inline this?
+      return helloworld
+
+  # TODO: execute main()?")
+
+    (let* ((result (progn (__ (current-buffer))
+                          (emacs-london/check-faces (current-buffer))))
+           (pass (equal result '(t t t) )))
+      (format "Pass:%S\n%S" pass result)))
 #+end_src
 
 ** Anagram finder
@@ -379,6 +438,7 @@ that subsequent calls to ~+~ return 4 again.
 
 ** COMMENT exercise topics
 
+- something with symbols - convert to/from string
 - vectors
 - buffers
 - frames
@@ -387,9 +447,10 @@ that subsequent calls to ~+~ return 4 again.
 - strings
 - regex
 - catch / throw / unwind-protect
+- read input with completing-read
 - defstruct
 - class
-- manipulating dates
+- manipulating dates - compare them, display as certain vals
 - macros
 - environment variables
 - clipboard
@@ -402,7 +463,7 @@ that subsequent calls to ~+~ return 4 again.
 - text properties
 - indirect buffers
 - defining modes
-- variable scope
+- variable scope - use let.
 
 * Open-ended project ideas
 
