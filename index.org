@@ -25,21 +25,22 @@ just have questions, you can contact us on:
 - or via [[mailto:hi@mattduck.com][email]].
 
 
+* [[https://www.meetup.com/London-Emacs-Hacking][next meetup]]: April
 
-* [[https://www.meetup.com/London-Emacs-Hacking][next meetup]]: Wednesday March 4th
+The next meetup is TBC, but likely to be in April.
 
-The next meetup is scheduled for Wednesday, March 4th. As usual it will be
-hosted [[https://goo.gl/maps/hQTo4moTHToJwvgG7][above the Poetry Café in
-Holborn]].
+# The next meetup is scheduled for Wednesday, March 4th. As usual it will be
+# hosted [[https://goo.gl/maps/hQTo4moTHToJwvgG7][above the Poetry Café in
+# Holborn]].
 
-This month we'll be running a dojo-style format to learn about emacs-lisp.
-We'll be providing [[file:dojo.org][some runnable exercises]] as a starting point.
+# This month we'll be running a dojo-style format to learn about emacs-lisp.
+# We'll be providing [[file:dojo.org][some runnable exercises]] as a starting point.
 
-Food and drink will be available to purchase downstairs. Attendees are welcome from 6:30pm.
+# Food and drink will be available to purchase downstairs. Attendees are welcome from 6:30pm.
 
-Please sign up to the guest list on [[https://www.meetup.com/London-Emacs-Hacking/][meetup.com]] to attend.
+# Please sign up to the guest list on [[https://www.meetup.com/London-Emacs-Hacking/][meetup.com]] to attend.
 
-For questions and other Emacs conversation, join the [[https://emacs-london.herokuapp.com/][emacs-london Slack group]].
+# For questions and other Emacs conversation, join the [[https://emacs-london.herokuapp.com/][emacs-london Slack group]].
 
 
 * [[file:dojo.org][emacs-lisp coding materials]]
