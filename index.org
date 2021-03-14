@@ -25,9 +25,10 @@ just have questions, you can contact us on:
 - or via [[mailto:hi@mattduck.com][email]].
 
 
-* [[https://www.meetup.com/London-Emacs-Hacking][next meetup]]: April
+* COVID-19
 
-The next meetup is TBC, but likely to be in April.
+The meetup has been postponed since April 2020 due to COVID-19. There are no
+concrete plans for the next meeting but we hope to to return at a later date.
 
 # The next meetup is scheduled for Wednesday, March 4th. As usual it will be
 # hosted [[https://goo.gl/maps/hQTo4moTHToJwvgG7][above the Poetry Café in
