@@ -24,6 +24,10 @@ Surely there are other kinds of proposals you can think of. Just add them below.
 * New to Emacs? Welcome!
 This is a meetup for everyone, so bring whatever Emacs questions or topics that interest you. Add them below :)
 
+* Have you registered?
+
+Check out [[https://www.meetup.com/london-emacs-hacking][london-emacs-hacking]] for the latest event and please register to attend.
+
 * September 2023 (please add more topics 🙏)
 <2023-09-26 Tue 19:00-21:00>
 ** Emacs 29.1, now with sqlite-mode
