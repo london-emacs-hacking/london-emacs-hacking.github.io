@@ -1,0 +1,33 @@
+#+TITLE: Emacs London Meetup agenda
+
+* Why?
+Organic and spontaneous discussion is great and totally encouraged. Having a basic meetup agenda helps us kick off with some direction seeding further discussion.
+
+* On-topic
+Anything Emacs-related (or even loosely related) is on-topic.
+
+* Help us by adding topics to the agenda
+Help us have richer meetups by bringing topics and things to chat about.
+
+* New to Emacs? Great!
+Welcome!
+
+* What to add to the agenda?
+This is an informal meetup, so don't sweat any topic proposal too much. Doesn't have to be an advanced topic. Add whatever sparks your interest. Better to add it to the agenda than not. Some examples, but not limited to:
+
+- Learned something new recently? Tell us about it. Bonus, share your screen and show us.
+- Got a favorite trick or package? Yep. Tell us. Better yet, show us.
+- Working on a package yourself? Want to showcase it? Show us.
+- Want to show us your workflow? We all bend Emacs in different ways. Would love to see how others do it. Show us.
+- Emacs stories. These are always fun to hear. How did you get into Emacs? Seen surprising usages? Tell us your stories.
+- Got questions? We're here to help. Whether it is setting things up, installing a tricky package, elisp questions, bring them on...
+
+Surely there are other kinds of proposals you can think of. Just add them below.
+
+* September 2023 (please add more topics 🙏)
+<2023-09-26 Tue 19:00-21:00>
+** Emacs 29.1, now with sqlite-mode
+:PROPERTIES:
+:BY: Álvaro Ramirez
+:END:
+Emacs 29.1 ships with sqlite-mode on top of the new native SQLite support. It's neat for inspecting SQLite databases, but can also be extended. I did a few experiments.
