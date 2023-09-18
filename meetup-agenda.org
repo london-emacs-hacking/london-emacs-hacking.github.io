@@ -9,9 +9,6 @@ Anything Emacs-related (or even loosely related) is on-topic.
 * Help us by adding topics to the agenda
 Help us have richer meetups by bringing topics and things to chat about.
 
-* New to Emacs? Great!
-Welcome!
-
 * What to add to the agenda?
 This is an informal meetup, so don't sweat any topic proposal too much. Doesn't have to be an advanced topic. Add whatever sparks your interest. Better to add it to the agenda than not. Some examples, but not limited to:
 
@@ -23,6 +20,9 @@ This is an informal meetup, so don't sweat any topic proposal too much. Doesn't 
 - Got questions? We're here to help. Whether it is setting things up, installing a tricky package, elisp questions, bring them on...
 
 Surely there are other kinds of proposals you can think of. Just add them below.
+
+* New to Emacs? Welcome!
+This is a meetup for everyone, so bring whatever Emacs questions or topics that interest you. Add them below :)
 
 * September 2023 (please add more topics 🙏)
 <2023-09-26 Tue 19:00-21:00>
