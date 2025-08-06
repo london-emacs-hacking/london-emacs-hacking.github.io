@@ -1,0 +1,19 @@
+* [2025-08-06 Wed] Kick off Meetup discussion (how to reignite)
+
+** Attendees
+James, Fabio, Arun, Alvaro.
+
+** Notes
+- Who can make it to the Barbican next week?
+  - James needs a dog sitter
+- Possible formats for future events
+  - Config support: share your snippets and help others with issuesUnconference
+  - Presentations by speakers
+  - Casual get together
+- It takes time to get speakers
+- Pubs can be noisy
+- Discussion around how we record our meetings and todo items
+- If we can find a venue, we can target September (otherwise continue as pub/informal).
+
+** Action items
+*** TODO James to reach out to folks who may have access to venue.
