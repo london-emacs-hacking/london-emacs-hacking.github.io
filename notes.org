@@ -16,4 +16,4 @@ James, Fabio, Arun, Alvaro.
 - If we can find a venue, we can target September (otherwise continue as pub/informal).
 
 ** Action items
-*** TODO James to reach out to folks who may have access to venue.
+- [ ] James to reach out to folks who may have access to venue.
